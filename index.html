@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- SEO -->
+  <title>ZEN NETTOYAGE 44 – Nettoyage Professionnel Nantes & Loire-Atlantique</title>
+  <meta name="description" content="ZEN NETTOYAGE 44 : entreprise de nettoyage professionnel à Nantes et en Loire-Atlantique. Locaux, bureaux, après travaux, vitres, Airbnb, copropriétés. Devis gratuit sous 24h. Disponible 6j/7. ☎ 07 44 25 76 76"/>
+  <meta name="keywords" content="nettoyage professionnel Nantes, nettoyage bureaux Nantes, nettoyage après travaux Loire-Atlantique, nettoyage vitre Nantes, nettoyage Airbnb Nantes, entreprise nettoyage 44, nettoyage copropriété Nantes, nettoyage fin de chantier Nantes, ménage professionnel Nantes, ZEN NETTOYAGE 44"/>
+  <meta name="author" content="ZEN NETTOYAGE 44"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://zennettoyage.fr/"/>
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="ZEN NETTOYAGE 44 – Nettoyage Professionnel Nantes"/>
+  <meta property="og:description" content="Nettoyage professionnel à Nantes et Loire-Atlantique. Locaux, après travaux, vitres, Airbnb. Devis gratuit sous 24h. ☎ 07 44 25 76 76"/>
+  <meta property="og:url" content="https://zennettoyage.fr/"/>
+  <meta property="og:locale" content="fr_FR"/>
+
+  <!-- SCHEMA.ORG -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ZEN NETTOYAGE 44",
+    "description": "Entreprise de nettoyage professionnel à Nantes et Loire-Atlantique. Locaux, bureaux, après travaux, vitres, Airbnb, copropriétés.",
+    "url": "https://zennettoyage.fr/",
+    "telephone": "+33744257676",
+    "email": "zennettoyage443@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nantes",
+      "addressRegion": "Loire-Atlantique",
+      "postalCode": "44000",
+      "addressCountry": "FR"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Loire-Atlantique"
+    },
+    "openingHours": "Mo-Sa 07:00-20:00",
+    "priceRange": "€€"
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --deep: #0d1f1a;
+      --green: #1a5c42;
+      --mint: #3aab7b;
+      --cream: #f5f2eb;
+      --white: #ffffff;
+      --text: #1a2822;
+      --muted: #5a7268;
+      --gold: #c8a96e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 5%;
+      background: rgba(13,31,26,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(58,171,123,0.15);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--white); letter-spacing: 0.04em;
+    }
+    .nav-logo span { color: var(--mint); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none; font-size: 0.88rem;
+      font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--mint); }
+    .nav-cta {
+      background: var(--mint); color: var(--white) !important;
+      padding: 0.55rem 1.3rem; border-radius: 50px;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: #2d9068 !important; }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh; background: var(--deep);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden; padding-top: 80px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 70% 50%, rgba(26,92,66,0.45) 0%, transparent 70%),
+                  radial-gradient(ellipse 40% 40% at 15% 80%, rgba(58,171,123,0.15) 0%, transparent 60%);
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(58,171,123,0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(58,171,123,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto; padding: 0 5%;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(58,171,123,0.15);
+      border: 1px solid rgba(58,171,123,0.35);
+      color: var(--mint); font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.45rem 1rem; border-radius: 50px; margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-badge::before { content: '✦'; font-size: 0.65rem; }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 900; line-height: 1.1;
+      color: var(--white); margin-bottom: 1.2rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+    h1 em { font-style: normal; color: var(--mint); }
+    .hero-sub {
+      color: rgba(255,255,255,0.65); font-size: 1.05rem;
+      line-height: 1.7; margin-bottom: 2rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+    .hero-btns {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+    .btn-primary {
+      background: var(--mint); color: var(--white);
+      padding: 0.85rem 2rem; border-radius: 50px;
+      font-weight: 600; font-size: 0.95rem; text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 4px 20px rgba(58,171,123,0.35);
+    }
+    .btn-primary:hover { background: #2d9068; transform: translateY(-2px); }
+    .btn-outline {
+      border: 1.5px solid rgba(255,255,255,0.3); color: var(--white);
+      padding: 0.85rem 2rem; border-radius: 50px;
+      font-weight: 500; font-size: 0.95rem; text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--mint); background: rgba(58,171,123,0.1); }
+    .hero-promo {
+      background: linear-gradient(135deg, rgba(200,169,110,0.15), rgba(200,169,110,0.05));
+      border: 1px solid rgba(200,169,110,0.4);
+      border-radius: 16px; padding: 2rem; text-align: center;
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+    .promo-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem; font-weight: 900; color: var(--gold); line-height: 1;
+    }
+    .promo-text { color: rgba(255,255,255,0.8); font-size: 1rem; margin-top: 0.4rem; line-height: 1.5; }
+    .promo-detail { color: rgba(255,255,255,0.45); font-size: 0.78rem; margin-top: 0.6rem; }
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1rem; margin-top: 1.5rem;
+    }
+    .stat {
+      text-align: center; padding: 0.8rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px; border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-val { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--mint); }
+    .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.2rem; }
+
+    /* SECTIONS */
+    section { padding: 90px 5%; }
+    .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mint); margin-bottom: 0.6rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 700; line-height: 1.2; color: var(--deep); margin-bottom: 1rem; }
+    .section-sub { font-size: 1.05rem; color: var(--muted); line-height: 1.7; max-width: 560px; }
+    .section-header { margin-bottom: 3.5rem; }
+
+    /* ENGAGEMENTS */
+    #engagements { background: var(--white); }
+    .engagements-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;
+    }
+    .engagement-card {
+      background: var(--cream); border-radius: 16px; padding: 1.8rem 1.5rem;
+      text-align: center; border: 1px solid rgba(26,92,66,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .engagement-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,92,66,0.1); }
+    .engagement-icon { font-size: 2.2rem; margin-bottom: 0.8rem; }
+    .engagement-title { font-weight: 700; font-size: 0.95rem; color: var(--deep); margin-bottom: 0.4rem; }
+    .engagement-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+    /* SERVICES */
+    #services { background: var(--cream); }
+    .services-wrap { max-width: 1200px; margin: 0 auto; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .service-card {
+      background: var(--white); border-radius: 20px; padding: 2rem;
+      border: 1px solid rgba(26,92,66,0.08);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: linear-gradient(to bottom, var(--mint), var(--green));
+      transform: scaleY(0); transform-origin: top; transition: transform 0.3s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(26,92,66,0.1); border-color: rgba(58,171,123,0.2); }
+    .service-card:hover::before { transform: scaleY(1); }
+    .service-emoji { font-size: 2.2rem; margin-bottom: 1rem; }
+    .service-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--deep); margin-bottom: 0.8rem; }
+    .service-items { list-style: none; }
+    .service-items li { font-size: 0.88rem; color: var(--muted); padding: 0.3rem 0; padding-left: 1.1rem; position: relative; line-height: 1.4; }
+    .service-items li::before { content: '→'; position: absolute; left: 0; color: var(--mint); font-size: 0.75rem; top: 0.35rem; }
+
+    /* DEVIS */
+    #devis { background: var(--deep); position: relative; overflow: hidden; }
+    #devis::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 30% 50%, rgba(26,92,66,0.5) 0%, transparent 65%);
+    }
+    .devis-wrap {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start; position: relative; z-index: 1;
+    }
+    .devis-info .section-title { color: var(--white); }
+    .devis-info .section-sub { color: rgba(255,255,255,0.6); }
+    .contact-list { list-style: none; margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+    .contact-list li { display: flex; align-items: center; gap: 0.9rem; color: rgba(255,255,255,0.8); font-size: 1rem; }
+    .contact-icon { width: 40px; height: 40px; background: rgba(58,171,123,0.15); border: 1px solid rgba(58,171,123,0.3); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .contact-list a { color: var(--mint); text-decoration: none; }
+    .contact-list a:hover { text-decoration: underline; }
+    .siret { color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-top: 1.5rem; }
+
+    /* FORM */
+    .devis-form { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 2.2rem; }
+    .form-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label { display: block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.4rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12); border-radius: 10px;
+      padding: 0.8rem 1rem; color: var(--white);
+      font-family: 'DM Sans', sans-serif; font-size: 0.92rem;
+      transition: border-color 0.2s; outline: none;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--mint); background: rgba(58,171,123,0.06); }
+    .form-group select option { background: var(--deep); color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .btn-submit {
+      width: 100%; background: var(--mint); color: var(--white);
+      border: none; padding: 1rem; border-radius: 12px;
+      font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700;
+      cursor: pointer; margin-top: 0.5rem;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 4px 20px rgba(58,171,123,0.3);
+    }
+    .btn-submit:hover { background: #2d9068; transform: translateY(-1px); }
+    .form-note { text-align: center; color: rgba(255,255,255,0.35); font-size: 0.75rem; margin-top: 0.8rem; }
+    .success-msg { display: none; text-align: center; padding: 2rem; }
+    .success-msg .check { font-size: 3rem; }
+
+    /* FOOTER */
+    footer { background: #060f0c; padding: 2rem 5%; text-align: center; color: rgba(255,255,255,0.3); font-size: 0.8rem; }
+    footer span { color: var(--mint); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-content { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+      .hero-btns { justify-content: center; }
+      .devis-wrap { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">ZEN <span>NETTOYAGE</span> 44</div>
+  <ul class="nav-links">
+    <li><a href="#engagements">Engagements</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#devis" class="nav-cta">Devis gratuit</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">Nantes & Loire-Atlantique</div>
+      <h1>La propreté,<br/><em>un art de vivre</em><br/>professionnel.</h1>
+      <p class="hero-sub">Entreprise locale spécialisée dans le nettoyage professionnel. Nous intervenons avec rigueur, réactivité et discrétion pour tous vos besoins en propreté.</p>
+      <div class="hero-btns">
+        <a href="#devis" class="btn-primary">Demander un devis gratuit</a>
+        <a href="#services" class="btn-outline">Nos services</a>
+      </div>
+    </div>
+    <div>
+      <div class="hero-promo">
+        <div class="promo-num">-20%</div>
+        <div class="promo-text">sur votre première prestation</div>
+        <div class="promo-detail">Tarif de lancement pour tout nouveau client professionnel</div>
+        <div class="hero-stats">
+          <div class="stat"><div class="stat-val">6j/7</div><div class="stat-label">Intervention</div></div>
+          <div class="stat"><div class="stat-val">24h</div><div class="stat-label">Devis</div></div>
+          <div class="stat"><div class="stat-val">100%</div><div class="stat-label">Déclaré</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section id="engagements">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="section-header reveal">
+      <div class="section-label">Pourquoi nous choisir</div>
+      <h2 class="section-title">Nos engagements qualité</h2>
+      <p class="section-sub">Chaque intervention est réalisée avec professionnalisme, transparence et respect de vos espaces.</p>
+    </div>
+    <div class="engagements-grid">
+      <div class="engagement-card reveal">
+        <div class="engagement-icon">⚡</div>
+        <div class="engagement-title">Intervention rapide</div>
+        <div class="engagement-desc">Disponibles 6 jours sur 7, nous nous adaptons à vos contraintes horaires.</div>
+      </div>
+      <div class="engagement-card reveal">
+        <div class="engagement-icon">📋</div>
+        <div class="engagement-title">Devis gratuit 24h</div>
+        <div class="engagement-desc">Devis gratuit et transparent transmis sous 24h, sans engagement.</div>
+      </div>
+      <div class="engagement-card reveal">
+        <div class="engagement-icon">🌿</div>
+        <div class="engagement-title">Produits écologiques</div>
+        <div class="engagement-desc">Gamme de produits écologiques disponible sur demande pour respecter votre environnement.</div>
+      </div>
+      <div class="engagement-card reveal">
+        <div class="engagement-icon">✅</div>
+        <div class="engagement-title">Équipe déclarée</div>
+        <div class="engagement-desc">Personnel professionnel et déclaré. Facturation en bonne et due forme (SIRET valide).</div>
+      </div>
+      <div class="engagement-card reveal">
+        <div class="engagement-icon">🔒</div>
+        <div class="engagement-title">Discrétion totale</div>
+        <div class="engagement-desc">Intervention discrète dans vos locaux, dans le respect de votre activité.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-wrap">
+    <div class="section-header reveal">
+      <div class="section-label">Ce que nous faisons</div>
+      <h2 class="section-title">Nos domaines d'intervention</h2>
+      <p class="section-sub">Des solutions de nettoyage sur mesure pour tous vos espaces professionnels et résidentiels.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-emoji">🏢</div>
+        <div class="service-title">Locaux & Bureaux</div>
+        <ul class="service-items">
+          <li>Nettoyage régulier ou ponctuel de bureaux</li>
+          <li>Entretien de locaux professionnels et commerciaux</li>
+          <li>Nettoyage des espaces de coworking</li>
+          <li>Nettoyage de fin de journée ou hebdomadaire</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-emoji">🏗️</div>
+        <div class="service-title">Après Travaux & Chantiers</div>
+        <ul class="service-items">
+          <li>Remise en état complète après travaux</li>
+          <li>Nettoyage fin de chantier (neuf ou rénovation)</li>
+          <li>Débarrassage et nettoyage de chantiers</li>
+          <li>Nettoyage après sinistre</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-emoji">🪟</div>
+        <div class="service-title">Nettoyage de Vitres</div>
+        <ul class="service-items">
+          <li>Nettoyage intérieur et extérieur des vitres</li>
+          <li>Nettoyage de façades vitrées</li>
+          <li>Entretien régulier des surfaces vitrées</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-emoji">🏠</div>
+        <div class="service-title">Locations & Airbnb</div>
+        <ul class="service-items">
+          <li>Ménage avant/après location</li>
+          <li>Remise en état fin de bail</li>
+          <li>Nettoyage Airbnb et locations saisonnières</li>
+          <li>Préparation complète pour l'arrivée des voyageurs</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-emoji">🏛️</div>
+        <div class="service-title">Copropriétés</div>
+        <ul class="service-items">
+          <li>Entretien des parties communes</li>
+          <li>Nettoyage des halls, escaliers, ascenseurs</li>
+          <li>Entretien des parkings</li>
+          <li>Grand nettoyage saisonnier</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-emoji">✨</div>
+        <div class="service-title">Autres Prestations</div>
+        <ul class="service-items">
+          <li>Grand ménage de printemps</li>
+          <li>Nettoyage après déménagement</li>
+          <li>Nettoyage de commerces et restaurants</li>
+          <li>Nettoyage de cabinets médicaux et paramédicaux</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVIS -->
+<section id="devis">
+  <div class="devis-wrap">
+    <div class="devis-info reveal">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Demandez votre devis gratuit</h2>
+      <p class="section-sub">Réponse sous 24h garantie. Décrivez-nous votre besoin et nous vous proposons une solution adaptée.</p>
+      <ul class="contact-list">
+        <li><span class="contact-icon">📞</span><span><a href="tel:+33744257676">07 44 25 76 76</a></span></li>
+        <li><span class="contact-icon">✉️</span><span><a href="mailto:zennettoyage443@gmail.com">zennettoyage443@gmail.com</a></span></li>
+        <li><span class="contact-icon">📍</span><span>Nantes & Loire-Atlantique (44)</span></li>
+        <li><span class="contact-icon">🕐</span><span>Disponible 6j/7</span></li>
+      </ul>
+      <p class="siret">SIRET : 853 634 616 00025</p>
+    </div>
+    <div class="devis-form reveal">
+      <div class="form-title">Formulaire de devis</div>
+      <div id="formContent">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nom / Société</label>
+            <input type="text" placeholder="Votre nom" id="f-nom"/>
+          </div>
+          <div class="form-group">
+            <label>Téléphone</label>
+            <input type="tel" placeholder="06 00 00 00 00" id="f-tel"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="votre@email.com" id="f-email"/>
+        </div>
+        <div class="form-group">
+          <label>Type de prestation</label>
+          <select id="f-type">
+            <option value="">— Sélectionnez —</option>
+            <option>Locaux & Bureaux</option>
+            <option>Après Travaux / Chantier</option>
+            <option>Nettoyage de Vitres</option>
+            <option>Location / Airbnb</option>
+            <option>Copropriété</option>
+            <option>Grand ménage de printemps</option>
+            <option>Déménagement</option>
+            <option>Commerce / Restaurant</option>
+            <option>Cabinet médical / paramédical</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Localisation</label>
+          <input type="text" placeholder="Ville, code postal" id="f-ville"/>
+        </div>
+        <div class="form-group">
+          <label>Message (optionnel)</label>
+          <textarea placeholder="Décrivez votre besoin : surface approximative, fréquence souhaitée..." id="f-msg"></textarea>
+        </div>
+        <button class="btn-submit" onclick="submitForm()">Envoyer ma demande de devis →</button>
+        <p class="form-note">Devis gratuit et sans engagement · Réponse sous 24h</p>
+      </div>
+      <div class="success-msg" id="successMsg">
+        <div class="check">✅</div>
+        <p style="margin-top:1rem; color:white; font-size:1.1rem;">Merci pour votre demande !</p>
+        <p style="color:rgba(255,255,255,0.6); margin-top:0.5rem; font-size:0.9rem;">Nous vous recontacterons sous 24h.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>ZEN NETTOYAGE 44</span> — Nantes & Loire-Atlantique — SIRET 853 634 616 00025</p>
+  <p style="margin-top:0.4rem;">📞 07 44 25 76 76 · ✉️ zennettoyage443@gmail.com</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  function submitForm() {
+    const nom = document.getElementById('f-nom').value.trim();
+    const tel = document.getElementById('f-tel').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const type = document.getElementById('f-type').value;
+    if (!nom || !tel || !email || !type) {
+      alert('Veuillez remplir les champs obligatoires (nom, téléphone, email, type de prestation).');
+      return;
+    }
+    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  }
+</script>
+</body>
+</html>
