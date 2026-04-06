@@ -240,7 +240,7 @@
       <p class="section-sub">Réponse sous 24h garantie. Décrivez-nous votre besoin et nous vous proposons une solution adaptée.</p>
       <ul class="contact-list">
         <li><span class="contact-icon">📞</span><span><a href="tel:+33744257676">07 44 25 76 76</a></span></li>
-        <li><span class="contact-icon">✉️</span><span><a href="/cdn-cgi/l/email-protection#08726d66666d7c7c6771696f6d3c3c3b486f65696164266b6765"><span class="__cf_email__" data-cfemail="98e2fdf6f6fdececf7e1f9fffdacacabd8fff5f9f1f4b6fbf7f5">[email&#160;protected]</span></a></span></li>
+        <li><span class="contact-icon">✉️</span><span><a href="mailto:zennettoyage443@gmail.com">zennettoyage443@gmail.com</a></span></li>
         <li><span class="contact-icon">📍</span><span>Nantes & Loire-Atlantique (44)</span></li>
         <li><span class="contact-icon">🕐</span><span>Disponible 6j/7</span></li>
       </ul>
@@ -292,7 +292,7 @@
       <p><strong>Activité :</strong> Nettoyage professionnel de locaux</p>
       <p><strong>Zone d'intervention :</strong> Nantes et Loire-Atlantique (44)</p>
       <p><strong>Téléphone :</strong> 07 44 25 76 76</p>
-      <p><strong>Email :</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0379666d6d6677776c7a62646637373043646e626a6f2d606c6e">[email&#160;protected]</a></p>
+      <p><strong>Email :</strong> zennettoyage443@gmail.com</p>
     </div>
     <div class="mentions-block reveal">
       <h3>Hébergement</h3>
@@ -306,7 +306,7 @@
     </div>
     <div class="mentions-block reveal">
       <h3>Données personnelles (RGPD)</h3>
-      <p>Les informations collectées via le formulaire de devis sont utilisées uniquement pour répondre à vos demandes. Elles ne sont ni cédées, ni vendues à des tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en contactant : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ea908f84848f9e9e85938b8d8fdeded9aa8d878b8386c4898587">[email&#160;protected]</a></p>
+      <p>Les informations collectées via le formulaire de devis sont utilisées uniquement pour répondre à vos demandes. Elles ne sont ni cédées, ni vendues à des tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression en contactant : zennettoyage443@gmail.com</p>
     </div>
     <div class="mentions-block reveal">
       <h3>Cookies</h3>
@@ -324,10 +324,10 @@
     <a href="#mentions">Mentions légales</a>
   </div>
   <p>© 2025 <span>ZEN NETTOYAGE 44</span> — Nantes & Loire-Atlantique — SIRET 853 634 616 00025</p>
-  <p style="margin-top:0.4rem;">📞 07 44 25 76 76 · ✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c2639323239282833253d3b3968686f1c3b313d3530723f3331">[email&#160;protected]</a></p>
+  <p style="margin-top:0.4rem;">📞 07 44 25 76 76 · ✉️ zennettoyage443@gmail.com</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -337,4 +337,20 @@
       }
     });
   }, { threshold: 0.1 });
-  reveals.forEach
+  reveals.forEach(el => observer.observe(el));
+
+  function submitForm() {
+    const nom = document.getElementById('f-nom').value.trim();
+    const tel = document.getElementById('f-tel').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const type = document.getElementById('f-type').value;
+    if (!nom || !tel || !email || !type) {
+      alert('Veuillez remplir les champs obligatoires (nom, téléphone, email, type de prestation).');
+      return;
+    }
+    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  }
+</script>
+</body>
+</html>
