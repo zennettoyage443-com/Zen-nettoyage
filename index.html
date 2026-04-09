@@ -324,28 +324,6 @@
   <p style="margin-top:0.4rem;">07 44 25 76 76 - <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e140b00000b1a1a01170f090b5a5a5d2e09030f0702400d0103">[email&#160;protected]</a></p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-document.getElementById('submitBtn').addEventListener('click', function() {
-  var nom = document.getElementById('f-nom').value.trim();
-  var tel = document.getElementById('f-tel').value.trim();
-  var email = document.getElementById('f-email').value.trim();
-  var type = document.getElementById('f-type').value;
-
-  if (!nom || !tel || !email || !type) {
-    alert('Veuillez remplir les champs obligatoires : nom, telephone, email et type de prestation.');
-    return;
-  }
-
-  var btn = document.getElementById('submitBtn');
-  btn.disabled = true;
-  btn.textContent = 'Envoi en cours...';
-
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://formspree.io/f/xreojbbp', true);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.setRequestHeader('Accept', 'application/json');
-
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      document.getElementById('formContent').style.display = 'none';
-      document.getElementById('successMsg').style.display = 'bl
+<script src="script.js"></script>
+</body>
+</html>
