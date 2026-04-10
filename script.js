@@ -25,14 +25,14 @@ document.getElementById('submitBtn').addEventListener('click', function() {
     } else {
       alert('Erreur lors de l envoi. Appelez-nous au 07 44 25 76 76.');
       btn.disabled = false;
-      btn.textContent = 'Envoyer ma demande de devis';
+      btn.textContent = 'Demander un devis gratuit';
     }
   };
 
   xhr.onerror = function() {
     alert('Erreur de connexion. Appelez-nous au 07 44 25 76 76.');
     btn.disabled = false;
-    btn.textContent = 'Envoyer ma demande de devis';
+    btn.textContent = 'Demander un devis gratuit';
   };
 
   var data = JSON.stringify({
