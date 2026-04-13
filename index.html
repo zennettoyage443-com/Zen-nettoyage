@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XMZZX8845J"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -9,7 +9,7 @@
   gtag('js', new Date());
 
   gtag('config', 'G-XMZZX8845J');
-</script>
+</script>  
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ZEN NETTOYAGE 44 - Nettoyage Professionnel Nantes, Loire-Atlantique et Bretagne</title>
@@ -282,7 +282,7 @@ footer{background:#060f0c;padding:3rem 5% 2rem}
 <div class="topbar">
   <span>&#128205; 75 rue du Port Boyer, 44300 Nantes</span>
   <div class="topbar-right">
-    <a href="tel:+33744257676">&#128222; 07 44 25 76 76</a>
+    <a href="tel:+33744257676" onclick="gtag('event','phone_click',{'event_category':'contact','event_label':'topbar'})">&#128222; 07 44 25 76 76</a>
     <a href="https://wa.me/33744257676">&#128172; WhatsApp</a>
   </div>
 </div>
@@ -295,8 +295,8 @@ footer{background:#060f0c;padding:3rem 5% 2rem}
     <li><a href="#realisations">Realisations</a></li>
     <li><a href="#temoignages">Avis clients</a></li>
     <li><a href="#zones">Zones</a></li>
-    <li><a href="tel:+33744257676" class="nav-phone">&#128222; 07 44 25 76 76</a></li>
-    <li><a href="#devis" class="nav-cta">Devis gratuit</a></li>
+    <li><a href="tel:+33744257676" class="nav-phone" onclick="gtag('event','phone_click',{'event_category':'contact','event_label':'nav'})">&#128222; 07 44 25 76 76</a></li>
+    <li><a href="#devis" class="nav-cta" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'nav'})">Devis gratuit</a></li>
   </ul>
   <button class="burger" id="burgerBtn" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -311,7 +311,7 @@ footer{background:#060f0c;padding:3rem 5% 2rem}
   <a href="#temoignages" class="m-link">Avis clients</a>
   <a href="#zones" class="m-link">Zones</a>
   <a href="#devis" class="m-cta">Devis gratuit</a>
-  <a href="tel:+33744257676">&#128222; 07 44 25 76 76</a>
+  <a href="tel:+33744257676" onclick="gtag('event','phone_click',{'event_category':'contact','event_label':'topbar'})">&#128222; 07 44 25 76 76</a>
 </div>
 
 <!-- HERO RIDEAU -->
@@ -330,8 +330,8 @@ footer{background:#060f0c;padding:3rem 5% 2rem}
         <span class="hero-feature">&#9989; Personnel qualifie</span>
       </div>
       <div class="hero-btns">
-        <a href="#devis" class="btn-primary">&#128203; Devis gratuit en 24h</a>
-        <a href="https://wa.me/33744257676" class="btn-whatsapp" target="_blank">&#128172; WhatsApp</a>
+        <a href="#devis" class="btn-primary" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'hero'})">&#128203; Devis gratuit en 24h</a>
+        <a href="https://wa.me/33744257676" class="btn-whatsapp" target="_blank" onclick="gtag('event','whatsapp_click',{'event_category':'contact','event_label':'hero'})">&#128172; WhatsApp</a>
       </div>
     </div>
     <div>
@@ -373,42 +373,42 @@ footer{background:#060f0c;padding:3rem 5% 2rem}
         <div class="service-name">Locaux et Bureaux</div>
         <div class="service-desc">Entretien regulier ou ponctuel de vos espaces de travail. Nous intervenons le soir ou le week-end pour ne pas perturber votre activite.</div>
         <ul class="service-list"><li>Bureaux et open spaces</li><li>Locaux commerciaux</li><li>Coworkings et showrooms</li><li>Intervention hors heures</li><li>Contrat hebdomadaire ou mensuel</li></ul>
-        <a href="#devis" class="service-link">Demander un devis &#8594;</a>
+        <a href="#devis" class="service-link" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'service_card'})">Demander un devis &#8594;</a>
       </div>
       <div class="service-card fade-in">
         <div class="service-icon">&#127959;</div>
         <div class="service-name">Fin de Chantier - Pre-livraison</div>
         <div class="service-desc">Nettoyage complet apres travaux. Poussiere de chantier, residus de peinture, vitres souillees : nous remettons tout en etat avant livraison.</div>
         <ul class="service-list"><li>Depoussierement complet</li><li>Vitres post-chantier</li><li>Elimination des residus</li><li>Sols et sanitaires</li><li>Neuf ou renovation</li></ul>
-        <a href="#devis" class="service-link">Demander un devis &#8594;</a>
+        <a href="#devis" class="service-link" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'service_card'})">Demander un devis &#8594;</a>
       </div>
       <div class="service-card fade-in">
         <div class="service-icon">&#129695;</div>
         <div class="service-name">Nettoyage de Vitres</div>
         <div class="service-desc">Nettoyage professionnel de vitres interieures et exterieures. Facades vitrees, baies vitrees, velux : un resultat impeccable garanti.</div>
         <ul class="service-list"><li>Vitres int. et ext.</li><li>Facades et baies vitrees</li><li>Velux et surfaces en hauteur</li><li>Immeubles et residences</li><li>Contrat regulier</li></ul>
-        <a href="#devis" class="service-link">Demander un devis &#8594;</a>
+        <a href="#devis" class="service-link" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'service_card'})">Demander un devis &#8594;</a>
       </div>
       <div class="service-card fade-in">
         <div class="service-icon">&#127968;</div>
         <div class="service-name">Menage Airbnb et Locations</div>
         <div class="service-desc">Service de menage entre chaque sejour pour vos locations courte duree. Rapidite et qualite garanties pour accueillir vos voyageurs.</div>
         <ul class="service-list"><li>Menage complet entre sejours</li><li>Changement de literie</li><li>Mise en place accueil</li><li>Etat des lieux de sortie</li><li>Disponible 7j/7</li></ul>
-        <a href="#devis" class="service-link">Demander un devis &#8594;</a>
+        <a href="#devis" class="service-link" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'service_card'})">Demander un devis &#8594;</a>
       </div>
       <div class="service-card fade-in">
         <div class="service-icon">&#127959;</div>
         <div class="service-name">Coproprietes - Parties Communes</div>
         <div class="service-desc">Entretien regulier des parties communes : halls, escaliers, ascenseurs, parkings. Proprete et hygiene garanties.</div>
         <ul class="service-list"><li>Halls et couloirs</li><li>Escaliers et cages</li><li>Ascenseurs</li><li>Parkings et sous-sols</li><li>Contrat regulier</li></ul>
-        <a href="#devis" class="service-link">Demander un devis &#8594;</a>
+        <a href="#devis" class="service-link" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'service_card'})">Demander un devis &#8594;</a>
       </div>
       <div class="service-card fade-in">
         <div class="service-icon">&#10024;</div>
         <div class="service-name">Autres Prestations</div>
         <div class="service-desc">Grand menage, demenagement, commerces, restaurants ou cabinets medicaux. Nous adaptons nos interventions a tous vos besoins.</div>
         <ul class="service-list"><li>Grand menage de printemps</li><li>Apres demenagement</li><li>Commerces et restaurants</li><li>Cabinets medicaux</li><li>Apres sinistre</li></ul>
-        <a href="#devis" class="service-link">Demander un devis &#8594;</a>
+        <a href="#devis" class="service-link" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'service_card'})">Demander un devis &#8594;</a>
       </div>
     </div>
   </div>
@@ -421,14 +421,14 @@ footer{background:#060f0c;padding:3rem 5% 2rem}
     <h2 class="section-title fade-in">Nos realisations</h2>
     <p class="section-sub fade-in">Decouvrez quelques exemples concrets de nos interventions. Des resultats impeccables, a chaque fois.</p>
     <div class="real-grid">
-      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/qpSDg9r.jpeg" alt="Nettoyage fin de chantier Nantes - equipe ZEN NETTOYAGE 44"/><div class="real-info"><div class="real-type">Fin de Chantier</div><div class="real-title">Nettoyage pre-livraison - Nantes</div><div class="real-desc">Nettoyage complet fin de chantier avant livraison du logement.</div><a href="#devis" class="real-link">Devis similaire &#8594;</a></div></div>
-      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/rHxgmCP.jpeg" alt="Nettoyage pre-livraison appartement neuf Loire-Atlantique"/><div class="real-info"><div class="real-type">Apres Travaux</div><div class="real-title">Appartement neuf - Loire-Atlantique</div><div class="real-desc">Remise en etat complete d un appartement neuf pret pour la livraison.</div><a href="#devis" class="real-link">Devis similaire &#8594;</a></div></div>
-      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/lQUl8ps.png" alt="Nettoyage fin chantier livraison Loire-Atlantique"/><div class="real-info"><div class="real-type">Fin de Chantier</div><div class="real-title">Chantier neuf - Loire-Atlantique</div><div class="real-desc">Nettoyage professionnel complet avant livraison.</div><a href="#devis" class="real-link">Devis similaire &#8594;</a></div></div>
-      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/ieeuctz.png" alt="Nettoyage professionnel fin de chantier Nantes"/><div class="real-info"><div class="real-type">Fin de Chantier</div><div class="real-title">Renovation complete - Nantes</div><div class="real-desc">Nettoyage apres renovation, chaque detail traite avec soin.</div><a href="#devis" class="real-link">Devis similaire &#8594;</a></div></div>
-      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/kW3KouO.png" alt="Menage Airbnb Nantes - nettoyage location courte duree"/><div class="real-info"><div class="real-type">Menage Airbnb</div><div class="real-title">Appartement Airbnb - Nantes Centre</div><div class="real-desc">Remise en etat complete entre deux sejours.</div><a href="#devis" class="real-link">Devis similaire &#8594;</a></div></div>
-      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/Mn6AVw6.png" alt="Nettoyage Airbnb Loire-Atlantique"/><div class="real-info"><div class="real-type">Menage Airbnb</div><div class="real-title">Location saisonniere - Loire-Atlantique</div><div class="real-desc">Preparation complete du logement pour les voyageurs.</div><a href="#devis" class="real-link">Devis similaire &#8594;</a></div></div>
-      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/7dzPueF.png" alt="Nettoyage location Nantes Airbnb"/><div class="real-info"><div class="real-type">Menage Airbnb</div><div class="real-title">Studio meuble - Nantes</div><div class="real-desc">Nettoyage approfondi entre chaque reservation.</div><a href="#devis" class="real-link">Devis similaire &#8594;</a></div></div>
-      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/wnqe6hg.png" alt="Menage Airbnb professionnel Nantes"/><div class="real-info"><div class="real-type">Menage Airbnb</div><div class="real-title">Maison de vacances - Cote Atlantique</div><div class="real-desc">Nettoyage complet pour maximiser les avis positifs.</div><a href="#devis" class="real-link">Devis similaire &#8594;</a></div></div>
+      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/qpSDg9r.jpeg" alt="Nettoyage fin de chantier Nantes - equipe ZEN NETTOYAGE 44"/><div class="real-info"><div class="real-type">Fin de Chantier</div><div class="real-title">Nettoyage pre-livraison - Nantes</div><div class="real-desc">Nettoyage complet fin de chantier avant livraison du logement.</div><a href="#devis" class="real-link" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'realisation_card'})">Devis similaire &#8594;</a></div></div>
+      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/rHxgmCP.jpeg" alt="Nettoyage pre-livraison appartement neuf Loire-Atlantique"/><div class="real-info"><div class="real-type">Apres Travaux</div><div class="real-title">Appartement neuf - Loire-Atlantique</div><div class="real-desc">Remise en etat complete d un appartement neuf pret pour la livraison.</div><a href="#devis" class="real-link" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'realisation_card'})">Devis similaire &#8594;</a></div></div>
+      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/lQUl8ps.png" alt="Nettoyage fin chantier livraison Loire-Atlantique"/><div class="real-info"><div class="real-type">Fin de Chantier</div><div class="real-title">Chantier neuf - Loire-Atlantique</div><div class="real-desc">Nettoyage professionnel complet avant livraison.</div><a href="#devis" class="real-link" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'realisation_card'})">Devis similaire &#8594;</a></div></div>
+      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/ieeuctz.png" alt="Nettoyage professionnel fin de chantier Nantes"/><div class="real-info"><div class="real-type">Fin de Chantier</div><div class="real-title">Renovation complete - Nantes</div><div class="real-desc">Nettoyage apres renovation, chaque detail traite avec soin.</div><a href="#devis" class="real-link" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'realisation_card'})">Devis similaire &#8594;</a></div></div>
+      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/kW3KouO.png" alt="Menage Airbnb Nantes - nettoyage location courte duree"/><div class="real-info"><div class="real-type">Menage Airbnb</div><div class="real-title">Appartement Airbnb - Nantes Centre</div><div class="real-desc">Remise en etat complete entre deux sejours.</div><a href="#devis" class="real-link" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'realisation_card'})">Devis similaire &#8594;</a></div></div>
+      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/Mn6AVw6.png" alt="Nettoyage Airbnb Loire-Atlantique"/><div class="real-info"><div class="real-type">Menage Airbnb</div><div class="real-title">Location saisonniere - Loire-Atlantique</div><div class="real-desc">Preparation complete du logement pour les voyageurs.</div><a href="#devis" class="real-link" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'realisation_card'})">Devis similaire &#8594;</a></div></div>
+      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/7dzPueF.png" alt="Nettoyage location Nantes Airbnb"/><div class="real-info"><div class="real-type">Menage Airbnb</div><div class="real-title">Studio meuble - Nantes</div><div class="real-desc">Nettoyage approfondi entre chaque reservation.</div><a href="#devis" class="real-link" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'realisation_card'})">Devis similaire &#8594;</a></div></div>
+      <div class="real-card fade-in"><img class="real-img" src="https://i.imgur.com/wnqe6hg.png" alt="Menage Airbnb professionnel Nantes"/><div class="real-info"><div class="real-type">Menage Airbnb</div><div class="real-title">Maison de vacances - Cote Atlantique</div><div class="real-desc">Nettoyage complet pour maximiser les avis positifs.</div><a href="#devis" class="real-link" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'realisation_card'})">Devis similaire &#8594;</a></div></div>
     </div>
   </div>
 </section>
@@ -495,9 +495,9 @@ footer{background:#060f0c;padding:3rem 5% 2rem}
       <div class="zones-visual fade-in">
         <h3>Contactez-nous maintenant</h3>
         <p>Devis gratuit sous 24h - Disponible 7j/7</p>
-        <a href="tel:+33744257676" class="zones-phone">07 44 25 76 76</a>
+        <a href="tel:+33744257676" class="zones-phone" onclick="gtag('event','phone_click',{'event_category':'contact','event_label':'zones'})">07 44 25 76 76</a>
         <p style="margin-top:1.2rem;font-size:0.85rem;color:var(--muted)">ou ecrivez-nous sur WhatsApp</p>
-        <a href="https://wa.me/33744257676" class="btn-whatsapp" style="margin-top:1rem;display:inline-flex" target="_blank">&#128172; Envoyer un message</a>
+        <a href="https://wa.me/33744257676" class="btn-whatsapp" style="margin-top:1rem;display:inline-flex" target="_blank" onclick="gtag('event','whatsapp_click',{'event_category':'contact','event_label':'zones'})">&#128172; Envoyer un message</a>
       </div>
     </div>
   </div>
@@ -511,8 +511,8 @@ footer{background:#060f0c;padding:3rem 5% 2rem}
       <h2 class="section-title" style="color:white">Demandez votre<br/>devis gratuit</h2>
       <p class="section-sub" style="color:rgba(255,255,255,0.58);margin-bottom:0">Reponse garantie sous 24h. Decrivez votre besoin et nous vous proposons une solution sur mesure.</p>
       <ul class="contact-list">
-        <li><span class="contact-icon">&#128222;</span><span><a href="tel:+33744257676">07 44 25 76 76</a></span></li>
-        <li><span class="contact-icon">&#128172;</span><span><a href="https://wa.me/33744257676" target="_blank">WhatsApp - Reponse rapide</a></span></li>
+        <li><span class="contact-icon">&#128222;</span><span><a href="tel:+33744257676" onclick="gtag('event','phone_click',{'event_category':'contact','event_label':'devis_section'})">07 44 25 76 76</a></span></li>
+        <li><span class="contact-icon">&#128172;</span><span><a href="https://wa.me/33744257676" target="_blank" onclick="gtag('event','whatsapp_click',{'event_category':'contact','event_label':'devis'})">WhatsApp - Reponse rapide</a></span></li>
         <li><span class="contact-icon">&#9993;</span><span><a href="/cdn-cgi/l/email-protection#661c030808031212091f07010352525526010b070f0a4805090b"><span class="__cf_email__" data-cfemail="fa809f94949f8e8e95839b9d9fcecec9ba9d979b9396d4999597">[email&#160;protected]</span></a></span></li>
         <li><span class="contact-icon">&#128205;</span><span>75 rue du Port Boyer, 44300 Nantes</span></li>
         <li><span class="contact-icon">&#128336;</span><span>Disponible 7 jours sur 7</span></li>
@@ -545,7 +545,7 @@ footer{background:#060f0c;padding:3rem 5% 2rem}
         </div>
         <div class="form-group"><label>Ville / Localisation</label><input type="text" placeholder="Ex: Nantes, Saint-Herblain..." id="f-ville" name="localisation"/></div>
         <div class="form-group"><label>Message (optionnel)</label><textarea placeholder="Surface, frequence, details specifiques..." id="f-msg" name="message"></textarea></div>
-        <button class="btn-submit" id="submitBtn" type="button">&#128203; Envoyer ma demande de devis</button>
+        <button class="btn-submit" id="submitBtn" type="button" onclick="gtag('event','devis_click',{'event_category':'conversion','event_label':'form_submit'})">&#128203; Envoyer ma demande de devis</button>
         <p class="form-note">Devis 100% gratuit et sans engagement - Reponse garantie sous 24h</p>
       </div>
       <div class="success-msg" id="successMsg">
@@ -588,7 +588,7 @@ footer{background:#060f0c;padding:3rem 5% 2rem}
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <a href="tel:+33744257676">07 44 25 76 76</a>
+      <a href="tel:+33744257676" onclick="gtag('event','phone_click',{'event_category':'contact','event_label':'devis_section'})">07 44 25 76 76</a>
       <a href="https://wa.me/33744257676">WhatsApp</a>
       <a href="/cdn-cgi/l/email-protection#7d0718131318090912041c1a1849494e3d1a101c1411531e1210"><span class="__cf_email__" data-cfemail="344e515a5a5140405b4d555351000007745359555d581a575b59">[email&#160;protected]</span></a>
       <a href="#devis">Devis gratuit</a>
@@ -602,7 +602,7 @@ footer{background:#060f0c;padding:3rem 5% 2rem}
 </footer>
 
 <!-- WHATSAPP FLOTTANT -->
-<a href="https://wa.me/33744257676" class="whatsapp-float" target="_blank" title="WhatsApp">
+<a href="https://wa.me/33744257676" class="whatsapp-float" target="_blank" title="WhatsApp" onclick="gtag('event','whatsapp_click',{'event_category':'contact','event_label':'floating'})">
   <div class="whatsapp-float-pulse"></div>
   &#128172;
 </a>
