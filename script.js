@@ -1,4 +1,8 @@
 document.getElementById('submitBtn').addEventListener('click', function() {
+  gtag('event','devis_click', {
+  'event_category':'conversion',
+  'event_label':'form_submit'
+});
   var nom = document.getElementById('f-nom').value.trim();
   var tel = document.getElementById('f-tel').value.trim();
   var email = document.getElementById('f-email').value.trim();
