@@ -33,7 +33,7 @@
   "address": {"@type":"PostalAddress","streetAddress":"75 rue du Port Boyer","addressLocality":"Nantes","postalCode":"44300","addressCountry":"FR"},
   "geo": {"@type":"GeoCoordinates","latitude":"47.2184","longitude":"-1.5536"},
   "openingHours": "Mo-Su 07:00-20:00",
-  "priceRange": "€€",
+  "priceRange": "EUR",
   "image": "https://i.imgur.com/qpSDg9r.jpeg",
   "sameAs": ["https://wa.me/33744257676"],
   "areaServed": ["Nantes","Saint-Herblain","Rezé","Orvault","Carquefou","Loire-Atlantique","Bretagne"],
@@ -50,9 +50,24 @@
   },
   "aggregateRating": {"@type":"AggregateRating","ratingValue":"5","reviewCount":"3","bestRating":"5"},
   "review": [
-    {"@type":"Review","author":{"@type":"Person","name":"Sophie M."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Équipe très professionnelle et ponctuelle. Mon appartement Airbnb est toujours impeccable entre chaque séjour."},
-    {"@type":"Review","author":{"@type":"Person","name":"Thomas R."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Travail soigné, rapide et sérieux. Le chantier était nickel pour la remise des clés."},
-    {"@type":"Review","author":{"@type":"Person","name":"Marie-Claire D."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Nettoyage de nos bureaux chaque semaine depuis 6 mois. Toujours à l'heure, discrets et efficaces."}
+    {
+      "@type": "Review",
+      "author": {"@type":"Person","name":"Sophie M."},
+      "reviewRating": {"@type":"Rating","ratingValue":"5","bestRating":"5"},
+      "reviewBody": "Équipe très professionnelle et ponctuelle. Mon appartement Airbnb est toujours impeccable entre chaque séjour."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type":"Person","name":"Thomas R."},
+      "reviewRating": {"@type":"Rating","ratingValue":"5","bestRating":"5"},
+      "reviewBody": "Travail soigné, rapide et sérieux. Le chantier était nickel pour la remise des clés."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type":"Person","name":"Marie-Claire D."},
+      "reviewRating": {"@type":"Rating","ratingValue":"5","bestRating":"5"},
+      "reviewBody": "Nettoyage de nos bureaux chaque semaine depuis 6 mois. Toujours à l'heure, discrets et efficaces."
+    }
   ]
 }
 </script>
@@ -540,7 +555,7 @@ footer{background:#0f2e1a;color:rgba(255,255,255,.75);padding:60px 24px 30px}
   </div>
 </section>
 
-<!-- MENTIONS LÉGALES - Hébergement et SIRET supprimés -->
+<!-- MENTIONS LÉGALES -->
 <section id="mentions">
   <div class="container">
     <div class="section-title">
