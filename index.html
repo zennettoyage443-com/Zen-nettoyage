@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Preload image hero pour améliorer le LCP -->
-  <link rel="preload" as="image" href="https://i.imgur.com/8ScJDLD.jpeg" fetchpriority="high">
+  <link rel="preload" as="image" href="https://i.imgur.com/RQ5lUpw.png" fetchpriority="high">
 
   <title>Nettoyage Professionnel Nantes – ZEN NETTOYAGE 44</title>
 
@@ -152,17 +152,20 @@
       color: var(--w);
       padding: 80px 24px 88px;
       overflow: hidden;
-      background: url('https://i.imgur.com/8ScJDLD.jpeg') center center / cover no-repeat;
+      background-image: url('https://i.imgur.com/RQ5lUpw.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       will-change: transform;
     }
     /* Sections sous le fold : optimisation rendu navigateur */
     #realisations, #pourquoi, #zones, #devis, #mentions { content-visibility: auto; contain-intrinsic-size: 0 600px; }
-    /* ── MODIFICATION 1 : overlay vert très léger rgba(0,128,0,0.2) ── */
-    .hero::after {
+    /* ── Overlay vert très léger via ::before ── */
+    .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: rgba(0, 128, 0, 0.2);
-      z-index: 0;
+      background: rgba(0, 128, 0, 0.10);
+      z-index: 1;
     }
     .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
 
@@ -187,27 +190,27 @@
       50% { transform: scale(1.07); box-shadow: 0 8px 32px rgba(192,57,43,.75); }
     }
 
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.35); color: var(--w); font-size: .82rem; font-weight: 600; padding: 6px 16px; border-radius: 50px; margin-bottom: 24px; letter-spacing: .5px; }
-    /* ── MODIFICATION 2 : H1 en vert foncé ── */
-    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; color: #1a3d2f; text-shadow: none; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.55); border: 1px solid rgba(45,106,71,.4); color: #1a3d2b; font-size: .82rem; font-weight: 700; padding: 6px 16px; border-radius: 50px; margin-bottom: 24px; letter-spacing: .5px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; color: #000; text-shadow: none; }
     .hero h1 em { font-style: italic; color: #1a6640; }
-    /* ── MODIFICATION 3 : paragraphe et liste en vert foncé ── */
-    .hero-desc { font-size: 1.08rem; max-width: 600px; margin-bottom: 32px; line-height: 1.7; color: #1a3d2f; text-shadow: none; }
-    .hero-checks { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-bottom: 36px; }
-    .hero-checks li { display: flex; align-items: center; gap: 8px; font-size: .9rem; font-weight: 500; color: #1a3d2f; }
+    /* Description + liste décalées à droite, texte plus gras */
+    .hero-desc { font-size: 1.08rem; max-width: 580px; margin-bottom: 32px; line-height: 1.75; color: #000; text-shadow: none; font-weight: 600; padding-left: 16px; border-left: 3px solid rgba(45,106,71,.35); }
+    .hero-checks { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-bottom: 36px; padding-left: 16px; }
+    .hero-checks li { display: flex; align-items: center; gap: 8px; font-size: .92rem; font-weight: 700; color: #000; }
     .hero-checks li::before { content: '✅'; font-size: .85rem; }
 
     .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 48px; }
-    .btn-primary { background: var(--vc); color: var(--v); font-weight: 700; padding: 14px 30px; border-radius: 10px; font-size: .95rem; transition: all var(--t); box-shadow: 0 4px 20px rgba(103,201,154,.35); }
-    .btn-primary:hover { background: #7fd9ae; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(103,201,154,.45); }
-    .btn-secondary { background: rgba(255,255,255,.15); color: var(--w); border: 1.5px solid rgba(255,255,255,.45); font-weight: 600; padding: 14px 30px; border-radius: 10px; font-size: .95rem; transition: all var(--t); backdrop-filter: blur(4px); }
-    .btn-secondary:hover { background: rgba(255,255,255,.25); transform: translateY(-2px); }
+    .btn-primary { background: #1a3d2b; color: #fff; border: 1.5px solid #1a3d2b; font-weight: 700; padding: 14px 30px; border-radius: 10px; font-size: .95rem; transition: all var(--t); }
+    .btn-primary:hover { background: #2d6a47; border-color: #2d6a47; transform: translateY(-2px); }
+    .btn-secondary { background: #25D366; color: #fff; border: none; font-weight: 700; padding: 14px 30px; border-radius: 10px; font-size: .95rem; transition: all var(--t); }
+    .btn-secondary:hover { background: #1ebe5a; transform: translateY(-2px); }
 
-    .hero-stats { display: flex; flex-wrap: wrap; background: rgba(0,0,0,.25); border: 1px solid rgba(255,255,255,.2); border-radius: var(--r); overflow: hidden; backdrop-filter: blur(8px); }
-    .hero-stat { flex: 1; min-width: 90px; text-align: center; padding: 18px 12px; border-right: 1px solid rgba(255,255,255,.12); }
+    /* Stats : totalement transparent + texte vert */
+    .hero-stats { display: flex; flex-wrap: wrap; background: transparent; border: 1px solid rgba(255,255,255,.35); border-radius: var(--r); overflow: hidden; }
+    .hero-stat { flex: 1; min-width: 90px; text-align: center; padding: 18px 12px; border-right: 1px solid rgba(255,255,255,.25); }
     .hero-stat:last-child { border-right: none; }
-    .hero-stat-num { font-size: 1.5rem; font-weight: 800; color: #a8f0ca; display: block; }
-    .hero-stat-label { font-size: .72rem; opacity: .8; text-transform: uppercase; letter-spacing: .5px; }
+    .hero-stat-num { font-size: 1.5rem; font-weight: 800; color: #1a6640; display: block; }
+    .hero-stat-label { font-size: .72rem; color: #2d6a47; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
 
     /* ── SECTIONS ── */
     section { padding: 72px 24px; }
