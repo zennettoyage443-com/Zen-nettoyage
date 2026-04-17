@@ -146,11 +146,14 @@
     .mobile-menu.open { display: flex; }
     .mobile-menu a { font-size: 1rem; font-weight: 500; color: var(--v); padding: 8px 0; border-bottom: 1px solid var(--gb); }
 
-    /* ── HERO avec image réelle ── */
+    /* ── HERO ──
+       CORRECTION 1 : padding vertical augmenté pour aérer le contenu
+       CORRECTION 5 : position relative pour ancrer le badge -20%
+    */
     .hero {
       position: relative;
       color: var(--w);
-      padding: 80px 24px 88px;
+      padding: 80px 24px 120px; /* CORRECTION 1 : pb 88→120 */
       overflow: hidden;
       background-image: url('https://i.imgur.com/RQ5lUpw.png');
       background-size: cover;
@@ -158,22 +161,33 @@
       background-repeat: no-repeat;
       will-change: transform;
     }
+
     /* Sections sous le fold : optimisation rendu navigateur */
     #realisations, #pourquoi, #zones, #devis, #mentions { content-visibility: auto; contain-intrinsic-size: 0 600px; }
-    /* ── Overlay vert très léger via ::before ── */
+
+    /* Overlay vert très léger via ::before */
     .hero::before {
       content: '';
       position: absolute; inset: 0;
       background: rgba(0, 128, 0, 0.10);
       z-index: 1;
     }
-    .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
 
-    /* Badge -20% rouge – décalé proprement vers le haut */
+    .hero-inner {
+      max-width: 600px; /* CORRECTION 7 : largeur max du contenu texte */
+      margin: 0 auto 0 0; /* aligné à gauche */
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── BADGE -20% rouge ──
+       CORRECTION : sorti du flux, positionné par rapport au .hero (position:relative)
+       → plus aucun chevauchement avec le texte
+    */
     .promo-badge {
       position: absolute;
-      top: -40px;
-      right: 4px;
+      top: 24px;
+      right: 24px;
       width: 92px; height: 92px;
       background: var(--rouge);
       border-radius: 50%;
@@ -192,25 +206,63 @@
 
     .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.55); border: 1px solid rgba(45,106,71,.4); color: #1a3d2b; font-size: .82rem; font-weight: 700; padding: 6px 16px; border-radius: 50px; margin-bottom: 24px; letter-spacing: .5px; }
 
-    /* ✅ MODIFICATION 1 — text-shadow lisibilité hero */
     .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; color: #000; text-shadow: 0 1px 2px rgba(255,255,255,0.4); }
     .hero h1 em { font-style: italic; color: #1a6640; }
-    .hero-desc { font-size: 1.08rem; max-width: 580px; margin-bottom: 32px; line-height: 1.75; color: #000; text-shadow: 0 1px 2px rgba(255,255,255,0.4); font-weight: 600; padding-left: 16px; border-left: 3px solid rgba(45,106,71,.35); }
-    .hero-checks { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-bottom: 36px; padding-left: 16px; }
+
+    /* CORRECTION 2 : margin-bottom augmenté sous le paragraphe */
+    .hero-desc {
+      font-size: 1.08rem;
+      max-width: 580px;
+      margin-bottom: 25px; /* CORRECTION 2 : 32→25 (+ cta-subtext prend le relais) */
+      line-height: 1.75;
+      color: #000;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.4);
+      font-weight: 600;
+      padding-left: 16px;
+      border-left: 3px solid rgba(45,106,71,.35);
+    }
+
+    /* CORRECTION 3 : espacement checklist */
+    .hero-checks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin-bottom: 25px; /* CORRECTION 3 : 36→25 */
+      padding-left: 16px;
+    }
     .hero-checks li { display: flex; align-items: center; gap: 8px; font-size: .92rem; font-weight: 700; color: #000; text-shadow: 0 1px 2px rgba(255,255,255,0.4); }
     .hero-checks li::before { content: '✅'; font-size: .85rem; }
 
-    .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+    /* CORRECTION 4 : espacement boutons CTA */
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;   /* CORRECTION 4a : espace au-dessus */
+      margin-bottom: 40px; /* CORRECTION 4b : espace en dessous */
+    }
     .btn-primary { background: #1a3d2b; color: #fff; border: none; font-weight: 700; padding: 14px 30px; border-radius: 10px; font-size: .95rem; transition: all var(--t); }
     .btn-primary:hover { background: #2d6a47; transform: translateY(-2px); }
     .btn-secondary { background: #25D366; color: #fff; border: none; font-weight: 700; padding: 14px 30px; border-radius: 10px; font-size: .95rem; transition: all var(--t); }
     .btn-secondary:hover { background: #1ebe5a; transform: translateY(-2px); }
 
-    /* ✅ MODIFICATION 2 — texte réassurance sous bouton principal */
     .cta-subtext { margin-top: 8px; margin-bottom: 36px; font-size: 14px; color: #000; opacity: 0.8; font-weight: 500; }
 
-    /* ✅ MODIFICATION 3 — Stats : border-radius + overflow pour effet carte */
-    .hero-stats { display: flex; flex-wrap: wrap; background: transparent; border: 1px solid rgba(255,255,255,.35); border-radius: 12px; overflow: hidden; }
+    /* CORRECTION 5 : bandeau stats détaché visuellement
+       margin-top: 40px pour bien séparer du contenu au-dessus
+       backdrop-filter + background semi-transparent pour effet carte propre
+    */
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 40px; /* CORRECTION 5 : séparation nette avec le contenu */
+      background: rgba(255,255,255,0.15); /* CORRECTION 5 : fond semi-transparent */
+      backdrop-filter: blur(10px);        /* CORRECTION 5 : effet verre dépoli */
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 12px;
+      overflow: hidden;
+    }
     .hero-stat { flex: 1; min-width: 90px; text-align: center; padding: 18px 12px; border-right: 1px solid rgba(255,255,255,.25); }
     .hero-stat:last-child { border-right: none; }
     .hero-stat-num { font-size: 1.5rem; font-weight: 800; color: #1a6640; display: block; }
@@ -330,13 +382,34 @@
       .nav-links { display: none; }
       .burger { display: flex; }
       section { padding: 56px 16px; }
-      .hero { padding: 60px 16px 72px; }
+
+      /* CORRECTION 6 MOBILE : padding hero adapté */
+      .hero {
+        padding: 60px 16px 140px; /* pb augmenté pour les stats */
+      }
+      .hero-inner {
+        max-width: 100%; /* pleine largeur mobile */
+      }
       .hero h1 { font-size: 1.9rem; }
-      .promo-badge { width: 78px; height: 78px; top: -12px; right: 4px; }
-      .promo-badge strong { font-size: 1.15rem; }
-      .hero-stats { flex-direction: column; }
-      .hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.12); }
+
+      /* Badge mobile : bien en haut à droite, pas de débordement */
+      .promo-badge { width: 74px; height: 74px; top: 14px; right: 14px; }
+      .promo-badge strong { font-size: 1.1rem; }
+
+      /* CORRECTION 6 MOBILE : boutons en colonne */
+      .hero-btns {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      /* CORRECTION 6 MOBILE : stats détachées */
+      .hero-stats {
+        margin-top: 30px;
+        flex-direction: column;
+      }
+      .hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.20); }
       .hero-stat:last-child { border-bottom: none; }
+
       .zones-content, .devis-wrapper { grid-template-columns: 1fr; }
       .form-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -344,7 +417,6 @@
       .mentions-box { padding: 24px 20px; }
     }
     @media (max-width: 480px) {
-      .hero-btns { flex-direction: column; }
       .btn-primary, .btn-secondary { text-align: center; }
       .top-bar { font-size: .76rem; gap: 12px; }
     }
@@ -384,21 +456,23 @@
   </div>
 
   <!-- HERO -->
+  <!-- Badge sorti du hero-inner → positionné par rapport au .hero (position:relative) -->
   <header class="hero">
-    <div class="hero-inner">
 
-      <!-- Badge -20% rouge -->
-      <div class="promo-badge" aria-label="Promotion : -20% sur la première prestation">
-        <strong>-20%</strong>
-        <span>1ère</span>
-        <span>prestation</span>
-      </div>
+    <div class="promo-badge" aria-label="Promotion : -20% sur la première prestation">
+      <strong>-20%</strong>
+      <span>1ère</span>
+      <span>prestation</span>
+    </div>
+
+    <div class="hero-inner">
 
       <div class="hero-badge">✦ Nantes, Loire-Atlantique &amp; Bretagne</div>
 
       <h1>Votre propreté, <em>notre priorité</em><br>à Nantes et alentours</h1>
 
-      <p class="hero-desc">ZEN NETTOYAGE 44 intervient pour les professionnels et particuliers : bureaux, fin de chantier, vitres, Airbnb, copropriétés. Équipe qualifiée, réactive et discrète. <span style="color:#c0392b;font-weight:700;">Disponible 7j/7.</span></p>
+      <!-- CORRECTION 8 : texte modifié + phrase en rouge -->
+      <p class="hero-desc">ZEN NETTOYAGE 44 intervient pour les professionnels et particuliers : bureaux, fin de chantier, vitres, Airbnb, copropriétés. <span style="color:#e53935;font-weight:700;">Équipe qualifiée, réactive et compétente. Disponible 7j/7.</span></p>
 
       <ul class="hero-checks">
         <li>Disponible 7j/7</li>
@@ -412,7 +486,6 @@
         <a href="https://wa.me/33744257676" class="btn-secondary" rel="noopener noreferrer" target="_blank">💬 WhatsApp</a>
       </div>
 
-      <!-- ✅ MODIFICATION 2 — texte de réassurance sous le bouton principal -->
       <p class="cta-subtext">Réponse en moins de 24h &bull; Gratuit &bull; Sans engagement</p>
 
       <div class="hero-stats" role="list">
@@ -421,6 +494,7 @@
         <div class="hero-stat" role="listitem"><span class="hero-stat-num">100%</span><span class="hero-stat-label">Qualité</span></div>
         <div class="hero-stat" role="listitem"><span class="hero-stat-num">44</span><span class="hero-stat-label">Loire-Atlantique</span></div>
       </div>
+
     </div>
   </header>
 
