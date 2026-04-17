@@ -157,21 +157,20 @@
     }
     /* Sections sous le fold : optimisation rendu navigateur */
     #realisations, #pourquoi, #zones, #devis, #mentions { content-visibility: auto; contain-intrinsic-size: 0 600px; }
-    /* overlay vert allégé – lisibilité conservée, moins sombre */
+    /* ── MODIFICATION 1 : overlay vert très léger rgba(0,128,0,0.2) ── */
     .hero::after {
       content: '';
       position: absolute; inset: 0;
-      background: rgba(45,134,83,.32);
+      background: rgba(0, 128, 0, 0.2);
       z-index: 0;
     }
     .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
 
-    /* Badge -20% rouge – enfant direct du .hero, hors du hero-inner */
-    /* Se positionne par rapport aux bords du hero, pas du contenu texte */
+    /* Badge -20% rouge – décalé proprement vers le haut */
     .promo-badge {
       position: absolute;
-      top: 24px;
-      right: 24px;
+      top: -20px;
+      right: 4px;
       width: 92px; height: 92px;
       background: var(--rouge);
       border-radius: 50%;
@@ -189,12 +188,13 @@
     }
 
     .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.35); color: var(--w); font-size: .82rem; font-weight: 600; padding: 6px 16px; border-radius: 50px; margin-bottom: 24px; letter-spacing: .5px; }
-    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; text-shadow: 0 2px 16px rgba(0,0,0,.55), 0 1px 4px rgba(0,0,0,.35); }
-    .hero h1 em { font-style: italic; color: #a8f0ca; }
-    .hero-desc { font-size: 1.08rem; max-width: 600px; margin-bottom: 32px; line-height: 1.7; text-shadow: 0 1px 8px rgba(0,0,0,.45); }
-
+    /* ── MODIFICATION 2 : H1 en vert foncé ── */
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; color: #1a3d2f; text-shadow: none; }
+    .hero h1 em { font-style: italic; color: #1a6640; }
+    /* ── MODIFICATION 3 : paragraphe et liste en vert foncé ── */
+    .hero-desc { font-size: 1.08rem; max-width: 600px; margin-bottom: 32px; line-height: 1.7; color: #1a3d2f; text-shadow: none; }
     .hero-checks { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-bottom: 36px; }
-    .hero-checks li { display: flex; align-items: center; gap: 8px; font-size: .9rem; font-weight: 500; }
+    .hero-checks li { display: flex; align-items: center; gap: 8px; font-size: .9rem; font-weight: 500; color: #1a3d2f; }
     .hero-checks li::before { content: '✅'; font-size: .85rem; }
 
     .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 48px; }
@@ -325,8 +325,8 @@
       section { padding: 56px 16px; }
       .hero { padding: 60px 16px 72px; }
       .hero h1 { font-size: 1.9rem; }
-      .promo-badge { width: 74px; height: 74px; top: 14px; right: 14px; }
-      .promo-badge strong { font-size: 1.1rem; }
+      .promo-badge { width: 78px; height: 78px; top: -12px; right: 4px; }
+      .promo-badge strong { font-size: 1.15rem; }
       .hero-stats { flex-direction: column; }
       .hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.12); }
       .hero-stat:last-child { border-bottom: none; }
@@ -378,15 +378,14 @@
 
   <!-- HERO -->
   <header class="hero">
-
-    <!-- Badge -20% rouge hors du hero-inner pour ne pas chevaucher le texte -->
-    <div class="promo-badge" aria-label="Promotion : -20% sur la premiere prestation">
-      <strong>-20%</strong>
-      <span>1ère</span>
-      <span>prestation</span>
-    </div>
-
     <div class="hero-inner">
+
+      <!-- Badge -20% rouge -->
+      <div class="promo-badge" aria-label="Promotion : -20% sur la première prestation">
+        <strong>-20%</strong>
+        <span>1ère</span>
+        <span>prestation</span>
+      </div>
 
       <div class="hero-badge">✦ Nantes, Loire-Atlantique &amp; Bretagne</div>
 
