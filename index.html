@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Preload image hero pour améliorer le LCP -->
-  <link rel="preload" as="image" href="https://i.imgur.com/RQ5lUpw.png" fetchpriority="high">
+  <link rel="preload" as="image" href="https://i.imgur.com/8ScJDLD.jpeg" fetchpriority="high">
 
   <title>Nettoyage Professionnel Nantes – ZEN NETTOYAGE 44</title>
 
@@ -152,20 +152,17 @@
       color: var(--w);
       padding: 80px 24px 88px;
       overflow: hidden;
-      background-image: url('https://i.imgur.com/RQ5lUpw.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background: url('https://i.imgur.com/8ScJDLD.jpeg') center center / cover no-repeat;
       will-change: transform;
     }
     /* Sections sous le fold : optimisation rendu navigateur */
     #realisations, #pourquoi, #zones, #devis, #mentions { content-visibility: auto; contain-intrinsic-size: 0 600px; }
-    /* ── Overlay vert très léger via ::before ── */
-    .hero::before {
+    /* ── MODIFICATION 1 : overlay vert très léger rgba(0,128,0,0.2) ── */
+    .hero::after {
       content: '';
       position: absolute; inset: 0;
-      background: rgba(0, 128, 0, 0.15);
-      z-index: 1;
+      background: rgba(0, 128, 0, 0.2);
+      z-index: 0;
     }
     .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
 
@@ -190,12 +187,14 @@
       50% { transform: scale(1.07); box-shadow: 0 8px 32px rgba(192,57,43,.75); }
     }
 
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.15); border: 1px solid rgba(45,106,71,.4); color: #2d6a47; font-size: .82rem; font-weight: 600; padding: 6px 16px; border-radius: 50px; margin-bottom: 24px; letter-spacing: .5px; }
-    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; color: #000; text-shadow: none; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.35); color: var(--w); font-size: .82rem; font-weight: 600; padding: 6px 16px; border-radius: 50px; margin-bottom: 24px; letter-spacing: .5px; }
+    /* ── MODIFICATION 2 : H1 en vert foncé ── */
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; color: #1a3d2f; text-shadow: none; }
     .hero h1 em { font-style: italic; color: #1a6640; }
-    .hero-desc { font-size: 1.08rem; max-width: 600px; margin-bottom: 32px; line-height: 1.7; color: #000; text-shadow: none; }
+    /* ── MODIFICATION 3 : paragraphe et liste en vert foncé ── */
+    .hero-desc { font-size: 1.08rem; max-width: 600px; margin-bottom: 32px; line-height: 1.7; color: #1a3d2f; text-shadow: none; }
     .hero-checks { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-bottom: 36px; }
-    .hero-checks li { display: flex; align-items: center; gap: 8px; font-size: .9rem; font-weight: 500; color: #000; }
+    .hero-checks li { display: flex; align-items: center; gap: 8px; font-size: .9rem; font-weight: 500; color: #1a3d2f; }
     .hero-checks li::before { content: '✅'; font-size: .85rem; }
 
     .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 48px; }
@@ -761,46 +760,7 @@
   <!-- WHATSAPP FLOTTANT -->
   <a href="https://wa.me/33744257676" class="whatsapp-float" rel="noopener noreferrer" target="_blank" aria-label="Contacter ZEN NETTOYAGE 44 sur WhatsApp" title="WhatsApp">💬</a>
 
-  <script>
-    // ── Burger menu ──
-    const burgerBtn = document.getElementById('burgerBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (burgerBtn && mobileMenu) {
-      burgerBtn.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.toggle('open');
-        burgerBtn.setAttribute('aria-expanded', isOpen);
-      });
-    }
-
-    // ── Scroll fluide avec offset pour le header fixe ──
-    document.addEventListener('click', function(e) {
-      const link = e.target.closest('a[href^="#"]');
-      if (!link) return;
-      const href = link.getAttribute('href');
-      if (href === '#' || href === '#devis' || href.startsWith('#')) {
-        const target = document.querySelector(href);
-        if (!target) return;
-        e.preventDefault();
-        const offset = 80;
-        const position = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top: position, behavior: 'smooth' });
-        // Fermer le menu mobile si ouvert
-        if (mobileMenu) mobileMenu.classList.remove('open');
-        if (burgerBtn) burgerBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // ── Formulaire devis ──
-    const devisForm = document.getElementById('devisForm');
-    const formSuccess = document.getElementById('formSuccess');
-    if (devisForm && formSuccess) {
-      devisForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        devisForm.style.display = 'none';
-        formSuccess.style.display = 'block';
-      });
-    }
-  </script>
+  <script src="script.js" defer></script>
 
 </body>
 </html>
