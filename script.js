@@ -1,45 +1,61 @@
-// Burger menu
-const burgerBtn = document.getElementById('burgerBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-burgerBtn.addEventListener('click', () => {
-  const isOpen = mobileMenu.classList.toggle('open');
-  burgerBtn.setAttribute('aria-expanded', isOpen);
-});
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    burgerBtn.setAttribute('aria-expanded', false);
-  });
-});
+document.addEventListener('DOMContentLoaded', function() {
 
-// GA4 event devis (déclenché à la soumission du formulaire)
-const devisForm = document.getElementById('devisForm');
-if (devisForm) {
-  devisForm.addEventListener('submit', () => {
-    const prestation = document.getElementById('prestation').value || 'Non précisée';
-    const ville = document.getElementById('ville').value.trim() || 'Non précisée';
-    if (typeof gtag !== 'undefined') gtag('event', 'devis_envoye', { prestation, ville });
-  });
-}
+  // FORMULAIRE DEVIS
+  var submitBtn = document.getElementById('submitBtn');
+  if (submitBtn) {
+    submitBtn.addEventListener('click', function() {
+      var nom = document.getElementById('f-nom').value.trim();
+      var tel = document.getElementById('f-tel').value.trim();
+      var email = document.getElementById('f-email').value.trim();
+      var type = document.getElementById('f-type').value;
 
-// GA4 tracking clicks téléphone
-document.querySelectorAll('a[href^="tel:"]').forEach(a => {
-  a.addEventListener('click', () => {
-    if (typeof gtag !== 'undefined') gtag('event', 'phone_click', { event_category: 'contact' });
-  });
-});
+      if (!nom || !tel || !email || !type) {
+        alert('Veuillez remplir les champs obligatoires : nom, telephone, email et type de prestation.');
+        return;
+      }
 
-// GA4 tracking WhatsApp
-document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
-  a.addEventListener('click', () => {
-    if (typeof gtag !== 'undefined') gtag('event', 'whatsapp_click', { event_category: 'contact' });
-  });
-});
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'devis_click', {'event_category':'conversion','event_label':'form_submitted','prestation':type});
+      }
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', function(e) {
-    const t = document.querySelector(this.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-  });
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Envoi en cours...';
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://formspree.io/f/xreojbbp', true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.setRequestHeader('Accept', 'application/json');
+
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'devis_envoye', {'event_category':'conversion','event_label':'form_success','prestation':type});
+          }
+          document.getElementById('formContent').style.display = 'none';
+          document.getElementById('successMsg').style.display = 'block';
+        } else {
+          alert('Erreur lors de l envoi. Appelez-nous au 07 44 25 76 76.');
+          btn.disabled = false;
+          btn.textContent = 'Envoyer ma demande de devis';
+        }
+      };
+
+      xhr.onerror = function() {
+        alert('Erreur de connexion. Appelez-nous au 07 44 25 76 76.');
+        btn.disabled = false;
+        btn.textContent = 'Envoyer ma demande de devis';
+      };
+
+      xhr.send(JSON.stringify({
+        nom: nom,
+        telephone: tel,
+        email: email,
+        prestation: type,
+        localisation: document.getElementById('f-ville').value,
+        message: document.getElementById('f-msg').value
+      }));
+    });
+  }
+
 });
