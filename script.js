@@ -1,75 +1,45 @@
-document.addEventListener('DOMContentLoaded', function() {
+// Burger menu
+const burgerBtn = document.getElementById('burgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+burgerBtn.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  burgerBtn.setAttribute('aria-expanded', isOpen);
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    burgerBtn.setAttribute('aria-expanded', false);
+  });
+});
 
-  var btn = document.getElementById('submitBtn');
+// GA4 event devis (déclenché à la soumission du formulaire)
+const devisForm = document.getElementById('devisForm');
+if (devisForm) {
+  devisForm.addEventListener('submit', () => {
+    const prestation = document.getElementById('prestation').value || 'Non précisée';
+    const ville = document.getElementById('ville').value.trim() || 'Non précisée';
+    if (typeof gtag !== 'undefined') gtag('event', 'devis_envoye', { prestation, ville });
+  });
+}
 
-  if (btn) {
-    btn.addEventListener('click', function() {
+// GA4 tracking clicks téléphone
+document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+  a.addEventListener('click', () => {
+    if (typeof gtag !== 'undefined') gtag('event', 'phone_click', { event_category: 'contact' });
+  });
+});
 
-      // 🔥 Tracking Google Analytics (clic devis)
-      if (typeof gtag !== "undefined") {
-        gtag('event','devis_click', {
-          'event_category':'conversion',
-          'event_label':'form_submit'
-        });
-      }
+// GA4 tracking WhatsApp
+document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+  a.addEventListener('click', () => {
+    if (typeof gtag !== 'undefined') gtag('event', 'whatsapp_click', { event_category: 'contact' });
+  });
+});
 
-      var nom = document.getElementById('f-nom').value.trim();
-      var tel = document.getElementById('f-tel').value.trim();
-      var email = document.getElementById('f-email').value.trim();
-      var type = document.getElementById('f-type').value;
-
-      if (!nom || !tel || !email || !type) {
-        alert('Veuillez remplir les champs obligatoires : nom, téléphone, email et type de prestation.');
-        return;
-      }
-
-      btn.disabled = true;
-      btn.textContent = 'Envoi en cours...';
-
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'https://formspree.io/f/xreojbbp', true);
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.setRequestHeader('Accept', 'application/json');
-
-      xhr.onload = function() {
-        if (xhr.status === 200) {
-
-          // 🔥 Tracking succès
-          if (typeof gtag !== "undefined") {
-            gtag('event','devis_envoye', {
-              'event_category':'conversion',
-              'event_label':'form_success'
-            });
-          }
-
-          document.getElementById('formContent').style.display = 'none';
-          document.getElementById('successMsg').style.display = 'block';
-
-        } else {
-          alert('Erreur lors de l’envoi. Appelez-nous au 07 44 25 76 76.');
-          btn.disabled = false;
-          btn.textContent = 'Envoyer ma demande de devis';
-        }
-      };
-
-      xhr.onerror = function() {
-        alert('Erreur de connexion. Appelez-nous au 07 44 25 76 76.');
-        btn.disabled = false;
-        btn.textContent = 'Envoyer ma demande de devis';
-      };
-
-      var data = JSON.stringify({
-        nom: nom,
-        telephone: tel,
-        email: email,
-        prestation: type,
-        localisation: document.getElementById('f-ville').value,
-        message: document.getElementById('f-msg').value
-      });
-
-      xhr.send(data);
-
-    });
-  }
-
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const t = document.querySelector(this.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
 });
