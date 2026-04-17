@@ -13,6 +13,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Preload image hero pour améliorer le LCP -->
+  <link rel="preload" as="image" href="https://i.imgur.com/8ScJDLD.jpeg" fetchpriority="high">
+
   <title>Nettoyage Professionnel Nantes – ZEN NETTOYAGE 44</title>
 
   <meta name="description" content="Nettoyage professionnel à Nantes : bureaux, fin de chantier, Airbnb, vitres, copropriétés. Devis gratuit sous 24h. Disponible 7j/7. Tel: 07 44 25 76 76">
@@ -150,7 +153,10 @@
       padding: 80px 24px 88px;
       overflow: hidden;
       background: url('https://i.imgur.com/8ScJDLD.jpeg') center center / cover no-repeat;
+      will-change: transform;
     }
+    /* Sections sous le fold : optimisation rendu navigateur */
+    #realisations, #pourquoi, #zones, #devis, #mentions { content-visibility: auto; contain-intrinsic-size: 0 600px; }
     /* overlay vert #2d8653 opacité 0.5 */
     .hero::after {
       content: '';
@@ -668,9 +674,9 @@
         <div class="devis-form-box">
           <p class="form-title">Demande de devis</p>
           <p class="form-subtitle">Gratuit, sans engagement. Réponse sous 24h.</p>
-          <div class="form-grid" id="devisForm">
+          <form id="devisForm" class="form-grid" novalidate>
             <div class="form-group"><label for="nom">Nom / Société</label><input type="text" id="nom" name="nom" placeholder="Votre nom ou société" autocomplete="name"></div>
-            <div class="form-group"><label for="tel">Téléphone</label><input type="tel" id="tel" name="tel" placeholder="06 XX XX XX XX" autocomplete="tel"></div>
+            <div class="form-group"><label for="tel">Téléphone</label><input type="tel" id="tel" name="telephone" placeholder="06 XX XX XX XX" autocomplete="tel"></div>
             <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="votre@email.fr" autocomplete="email"></div>
             <div class="form-group">
               <label for="prestation">Type de prestation</label>
@@ -681,9 +687,11 @@
             </div>
             <div class="form-group"><label for="ville">Ville / Localisation</label><input type="text" id="ville" name="ville" placeholder="Nantes, Rezé…" autocomplete="address-level2"></div>
             <div class="form-group full"><label for="message">Message (optionnel)</label><textarea id="message" name="message" placeholder="Décrivez votre besoin…"></textarea></div>
-          </div>
-          <button class="btn-submit" onclick="submitForm()">📋 Envoyer ma demande de devis</button>
-          <p class="form-note">Devis 100% gratuit et sans engagement – Réponse garantie sous 24h</p>
+            <div class="form-group full">
+              <button type="submit" class="btn-submit">📋 Envoyer ma demande de devis</button>
+              <p class="form-note">Devis 100% gratuit et sans engagement – Réponse garantie sous 24h</p>
+            </div>
+          </form>
           <div class="form-success" id="formSuccess">
             <p>✅ <strong>Demande envoyée !</strong> Nous vous recontacterons sous 24h.<br>Appelez-nous directement : <strong>07 44 25 76 76</strong></p>
           </div>
@@ -754,61 +762,7 @@
   <!-- WHATSAPP FLOTTANT -->
   <a href="https://wa.me/33744257676" class="whatsapp-float" rel="noopener noreferrer" target="_blank" aria-label="Contacter ZEN NETTOYAGE 44 sur WhatsApp" title="WhatsApp">💬</a>
 
-  <script>
-    // Burger menu
-    const burgerBtn = document.getElementById('burgerBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    burgerBtn.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      burgerBtn.setAttribute('aria-expanded', isOpen);
-    });
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        burgerBtn.setAttribute('aria-expanded', false);
-      });
-    });
-
-    // Formulaire → WhatsApp + GA4 event
-    function submitForm() {
-      const nom = document.getElementById('nom').value.trim();
-      const tel = document.getElementById('tel').value.trim();
-      if (!nom || !tel) { alert('Merci de renseigner votre nom et votre téléphone.'); return; }
-      const prestation = document.getElementById('prestation').value || 'Non précisée';
-      const ville = document.getElementById('ville').value.trim() || 'Non précisée';
-      const email = document.getElementById('email').value.trim() || 'Non précisé';
-      const msg = document.getElementById('message').value.trim();
-      // GA4 event
-      if (typeof gtag !== 'undefined') gtag('event', 'devis_envoye', { prestation, ville });
-      const text = `Bonjour ZEN NETTOYAGE 44,\n\nDemande de devis :\n- Nom : ${nom}\n- Tél : ${tel}\n- Email : ${email}\n- Prestation : ${prestation}\n- Ville : ${ville}${msg ? '\n- Message : ' + msg : ''}\n\nMerci !`;
-      window.open('https://wa.me/33744257676?text=' + encodeURIComponent(text), '_blank');
-      document.getElementById('formSuccess').style.display = 'block';
-      const f = document.getElementById('devisForm');
-      f.style.opacity = '.4'; f.style.pointerEvents = 'none';
-    }
-
-    // GA4 tracking clicks téléphone
-    document.querySelectorAll('a[href^="tel:"]').forEach(a => {
-      a.addEventListener('click', () => {
-        if (typeof gtag !== 'undefined') gtag('event', 'phone_click', { event_category: 'contact' });
-      });
-    });
-
-    // GA4 tracking WhatsApp
-    document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
-      a.addEventListener('click', () => {
-        if (typeof gtag !== 'undefined') gtag('event', 'whatsapp_click', { event_category: 'contact' });
-      });
-    });
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', function(e) {
-        const t = document.querySelector(this.getAttribute('href'));
-        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-      });
-    });
-  </script>
+  <script src="script.js" defer></script>
 
 </body>
 </html>
