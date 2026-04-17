@@ -1,61 +1,107 @@
-document.addEventListener('DOMContentLoaded', function() {
+// ── Burger menu ──────────────────────────────────────────────────────────────
+const burgerBtn = document.getElementById('burgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
 
-  // FORMULAIRE DEVIS
-  var submitBtn = document.getElementById('submitBtn');
-  if (submitBtn) {
-    submitBtn.addEventListener('click', function() {
-      var nom = document.getElementById('f-nom').value.trim();
-      var tel = document.getElementById('f-tel').value.trim();
-      var email = document.getElementById('f-email').value.trim();
-      var type = document.getElementById('f-type').value;
+burgerBtn.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  burgerBtn.setAttribute('aria-expanded', isOpen);
+});
 
-      if (!nom || !tel || !email || !type) {
-        alert('Veuillez remplir les champs obligatoires : nom, telephone, email et type de prestation.');
-        return;
-      }
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    burgerBtn.setAttribute('aria-expanded', false);
+  });
+});
 
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'devis_click', {'event_category':'conversion','event_label':'form_submitted','prestation':type});
-      }
+// ── Formulaire Formspree AJAX ─────────────────────────────────────────────────
+const devisForm = document.getElementById('devisForm');
+const formSuccess = document.getElementById('formSuccess');
 
-      var btn = document.getElementById('submitBtn');
-      btn.disabled = true;
-      btn.textContent = 'Envoi en cours...';
+if (devisForm) {
+  devisForm.addEventListener('submit', async function (e) {
+    e.preventDefault(); // Bloque toute soumission native et toute redirection
 
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'https://formspree.io/f/xreojbbp', true);
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.setRequestHeader('Accept', 'application/json');
+    const submitBtn = devisForm.querySelector('button[type="submit"]');
 
-      xhr.onload = function() {
-        if (xhr.status === 200) {
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'devis_envoye', {'event_category':'conversion','event_label':'form_success','prestation':type});
-          }
-          document.getElementById('formContent').style.display = 'none';
-          document.getElementById('successMsg').style.display = 'block';
-        } else {
-          alert('Erreur lors de l envoi. Appelez-nous au 07 44 25 76 76.');
-          btn.disabled = false;
-          btn.textContent = 'Envoyer ma demande de devis';
+    // Validation minimale
+    const nom = document.getElementById('nom').value.trim();
+    const tel = document.getElementById('tel').value.trim();
+    if (!nom || !tel) {
+      alert('Merci de renseigner votre nom et votre téléphone.');
+      return;
+    }
+
+    // Désactiver le bouton pendant l'envoi
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi en cours…';
+
+    // GA4 event
+    const prestation = document.getElementById('prestation').value || 'Non précisée';
+    const ville = document.getElementById('ville').value.trim() || 'Non précisée';
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'devis_envoye', { prestation, ville });
+    }
+
+    // Envoi AJAX vers Formspree
+    try {
+      const data = new FormData(devisForm);
+
+      const response = await fetch('https://formspree.io/f/xreojbbp', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        // Succès : cacher le formulaire, afficher le message
+        devisForm.style.display = 'none';
+        if (formSuccess) {
+          formSuccess.style.display = 'block';
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-      };
+      } else {
+        // Erreur Formspree
+        const json = await response.json().catch(() => ({}));
+        const errMsg = json.errors ? json.errors.map(e => e.message).join(', ') : 'Erreur lors de l\'envoi.';
+        alert('Une erreur est survenue : ' + errMsg + '\nVeuillez réessayer ou nous appeler au 07 44 25 76 76.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = '📋 Envoyer ma demande de devis';
+      }
+    } catch (err) {
+      // Erreur réseau
+      alert('Problème de connexion. Veuillez réessayer ou nous appeler au 07 44 25 76 76.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = '📋 Envoyer ma demande de devis';
+    }
+  });
+}
 
-      xhr.onerror = function() {
-        alert('Erreur de connexion. Appelez-nous au 07 44 25 76 76.');
-        btn.disabled = false;
-        btn.textContent = 'Envoyer ma demande de devis';
-      };
+// ── GA4 tracking : clics téléphone ───────────────────────────────────────────
+document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+  a.addEventListener('click', () => {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'phone_click', { event_category: 'contact' });
+    }
+  });
+});
 
-      xhr.send(JSON.stringify({
-        nom: nom,
-        telephone: tel,
-        email: email,
-        prestation: type,
-        localisation: document.getElementById('f-ville').value,
-        message: document.getElementById('f-msg').value
-      }));
-    });
-  }
+// ── GA4 tracking : clics WhatsApp ────────────────────────────────────────────
+document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+  a.addEventListener('click', () => {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'whatsapp_click', { event_category: 'contact' });
+    }
+  });
+});
 
+// ── Smooth scroll ─────────────────────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 });
