@@ -108,3 +108,4 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     window.scrollTo({ top: pos, behavior: 'smooth' });
   });
 });
+
