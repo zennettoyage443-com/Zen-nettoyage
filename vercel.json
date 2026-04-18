@@ -1,5 +1,14 @@
 {
   "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
+    { "source": "/robots.txt", "destination": "/robots.txt" },
+
+    { "source": "/nettoyage-vitres-nantes", "destination": "/nettoyage-vitres-nantes.html" },
+    { "source": "/nettoyage-bureaux-nantes", "destination": "/nettoyage-bureaux-nantes.html" },
+    { "source": "/nettoyage-copropriete-nantes", "destination": "/nettoyage-copropriete-nantes.html" },
+    { "source": "/fin-de-chantier-nantes", "destination": "/fin-de-chantier-nantes.html" },
+    { "source": "/menage-airbnb-nantes", "destination": "/ménage-airbnb-nantes.html" },
+
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
