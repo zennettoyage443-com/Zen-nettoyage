@@ -1,0 +1,102 @@
+/* ══════════════════════════════════════════════════════
+   ZEN NETTOYAGE 44 – style.css
+   Styles partagés entre toutes les pages service
+   Fix principal : contraste texte hero illisible
+   ══════════════════════════════════════════════════════ */
+
+/* ── FIX CRITIQUE : texte hero illisible ────────────────
+   Problème : p{color:#4a5568} écrase le color:#fff hérité
+   de .hero-page via la cascade CSS.
+   Solution : déclarer explicitement la couleur sur chaque
+   élément textuel du hero.
+   ─────────────────────────────────────────────────────── */
+.hero-page {
+  color: #ffffff;
+}
+
+.hero-page h1 {
+  color: #ffffff;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+.hero-page h1 em {
+  color: #67c99a;
+  font-style: italic;
+}
+
+/* Fix principal : le p global écrasait la couleur héritée */
+.hero-page p {
+  color: rgba(255, 255, 255, 0.92);
+  /* suppression de opacity:.9 remplacée par rgba direct */
+}
+
+/* ── LISIBILITÉ HERO ──────────────────────────────────── */
+.hero-page {
+  padding: 88px 24px 72px;
+}
+
+.hero-page .btn-hero {
+  color: #1a3d2b;
+  background: #67c99a;
+  display: inline-block;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin: 0 8px 12px;
+  transition: all 0.3s ease;
+  text-shadow: none;
+}
+
+.hero-page .btn-hero:hover {
+  background: #7fd9ae;
+  transform: translateY(-2px);
+}
+
+.hero-page .btn-hero2 {
+  color: #ffffff;
+  background: #25D366;
+  display: inline-block;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin: 0 8px 12px;
+  transition: all 0.3s ease;
+  text-shadow: none;
+}
+
+.hero-page .btn-hero2:hover {
+  background: #1ebe5a;
+  transform: translateY(-2px);
+}
+
+/* ── AMÉLIORATION LISIBILITÉ GLOBALE ─────────────────── */
+.faq-q {
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+.card p {
+  line-height: 1.7;
+}
+
+/* ── MOBILE ─────────────────────────────────────────────*/
+@media (max-width: 768px) {
+  .hero-page {
+    padding: 64px 20px 56px;
+  }
+
+  .hero-page h1 {
+    font-size: clamp(1.7rem, 5vw, 2.4rem);
+  }
+
+  .hero-page .btn-hero,
+  .hero-page .btn-hero2 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 12px;
+    box-sizing: border-box;
+  }
+}
