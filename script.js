@@ -1,110 +1,183 @@
-// ── Burger menu ──────────────────────────────────────────────────────────────
-const burgerBtn = document.getElementById('burgerBtn');
-const mobileMenu = document.getElementById('mobileMenu');
+/* =============================================================
+   ZEN NETTOYAGE 44 — script.js   |   GA4 : G-XMZZX8845J
+   ============================================================= */
 
-if (burgerBtn && mobileMenu) {
-  burgerBtn.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('open');
-    burgerBtn.setAttribute('aria-expanded', isOpen);
-  });
-
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      burgerBtn.setAttribute('aria-expanded', false);
-    });
-  });
+// ─────────────────────────────────────────────────────────────
+// HELPER GA4 ROBUSTE
+// Problème : gtag.js est async → peut ne pas être prêt quand
+// script.js (defer) s'exécute. Solution : on pousse dans
+// window.dataLayer directement ; GA4 les consomme à son chargement.
+// ─────────────────────────────────────────────────────────────
+function ga4(eventName, params) {
+  try {
+    window.dataLayer = window.dataLayer || [];
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params || {});
+    } else {
+      // Fallback : dataLayer direct (GA4 pickup automatique)
+      window.dataLayer.push(
+        Object.assign({ event: eventName }, params || {})
+      );
+    }
+    console.log('[GA4]', eventName, params || {});
+  } catch (err) {
+    console.warn('[GA4] erreur :', err);
+  }
 }
 
-// ── Formulaire Formspree AJAX ─────────────────────────────────────────────────
-const devisForm = document.getElementById('devisForm');
-const formSuccess = document.getElementById('formSuccess');
+// ─────────────────────────────────────────────────────────────
+// BURGER MENU
+// ─────────────────────────────────────────────────────────────
+(function () {
+  var btn  = document.getElementById('burgerBtn');
+  var menu = document.getElementById('mobileMenu');
+  if (!btn || !menu) return;
 
-if (devisForm) {
-  devisForm.addEventListener('submit', async function (e) {
+  btn.addEventListener('click', function () {
+    var isOpen = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  menu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+}());
+
+// ─────────────────────────────────────────────────────────────
+// FORMULAIRE FORMSPREE — AJAX (e.preventDefault strict)
+// ─────────────────────────────────────────────────────────────
+(function () {
+  var form    = document.getElementById('devisForm');
+  var success = document.getElementById('formSuccess');
+  if (!form) return;
+
+  form.addEventListener('submit', async function (e) {
+    // Bloque TOUTE soumission native et toute redirection
     e.preventDefault();
+    e.stopPropagation();
 
-    const submitBtn = devisForm.querySelector('button[type="submit"]');
+    var btn        = form.querySelector('button[type="submit"]');
+    var nom        = (document.getElementById('nom')        || {}).value || '';
+    var tel        = (document.getElementById('tel')        || {}).value || '';
+    var prestation = (document.getElementById('prestation') || {}).value || 'Non précisée';
+    var ville      = (document.getElementById('ville')      || {}).value || 'Non précisée';
 
-    // Validation minimale
-    const nom = document.getElementById('nom').value.trim();
-    const tel = document.getElementById('tel').value.trim();
+    nom = nom.trim();
+    tel = tel.trim();
+
     if (!nom || !tel) {
       alert('Merci de renseigner votre nom et votre téléphone.');
       return;
     }
 
-    // Désactiver le bouton pendant l'envoi
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Envoi en cours…';
+    // Désactiver le bouton
+    btn.disabled    = true;
+    btn.textContent = 'Envoi en cours…';
 
-    // GA4 event
-    const prestation = document.getElementById('prestation').value || 'Non précisée';
-    const ville = document.getElementById('ville').value.trim() || 'Non précisée';
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'devis_envoye', { prestation, ville });
-    }
+    // GA4 avant fetch (évite perte en cas de navigation)
+    ga4('devis_envoye', {
+      prestation:    prestation,
+      ville:         ville,
+      form_source:   'formspree',
+      page_location: window.location.href
+    });
 
-    // Envoi AJAX vers Formspree
     try {
-      const data = new FormData(devisForm);
-
-      const response = await fetch('https://formspree.io/f/xreojbbp', {
-        method: 'POST',
-        body: data,
+      var resp = await fetch('https://formspree.io/f/xreojbbp', {
+        method:  'POST',
+        body:    new FormData(form),
         headers: { 'Accept': 'application/json' }
       });
 
-      if (response.ok) {
-        devisForm.style.display = 'none';
-        if (formSuccess) {
-          formSuccess.style.display = 'block';
-          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (resp.ok) {
+        form.style.display = 'none';
+        if (success) {
+          success.style.display = 'block';
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       } else {
-        const json = await response.json().catch(() => ({}));
-        const errMsg = json.errors ? json.errors.map(e => e.message).join(', ') : 'Erreur lors de l\'envoi.';
-        alert('Une erreur est survenue : ' + errMsg + '\nVeuillez réessayer ou nous appeler au 07 44 25 76 76.');
-        submitBtn.disabled = false;
-        submitBtn.textContent = '📋 Envoyer ma demande de devis';
+        var json   = await resp.json().catch(function () { return {}; });
+        var errMsg = json.errors
+          ? json.errors.map(function (e) { return e.message; }).join(', ')
+          : "Erreur lors de l'envoi.";
+        alert('Erreur : ' + errMsg
+          + '\nVeuillez réessayer ou appeler le 07 44 25 76 76.');
+        btn.disabled    = false;
+        btn.textContent = '📋 Envoyer ma demande de devis';
       }
     } catch (err) {
-      alert('Problème de connexion. Veuillez réessayer ou nous appeler au 07 44 25 76 76.');
-      submitBtn.disabled = false;
-      submitBtn.textContent = '📋 Envoyer ma demande de devis';
+      console.error('[Formspree] réseau :', err);
+      alert('Problème de connexion. Appelez-nous au 07 44 25 76 76.');
+      btn.disabled    = false;
+      btn.textContent = '📋 Envoyer ma demande de devis';
     }
   });
-}
+}());
 
-// ── GA4 tracking : clics téléphone ───────────────────────────────────────────
-document.querySelectorAll('a[href^="tel:"]').forEach(a => {
-  a.addEventListener('click', () => {
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'phone_click', { event_category: 'contact' });
-    }
+// ─────────────────────────────────────────────────────────────
+// GA4 — TRACKING TÉLÉPHONE
+// Délégation sur document → robuste même si DOM modifié
+// ─────────────────────────────────────────────────────────────
+document.addEventListener('click', function (e) {
+  var link = e.target.closest('a[href^="tel:"]');
+  if (!link) return;
+  ga4('phone_click', {
+    link_url:      link.getAttribute('href'),
+    phone:         link.getAttribute('href').replace('tel:', ''),
+    link_text:     (link.innerText || '').trim(),
+    page_location: window.location.href
   });
 });
 
-// ── GA4 tracking : clics WhatsApp ────────────────────────────────────────────
-document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
-  a.addEventListener('click', () => {
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'whatsapp_click', { event_category: 'contact' });
-    }
+// ─────────────────────────────────────────────────────────────
+// GA4 — TRACKING WHATSAPP
+// CORRECTION MOBILE : target="_blank" met la page en arrière-plan
+// avant que gtag envoie la requête HTTP → event perdu.
+// Solution : dataLayer.push SYNCHRONE + gtag utilise sendBeacon
+// en interne pour les events émis juste avant navigation.
+// ─────────────────────────────────────────────────────────────
+document.addEventListener('click', function (e) {
+  var link = e.target.closest('a[href*="wa.me"]');
+  if (!link) return;
+
+  // Push SYNCHRONE dans dataLayer (sendBeacon géré par GA4 nativement)
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event:         'whatsapp_click',
+    link_url:      link.getAttribute('href'),
+    link_text:     (link.innerText || '').trim(),
+    page_location: window.location.href
   });
+
+  // Aussi via gtag si disponible
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'whatsapp_click', {
+      link_url:      link.getAttribute('href'),
+      link_text:     (link.innerText || '').trim(),
+      page_location: window.location.href
+    });
+  }
+
+  console.log('[GA4] whatsapp_click', link.getAttribute('href'));
+  // PAS de e.preventDefault() → WhatsApp s'ouvre normalement
 });
 
-// ── Smooth scroll avec offset nav fixe ───────────────────────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', function (e) {
-    const href = this.getAttribute('href');
-    if (!href || href === '#') return;
-    const target = document.querySelector(href);
-    if (!target) return;
-    e.preventDefault();
-    const navHeight = document.querySelector('nav.main-nav')
-      ? document.querySelector('nav.main-nav').offsetHeight : 64;
-    const pos = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 12;
-    window.scrollTo({ top: pos, behavior: 'smooth' });
-  });
+// ─────────────────────────────────────────────────────────────
+// SMOOTH SCROLL — avec offset nav fixe
+// ─────────────────────────────────────────────────────────────
+document.addEventListener('click', function (e) {
+  var link = e.target.closest('a[href^="#"]');
+  if (!link) return;
+  var href = link.getAttribute('href');
+  if (!href || href === '#') return;
+  var target = document.querySelector(href);
+  if (!target) return;
+  e.preventDefault();
+  var nav    = document.querySelector('nav.main-nav');
+  var offset = nav ? nav.offsetHeight : 64;
+  var pos    = target.getBoundingClientRect().top + window.pageYOffset - offset - 12;
+  window.scrollTo({ top: pos, behavior: 'smooth' });
 });
