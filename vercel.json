@@ -1,13 +1,4 @@
 {
-  "redirects": [
-    { "source": "/menage-airbnb-nantes.html", "destination": "/menage-airbnb-nantes", "permanent": true },
-    { "source": "/nettoyage-bureaux-nantes.html", "destination": "/nettoyage-bureaux-nantes", "permanent": true },
-    { "source": "/nettoyage-vitres-nantes.html", "destination": "/nettoyage-vitres-nantes", "permanent": true },
-    { "source": "/fin-de-chantier-nantes.html", "destination": "/fin-de-chantier-nantes", "permanent": true },
-    { "source": "/nettoyage-copropriete-nantes.html", "destination": "/nettoyage-copropriete-nantes", "permanent": true },
-    { "source": "/a-propos.html", "destination": "/a-propos", "permanent": true },
-    { "source": "/guide-prix-nettoyage-nantes.html", "destination": "/guide-prix-nettoyage-nantes", "permanent": true }
-  ],
   "rewrites": [
     { "source": "/menage-airbnb-nantes", "destination": "/menage-airbnb-nantes.html" },
     { "source": "/nettoyage-bureaux-nantes", "destination": "/nettoyage-bureaux-nantes.html" },
@@ -15,7 +6,8 @@
     { "source": "/fin-de-chantier-nantes", "destination": "/fin-de-chantier-nantes.html" },
     { "source": "/nettoyage-copropriete-nantes", "destination": "/nettoyage-copropriete-nantes.html" },
     { "source": "/a-propos", "destination": "/a-propos.html" },
-    { "source": "/guide-prix-nettoyage-nantes", "destination": "/guide-prix-nettoyage-nantes.html" }
+    { "source": "/guide-prix-nettoyage-nantes", "destination": "/guide-prix-nettoyage-nantes.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
     {
