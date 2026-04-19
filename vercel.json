@@ -1,42 +1,13 @@
 {
   "redirects": [
-    {
-      "source": "/menage-airbnb-nantes.html",
-      "destination": "/menage-airbnb-nantes",
-      "permanent": true
-    },
-    {
-      "source": "/nettoyage-bureaux-nantes.html",
-      "destination": "/nettoyage-bureaux-nantes",
-      "permanent": true
-    },
-    {
-      "source": "/nettoyage-vitres-nantes.html",
-      "destination": "/nettoyage-vitres-nantes",
-      "permanent": true
-    },
-    {
-      "source": "/fin-de-chantier-nantes.html",
-      "destination": "/fin-de-chantier-nantes",
-      "permanent": true
-    },
-    {
-      "source": "/nettoyage-copropriete-nantes.html",
-      "destination": "/nettoyage-copropriete-nantes",
-      "permanent": true
-    },
-    {
-      "source": "/a-propos.html",
-      "destination": "/a-propos",
-      "permanent": true
-    },
-    {
-      "source": "/guide-prix-nettoyage-nantes.html",
-      "destination": "/guide-prix-nettoyage-nantes",
-      "permanent": true
-    }
+    { "source": "/menage-airbnb-nantes.html", "destination": "/menage-airbnb-nantes", "permanent": true },
+    { "source": "/nettoyage-bureaux-nantes.html", "destination": "/nettoyage-bureaux-nantes", "permanent": true },
+    { "source": "/nettoyage-vitres-nantes.html", "destination": "/nettoyage-vitres-nantes", "permanent": true },
+    { "source": "/fin-de-chantier-nantes.html", "destination": "/fin-de-chantier-nantes", "permanent": true },
+    { "source": "/nettoyage-copropriete-nantes.html", "destination": "/nettoyage-copropriete-nantes", "permanent": true },
+    { "source": "/a-propos.html", "destination": "/a-propos", "permanent": true },
+    { "source": "/guide-prix-nettoyage-nantes.html", "destination": "/guide-prix-nettoyage-nantes", "permanent": true }
   ],
-
   "rewrites": [
     { "source": "/menage-airbnb-nantes", "destination": "/menage-airbnb-nantes.html" },
     { "source": "/nettoyage-bureaux-nantes", "destination": "/nettoyage-bureaux-nantes.html" },
@@ -45,5 +16,36 @@
     { "source": "/nettoyage-copropriete-nantes", "destination": "/nettoyage-copropriete-nantes.html" },
     { "source": "/a-propos", "destination": "/a-propos.html" },
     { "source": "/guide-prix-nettoyage-nantes", "destination": "/guide-prix-nettoyage-nantes.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/index.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }
+      ]
+    }
   ]
 }
