@@ -8,13 +8,27 @@
   <title>Ménage Airbnb Nantes – Nettoyage Location Courte Durée | ZEN NETTOYAGE 44</title>
   <meta name="description" content="Ménage professionnel Airbnb à Nantes entre chaque séjour. Changement literie, remise en état complète. Disponible 7j/7. Devis gratuit 24h. ☎ 07 44 25 76 76">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.zennettoyage.fr/menage-airbnb-nantes">
+
+  <!--
+    BUG 1 CORRIGÉ : canonical pointait vers /menage-airbnb-nantes (sans .html)
+    alors que le fichier s'appelle menage-airbnb-nantes.html
+    → URL canonique corrigée avec .html pour correspondre au vrai fichier
+  -->
+  <link rel="canonical" href="https://www.zennettoyage.fr/menage-airbnb-nantes.html">
+
   <meta property="og:title" content="Ménage Airbnb Nantes – ZEN NETTOYAGE 44">
   <meta property="og:description" content="Service de ménage Airbnb professionnel à Nantes. Disponible 7j/7. Devis gratuit sous 24h.">
-  <meta property="og:url" content="https://www.zennettoyage.fr/menage-airbnb-nantes">
+
+  <!--
+    BUG 2 CORRIGÉ : og:url pointait vers /menage-airbnb-nantes (sans .html)
+    → Corrigé avec .html
+  -->
+  <meta property="og:url" content="https://www.zennettoyage.fr/menage-airbnb-nantes.html">
+
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Service","name":"Ménage Airbnb Nantes","description":"Service de ménage professionnel entre chaque séjour pour les locations Airbnb et courte durée à Nantes. Disponible 7j/7. Changement de literie, remise en état complète.","provider":{"@type":"LocalBusiness","name":"ZEN NETTOYAGE 44","telephone":"+33744257676","address":{"@type":"PostalAddress","streetAddress":"75 rue du Port Boyer","addressLocality":"Nantes","postalCode":"44300","addressCountry":"FR"}},"areaServed":{"@type":"City","name":"Nantes"},"offers":{"@type":"Offer","priceRange":"€€"}}
   </script>
+
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'Segoe UI',system-ui,sans-serif;color:#1a202c;line-height:1.7}
@@ -55,26 +69,38 @@
     .zones-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
     footer{background:#0f2419;color:rgba(255,255,255,.65);padding:40px 24px;text-align:center;font-size:.85rem}
     footer a{color:#67c99a}
-    @media(max-width:768px){.grid-2{grid-template-columns:1fr}.nav-links{display:none}}
+    @media(max-width:768px){
+      .grid-2{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .hero-page{padding:60px 16px 48px}
+      .btn-hero,.btn-hero2{display:block;margin:0 0 12px;text-align:center}
+    }
   </style>
-  <link rel="stylesheet" href="style.css">
+
+  <!--
+    BUG 3 CORRIGÉ : <link rel="stylesheet" href="style.css"> était présent
+    → Ce fichier n'existe pas sur votre serveur (absent du repo GitHub visible)
+    → Il générait une erreur 404 silencieuse qui pouvait bloquer le rendu CSS
+    → Supprimé
+  -->
+
 </head>
 <body>
 
 <div class="top-bar">
   <span>📍 75 rue du Port Boyer, 44300 Nantes</span>
   <a href="tel:+33744257676">📞 07 44 25 76 76</a>
-  <a href="https://wa.me/33744257676" target="_blank">💬 WhatsApp</a>
+  <a href="https://wa.me/33744257676" target="_blank" rel="noopener">💬 WhatsApp</a>
 </div>
 
 <nav>
-  <a href="/" class="logo">ZEN NETTOYAGE <span>44</span></a>
+  <a href="https://www.zennettoyage.fr/" class="logo">ZEN NETTOYAGE <span>44</span></a>
   <div class="nav-links">
-    <a href="/#services">Services</a>
-    <a href="/#realisations">Réalisations</a>
-    <a href="/#zones">Zones</a>
+    <a href="https://www.zennettoyage.fr/#services">Services</a>
+    <a href="https://www.zennettoyage.fr/#realisations">Réalisations</a>
+    <a href="https://www.zennettoyage.fr/#zones">Zones</a>
     <a href="tel:+33744257676">📞 07 44 25 76 76</a>
-    <a href="/#devis" class="nav-cta">Devis gratuit</a>
+    <a href="https://www.zennettoyage.fr/#devis" class="nav-cta">Devis gratuit</a>
   </div>
 </nav>
 
@@ -82,8 +108,8 @@
   <div class="container">
     <h1>Ménage <em>Airbnb à Nantes</em></h1>
     <p>Service de ménage professionnel entre chaque séjour pour vos locations Airbnb et courte durée à Nantes. Remise en état complète, changement de literie, disponible 7j/7. Devis gratuit sous 24h.</p>
-    <a href="/#devis" class="btn-hero">📋 Devis gratuit en 24h</a>
-    <a href="https://wa.me/33744257676" class="btn-hero2" target="_blank">💬 WhatsApp</a>
+    <a href="https://www.zennettoyage.fr/#devis" class="btn-hero">📋 Devis gratuit en 24h</a>
+    <a href="https://wa.me/33744257676" class="btn-hero2" target="_blank" rel="noopener">💬 WhatsApp</a>
   </div>
 </div>
 
@@ -158,14 +184,19 @@
     <h2>Devis ménage Airbnb Nantes – Gratuit et rapide</h2>
     <p>Réponse sous 24h. Sans engagement. Disponible 7j/7.</p>
     <a href="tel:+33744257676" class="tel-big">07 44 25 76 76</a>
-    <a href="/#devis" class="btn-hero">📋 Formulaire de devis</a>
-    <a href="https://wa.me/33744257676" class="btn-hero2" target="_blank">💬 WhatsApp</a>
+    <a href="https://www.zennettoyage.fr/#devis" class="btn-hero">📋 Formulaire de devis</a>
+    <a href="https://wa.me/33744257676" class="btn-hero2" target="_blank" rel="noopener">💬 WhatsApp</a>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 <a href="/">ZEN NETTOYAGE 44</a> – Ménage Airbnb Nantes &amp; Loire-Atlantique – <a href="tel:+33744257676">07 44 25 76 76</a></p>
-  <p style="margin-top:8px"><a href="/">Accueil</a> · <a href="/nettoyage-bureaux-nantes">Nettoyage bureaux</a> · <a href="/nettoyage-vitres-nantes">Nettoyage vitres</a> · <a href="/fin-de-chantier-nantes">Fin de chantier</a></p>
+  <p>© 2026 <a href="https://www.zennettoyage.fr/">ZEN NETTOYAGE 44</a> – Ménage Airbnb Nantes &amp; Loire-Atlantique – <a href="tel:+33744257676">07 44 25 76 76</a></p>
+  <p style="margin-top:8px">
+    <a href="https://www.zennettoyage.fr/">Accueil</a> ·
+    <a href="https://www.zennettoyage.fr/nettoyage-bureaux-nantes.html">Nettoyage bureaux</a> ·
+    <a href="https://www.zennettoyage.fr/nettoyage-vitres-nantes.html">Nettoyage vitres</a> ·
+    <a href="https://www.zennettoyage.fr/fin-de-chantier-nantes.html">Fin de chantier</a>
+  </p>
 </footer>
 
 </body>
