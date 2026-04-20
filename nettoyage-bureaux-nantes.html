@@ -56,6 +56,17 @@
     footer{background:#0f2419;color:rgba(255,255,255,.65);padding:40px 24px;text-align:center;font-size:.85rem}
     footer a{color:#67c99a}
     @media(max-width:768px){.grid-2{grid-template-columns:1fr}.nav-links{display:none}}
+
+    /* ── MAILLAGE INTERNE ── */
+    .ressources-section { background: #f5f7f6; padding: 40px 24px; }
+    .ressources-section .container { max-width: 1100px; margin: 0 auto; }
+    .ressources-section h2 { font-size: 1.15rem; font-weight: 800; color: #1a3d2b; margin-bottom: 16px; }
+    .ressources-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+    .ressource-card { background: #fff; border-radius: 12px; padding: 18px 20px; border: 1px solid #e2e8f0; transition: all .25s; display: flex; flex-direction: column; gap: 4px; }
+    .ressource-card:hover { border-color: #67c99a; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,61,43,.1); }
+    .ressource-card .r-icon { font-size: 1.3rem; }
+    .ressource-card .r-title { font-size: .9rem; font-weight: 700; color: #1a3d2b; }
+    .ressource-card .r-desc { font-size: .78rem; color: #4a5568; }
   </style>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -162,6 +173,36 @@
     <a href="https://wa.me/33744257676" class="btn-hero2" target="_blank">💬 WhatsApp</a>
   </div>
 </section>
+
+
+  <!-- MAILLAGE INTERNE -->
+  <section class="ressources-section">
+    <div class="container">
+      <h2>🔗 Besoin d'en savoir plus sur nos tarifs ou notre entreprise ?</h2>
+      <div class="ressources-grid">
+      <a href="/nettoyage-vitres-nantes" class="ressource-card">
+        <span class="r-icon">🪟</span>
+        <span class="r-title">Nettoyage vitres Nantes</span>
+        <span class="r-desc">Façades, baies, velux</span>
+      </a>
+      <a href="/fin-de-chantier-nantes" class="ressource-card">
+        <span class="r-icon">🏗</span>
+        <span class="r-title">Fin de chantier Nantes</span>
+        <span class="r-desc">Pré-livraison & après travaux</span>
+      </a>
+      <a href="/guide-prix-nettoyage-nantes" class="ressource-card">
+        <span class="r-icon">💶</span>
+        <span class="r-title">Guide des tarifs Nantes</span>
+        <span class="r-desc">Fourchettes de prix 2026</span>
+      </a>
+      <a href="/a-propos" class="ressource-card">
+        <span class="r-icon">ℹ️</span>
+        <span class="r-title">À propos de nous</span>
+        <span class="r-desc">Notre équipe & nos valeurs</span>
+      </a>
+      </div>
+    </div>
+  </section>
 
 <footer>
   <p>© 2026 <a href="/">ZEN NETTOYAGE 44</a> – Nettoyage bureaux Nantes, Loire-Atlantique &amp; Bretagne – <a href="tel:+33744257676">07 44 25 76 76</a></p>
