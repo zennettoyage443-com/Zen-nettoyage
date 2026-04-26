@@ -1,4 +1,24 @@
 {
+  "redirects": [
+    { "source": "/fin-de-chantier-nantes.html",          "destination": "/nettoyage-fin-chantier-nantes", "permanent": true },
+    { "source": "/fin-de-chantier-nantes",               "destination": "/nettoyage-fin-chantier-nantes", "permanent": true },
+    { "source": "/nettoyage-bureaux-nantes.html",        "destination": "/nettoyage-bureaux-nantes",      "permanent": true },
+    { "source": "/nettoyage-copropriete-nantes.html",    "destination": "/nettoyage-copropriete-nantes",  "permanent": true },
+    { "source": "/nettoyage-vitres-nantes.html",         "destination": "/nettoyage-vitres-nantes",       "permanent": true },
+    { "source": "/menage-airbnb-nantes.html",            "destination": "/menage-airbnb-nantes",          "permanent": true },
+    { "source": "/nettoyage-fin-chantier-nantes.html",   "destination": "/nettoyage-fin-chantier-nantes", "permanent": true },
+    { "source": "/nettoyage-fin-bail-nantes.html",       "destination": "/nettoyage-fin-bail-nantes",     "permanent": true },
+    { "source": "/nettoyage-apres-sinistre-nantes.html", "destination": "/nettoyage-apres-sinistre-nantes","permanent": true },
+    { "source": "/nettoyage-copropriete-nantes.html",    "destination": "/nettoyage-copropriete-nantes",  "permanent": true },
+    { "source": "/grand-menage-demenagement-nantes.html","destination": "/grand-menage-demenagement-nantes","permanent": true },
+    { "source": "/prix-nettoyage-fin-chantier-nantes.html","destination": "/prix-nettoyage-fin-chantier-nantes","permanent": true },
+    { "source": "/entreprise-nettoyage-nantes.html",     "destination": "/entreprise-nettoyage-nantes",   "permanent": true },
+    { "source": "/a-propos.html",                        "destination": "/a-propos",                      "permanent": true },
+    { "source": "/guide-prix-nettoyage-nantes",          "destination": "/prix-nettoyage-nantes",         "permanent": true },
+    { "source": "/guide-prix-nettoyage-nantes.html",     "destination": "/prix-nettoyage-nantes",         "permanent": true },
+    { "source": "/prix-nettoyage-nantes.html",           "destination": "/prix-nettoyage-nantes",         "permanent": true },
+    { "source": "/index.html",                           "destination": "/",                              "permanent": true }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
