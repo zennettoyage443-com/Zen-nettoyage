@@ -267,7 +267,7 @@
     <h1>Nettoyage<br><em>copropriété</em><br>à Nantes</h1>
     <p class="hero-desc">ZEN NETTOYAGE 44 assure l'entretien régulier des <strong>parties communes de copropriétés</strong> à Nantes et agglomération. Halls, escaliers, ascenseurs, parkings : une équipe attitrée, un résultat irréprochable à chaque passage.</p>
     <div class="ctas">
-      <a href="https://wa.me/33744257676?text=Bonjour%2C+je+souhaite+un+devis+nettoyage+copropri%C3%A9t%C3%A9+%C3%A0+Nantes" class="btn-p" target="_blank" rel="noopener">📋 Devis gratuit en 24h</a>
+      <a href="#devis-form" class="btn-p" target="_blank" rel="noopener">📋 Devis gratuit en 24h</a>
       <a href="tel:+33744257676" class="btn-w">📞 07 44 25 76 76</a>
     </div>
     <div class="hero-stats">
@@ -558,6 +558,45 @@
   </div>
 </section>
 
+
+<section class="section section-alt" id="devis-form">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;max-width:900px;margin:0 auto">
+      <div>
+        <div class="s-label">Devis gratuit</div>
+        <h2 class="s-title" style="font-size:clamp(1.5rem,2.5vw,2rem)">Demandez votre devis<br><span>copropriété à Nantes</span></h2>
+        <p style="color:var(--tm);font-size:.95rem;line-height:1.8;margin-bottom:24px">Réponse garantie sous 24h. Visite gratuite sur site pour évaluer vos parties communes.</p>
+        <a href="tel:+33744257676" style="display:block;font-size:1.8rem;font-weight:900;color:var(--gd);letter-spacing:-1px;margin-bottom:20px;text-decoration:none">📞 07 44 25 76 76</a>
+        <div style="font-size:.85rem;color:var(--tm);line-height:2">✅ Contrat sur mesure · tarif fixe mensuel<br>✅ Rapport d'intervention à chaque passage<br>✅ Équipe attitrée · zéro sous-traitance<br>✅ Réponse sous 24h · visite gratuite<br>✅ <a href="https://wa.me/33744257676?text=Bonjour+copropriété" target="_blank" style="color:var(--gm);font-weight:600">💬 Message WhatsApp rapide</a></div>
+      </div>
+      <form id="copro-form" action="https://formspree.io/f/zennettoyage443@gmail.com" method="POST" novalidate style="background:var(--w);border:1.5px solid var(--bd);border-radius:14px;padding:28px;box-shadow:var(--s1)">
+        <div style="margin-bottom:12px"><label style="display:block;font-size:.78rem;font-weight:700;color:var(--gd);margin-bottom:6px">Nom / Syndic *</label><input type="text" name="nom" required placeholder="Nom ou raison sociale" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:11px 14px;font-size:.88rem;font-family:inherit;outline:none" onfocus="this.style.borderColor='#67c99a'" onblur="this.style.borderColor='#e2e8f0'"></div>
+        <div style="margin-bottom:12px"><label style="display:block;font-size:.78rem;font-weight:700;color:var(--gd);margin-bottom:6px">Téléphone *</label><input type="tel" name="tel" required placeholder="06 XX XX XX XX" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:11px 14px;font-size:.88rem;font-family:inherit;outline:none" onfocus="this.style.borderColor='#67c99a'" onblur="this.style.borderColor='#e2e8f0'"></div>
+        <div style="margin-bottom:12px"><label style="display:block;font-size:.78rem;font-weight:700;color:var(--gd);margin-bottom:6px">Email</label><input type="email" name="email" placeholder="votre@email.fr" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:11px 14px;font-size:.88rem;font-family:inherit;outline:none" onfocus="this.style.borderColor='#67c99a'" onblur="this.style.borderColor='#e2e8f0'"></div>
+        <div style="margin-bottom:12px"><label style="display:block;font-size:.78rem;font-weight:700;color:var(--gd);margin-bottom:6px">Adresse de la copropriété</label><input type="text" name="adresse" placeholder="Rue, ville" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:11px 14px;font-size:.88rem;font-family:inherit;outline:none" onfocus="this.style.borderColor='#67c99a'" onblur="this.style.borderColor='#e2e8f0'"></div>
+        <div style="margin-bottom:12px"><label style="display:block;font-size:.78rem;font-weight:700;color:var(--gd);margin-bottom:6px">Nombre de lots</label><select name="lots" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:11px 14px;font-size:.88rem;font-family:inherit;outline:none;background:var(--w)" onfocus="this.style.borderColor='#67c99a'" onblur="this.style.borderColor='#e2e8f0'"><option value="">Sélectionner</option><option>Moins de 10 lots</option><option>10 à 20 lots</option><option>20 à 50 lots</option><option>Plus de 50 lots</option></select></div>
+        <div style="margin-bottom:16px"><label style="display:block;font-size:.78rem;font-weight:700;color:var(--gd);margin-bottom:6px">Fréquence souhaitée</label><select name="frequence" style="width:100%;border:1.5px solid var(--bd);border-radius:8px;padding:11px 14px;font-size:.88rem;font-family:inherit;outline:none;background:var(--w)" onfocus="this.style.borderColor='#67c99a'" onblur="this.style.borderColor='#e2e8f0'"><option value="">Sélectionner</option><option>Hebdomadaire</option><option>Bi-mensuel</option><option>Mensuel</option><option>À définir</option></select></div>
+        <input type="hidden" name="_subject" value="Devis copropriété Nantes">
+        <button type="submit" id="coproBtn" style="width:100%;background:var(--gd);color:var(--w);font-weight:800;padding:14px;border-radius:8px;font-size:.93rem;border:none;cursor:pointer;font-family:inherit;transition:background .25s">📋 Envoyer ma demande de devis</button>
+        <p style="font-size:.73rem;color:var(--tl);text-align:center;margin-top:10px">Gratuit · Sans engagement · Réponse sous 24h</p>
+        <div id="coproOk" style="display:none;background:var(--gp);border:1.5px solid var(--gl);border-radius:8px;padding:14px;text-align:center;color:var(--gd);font-weight:700;margin-top:12px">✅ Demande envoyée ! Réponse sous 24h.</div>
+      </form>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var f=document.getElementById('copro-form');
+  var btn=document.getElementById('coproBtn');
+  var ok=document.getElementById('coproOk');
+  if(!f)return;
+  f.addEventListener('submit',async function(e){
+    e.preventDefault();btn.textContent='Envoi…';btn.disabled=true;
+    try{var r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});if(r.ok){f.reset();ok.style.display='block';btn.style.display='none';if(typeof gtag!=='undefined')gtag('event','form_submit',{event_category:'devis',event_label:'copropriete'});}else throw 0;}
+    catch{btn.textContent='⚠️ Erreur – Appelez le 07 44 25 76 76';btn.disabled=false;}
+  });
+})();
+</script>
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -629,5 +668,7 @@ const obs=new IntersectionObserver((entries)=>{
 },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
 </script>
+<div id="sm-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px solid #e2e8f0;padding:10px 16px;z-index:500;gap:10px;align-items:center"><a href="tel:+33744257676" style="flex:1;background:#1a3d2b;color:#fff;font-weight:800;padding:12px;border-radius:8px;text-align:center;font-size:.88rem;text-decoration:none">📞 Appeler</a><a href="#devis-form" id="sm-devis" style="flex:2;background:#67c99a;color:#1a3d2b;font-weight:800;padding:12px;border-radius:8px;text-align:center;font-size:.88rem;text-decoration:none">📋 Devis gratuit</a></div>
+<script>var sb=document.getElementById('sm-bar');function chk(){if(window.innerWidth<=768)sb.style.display='flex';else sb.style.display='none';}chk();window.addEventListener('resize',chk);</script>
 </body>
 </html>
