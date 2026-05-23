@@ -148,9 +148,10 @@
     ul { list-style: none; }
     address { font-style: normal; display: inline; }
 
-    /* SCROLL REVEAL */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.in { opacity: 1; transform: none; }
+    /* SCROLL REVEAL — content visible by default, animated with JS */
+    .reveal { transition: opacity .5s ease, transform .5s ease; }
+    .js-ready .reveal { opacity: 0; transform: translateY(20px); }
+    .js-ready .reveal.in { opacity: 1; transform: none; }
     .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; }
     .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
 
@@ -160,7 +161,7 @@
     .top-bar a:hover { color: var(--em-l); }
 
     /* ── NAV ── */
-    nav.main-nav { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,.96); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid rgba(52,211,153,.12); padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 68px; transition: box-shadow var(--t); }
+    nav.main-nav { position: sticky; top: 0; z-index: 1000; isolation: isolate; background: rgba(255,255,255,.96); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid rgba(52,211,153,.12); padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 68px; transition: box-shadow var(--t); }
     nav.main-nav.scrolled { box-shadow: 0 4px 24px rgba(13,33,24,.08); }
     .nav-logo { font-family: var(--fd); font-size: 1.2rem; font-weight: 800; color: var(--deep); letter-spacing: -.5px; display: flex; align-items: center; gap: 3px; }
     .nav-logo em { font-style: normal; color: var(--em); }
@@ -171,17 +172,17 @@
     .nav-cta:hover { background: var(--mid) !important; transform: translateY(-1px); box-shadow: var(--she) !important; }
     .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
     .burger span { display: block; width: 22px; height: 2px; background: var(--deep); border-radius: 2px; transition: all .3s; }
-    .mob-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--white); border-bottom: 3px solid var(--em); padding: 16px 20px; flex-direction: column; gap: 2px; z-index: 999; box-shadow: var(--shl); }
+    .mob-menu { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--white); border-bottom: 3px solid var(--em); padding: 16px 20px; flex-direction: column; gap: 2px; z-index: 999; box-shadow: var(--shl); }
     .mob-menu.open { display: flex; }
     .mob-menu a { font-size: .975rem; font-weight: 500; color: var(--deep); padding: 12px 16px; border-radius: 9px; border-bottom: 1px solid var(--border); transition: background var(--t); }
     .mob-menu a:last-child { border-bottom: none; }
     .mob-menu a:hover { background: var(--cream); }
 
     /* ── HERO ── */
-    .hero { position: relative; min-height: 480px; display: flex; align-items: center; overflow: hidden; background-image: url('/hero-nettoyage-bureaux-nantes.webp'); background-size: cover; background-position: center 30%; }
+    .hero { position: relative; min-height: 480px; display: flex; align-items: center; background-image: url('/hero-nettoyage-bureaux-nantes.webp'); background-size: cover; background-position: center 30%; }
     .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,33,24,.9) 0%, rgba(13,33,24,.72) 55%, rgba(13,33,24,.42) 100%); }
-    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 110px; background: linear-gradient(to bottom, transparent, var(--white)); pointer-events: none; }
-    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 120px 32px 160px; position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 320px; gap: 48px; align-items: center; width: 100%; }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(to bottom, transparent, var(--white)); pointer-events: none; }
+    .hero-inner { max-width: 1200px; margin: 0 auto; padding: clamp(56px,10vw,120px) 24px clamp(72px,12vw,160px); position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 320px; gap: 48px; align-items: center; width: 100%; }
     .promo-badge { position: absolute; top: 32px; right: 32px; width: 94px; height: 94px; background: var(--rouge); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(239,68,68,.5); animation: pbadge 2.4s ease-in-out infinite; z-index: 10; text-align: center; line-height: 1.2; border: 3px solid rgba(255,255,255,.28); }
     .promo-badge strong { font-family: var(--fd); font-size: 1.45rem; font-weight: 800; color: var(--white); display: block; }
     .promo-badge span { font-size: .57rem; font-weight: 600; color: rgba(255,255,255,.9); display: block; letter-spacing: .04em; }
@@ -208,7 +209,7 @@
     .hstat-l { font-size: .71rem; font-weight: 600; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .08em; }
 
     /* ── TRUST TICKER ── */
-    .trust-bar { background: var(--forest); padding: 17px 0; overflow: hidden; white-space: nowrap; }
+    .trust-bar { background: var(--forest); padding: 17px 0; overflow: hidden; white-space: nowrap; width:100%; max-width:100%; }
     .trust-track { display: inline-flex; animation: ticker 30s linear infinite; }
     .trust-item { display: inline-flex; align-items: center; gap: 9px; padding: 0 40px; font-size: .79rem; font-weight: 600; color: rgba(255,255,255,.62); border-right: 1px solid rgba(52,211,153,.16); }
     .trust-item:last-child { border-right: none; }
@@ -413,7 +414,7 @@
       .burger { display: flex; }
       section { padding: 60px 20px; }
       #calculateur, #nos-services, #chiffres { padding: 60px 20px; }
-      .hero-inner { padding: 100px 20px 140px; }
+      .hero-inner { padding: 56px 20px 72px; }
       .hero h1 { font-size: 2.2rem; letter-spacing: -.8px; }
       .hero-btns { flex-direction: column; }
       .hero-btns a { text-align: center; justify-content: center; }
@@ -449,7 +450,14 @@
     .etapes-grid>div:last-child{border-bottom:none}
   }
 
-</style>
+
+    /* ── INJECTED SECTIONS RESPONSIVE ── */
+    .inj-g2 { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
+    .inj-g4 { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
+    @media(max-width:1024px){
+      .inj-g2 { grid-template-columns:1fr; gap:32px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -543,7 +551,7 @@
   <div class="container">
     <header class="s-head">
       <div class="s-label">Nos prestations</div>
-      <h3 id="h2-services" class="s-title reveal">Nettoyage professionnel à Nantes<br>et Loire-Atlantique</h2>
+      <h2 id="h2-services" class="s-title reveal">Nettoyage professionnel à Nantes<br>et Loire-Atlantique</h2>
       <p class="s-lead reveal d1">Spécialistes du nettoyage professionnel, nous intervenons sur Nantes et toute la Loire-Atlantique avec rigueur, ponctualité et discrétion.</p>
     </header>
     <div class="svc-grid">
@@ -636,7 +644,7 @@
   <div class="calc-wrap">
     <div class="calc-l">
       <div class="s-label">Outil exclusif</div>
-      <h3 id="h2-calc" class="s-title">Estimez votre devis<br>en 3 clics</h2>
+      <h3 id="h2-calc" class="s-title">Estimez votre devis<br>en 3 clics</h3>
       <p class="s-lead">Obtenez une estimation immédiate. Devis définitif gratuit sous 24h, sans engagement.</p>
     </div>
     <div class="calc-box" role="form" aria-label="Calculateur de devis">
@@ -698,7 +706,7 @@
   <div class="container">
     <header class="s-head">
       <div class="s-label">Notre travail</div>
-      <h3 id="h2-real" class="s-title reveal">Nos réalisations en nettoyage professionnel</h2>
+      <h2 id="h2-real" class="s-title reveal">Nos réalisations en nettoyage professionnel</h2>
       <p class="s-lead reveal d1">Des résultats impeccables à chaque intervention. Quelques exemples concrets.</p>
     </header>
     <div class="real-grid">
@@ -735,7 +743,7 @@
   <div class="container">
     <header class="s-head cx">
       <div class="s-label">Notre promesse</div>
-      <h3 id="h2-pourquoi" class="s-title reveal">Pourquoi choisir ZEN NETTOYAGE 44</h2>
+      <h2 id="h2-pourquoi" class="s-title reveal">Pourquoi choisir ZEN NETTOYAGE 44</h2>
       <p class="s-lead reveal d1">Qualité, ponctualité et discrétion à chaque intervention en Loire-Atlantique.</p>
     </header>
     <div class="avt-grid">
@@ -754,7 +762,7 @@
 <!-- ENGAGEMENT -->
 <section style="padding:72px 0;background:#fff">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+    <div class="inj-g2">
       <div>
         <div class="s-label">Notre engagement</div>
         <h3 id="h2-engagement" class="s-title reveal">Une équipe locale engagée<br>pour votre satisfaction</h3>
@@ -795,7 +803,7 @@
   <div class="container">
     <header class="s-head cx">
       <div class="s-label" style="background:rgba(52,211,153,.14);color:var(--em)">Simple &amp; rapide</div>
-      <h2 class="s-title reveal" style="color:var(--white)">Votre devis en 3 étapes</h3>
+      <h3 class="s-title reveal" style="color:var(--white)">Votre devis en 3 étapes</h3>
       <p class="s-lead reveal d1" style="color:rgba(255,255,255,.62);margin:0 auto">Pas de formulaire interminable. Un échange direct, une réponse claire sous 24h, un tarif fixe sans surprise.</p>
     </header>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(52,211,153,.12);border-radius:var(--rx);overflow:hidden;max-width:900px;margin:0 auto 52px" class="etapes-grid">
@@ -856,12 +864,12 @@
 <section style="padding:72px 0;background:var(--off)">
   <div class="container">
     <div class="s-label">Expertise locale</div>
-    <h2 class="s-title reveal">Nettoyage professionnel à Nantes :<br>ce que nous savons du terrain</h3>
+    <h3 class="s-title reveal">Nettoyage professionnel à Nantes :<br>ce que nous savons du terrain</h3>
     <p class="s-lead reveal d1" style="margin-bottom:36px">Nantes est une métropole en pleine expansion. Son tissu immobilier, professionnel et résidentiel génère des besoins en nettoyage extrêmement variés. Voici ce que notre expérience locale nous a appris.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px">
       <div style="background:var(--white);border-radius:var(--rl);padding:28px;border:1px solid var(--border)">
         <div style="font-size:1.8rem;margin-bottom:12px">🏗</div>
-        <h3 style="font-family:var(--fd);color:var(--deep);margin-bottom:10px">Une ville qui construit</h3>
+        <h2 style="font-family:var(--fd);color:var(--deep);margin-bottom:10px">Une ville qui construit</h2>
         <p style="color:var(--slate);font-size:.9rem;line-height:1.75">Nantes figure parmi les métropoles françaises les plus dynamiques en termes de construction neuve. Les quartiers Bottière-Chénaie, Pirmil-les-Isles, Prairie-de-Mauves et les ZAC de la périphérie concentrent des centaines de chantiers résidentiels et tertiaires. Le nettoyage fin de chantier avant pré-livraison est l'une de nos prestations les plus demandées. Nous connaissons les exigences des promoteurs locaux et les délais serrés de remise des clés.</p>
       </div>
       <div style="background:var(--white);border-radius:var(--rl);padding:28px;border:1px solid var(--border)">
@@ -908,7 +916,7 @@
   <div class="container">
     <header class="s-head">
       <div class="s-label">Toutes nos prestations</div>
-      <h2 id="h2-nos-services" class="s-title reveal">Nos services de nettoyage à Nantes</h3>
+      <h2 id="h2-nos-services" class="s-title reveal">Nos services de nettoyage à Nantes</h2>
       <p class="s-lead reveal d1">Votre <a href="/entreprise-nettoyage-nantes">entreprise de nettoyage à Nantes</a> intervient pour tous vos besoins. Devis gratuit sous 24h.</p>
     </header>
 
@@ -971,7 +979,7 @@
   <div class="container">
     <header class="s-head cx">
       <div class="s-label">Contact</div>
-      <h2 id="h2-devis" class="s-title reveal">Demandez votre devis gratuit</h3>
+      <h3 id="h2-devis" class="s-title reveal">Demandez votre devis gratuit</h3>
       <p class="s-lead reveal d1">Réponse garantie sous 24h. Décrivez votre besoin et nous vous proposons une solution sur mesure.</p>
     </header>
     <div class="devis-wrap">
@@ -1101,6 +1109,9 @@
 
 <script src="script.js" defer></script>
 <script>
+/* ── JS READY CLASS ── */
+document.documentElement.classList.add('js-ready');
+
 /* ── SCROLL REVEAL ─────────────────────── */
 (function(){
   var els = document.querySelectorAll('.reveal');
@@ -1246,3 +1257,4 @@
 </script>
 </body>
 </html>
+
