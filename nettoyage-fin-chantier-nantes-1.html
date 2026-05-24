@@ -134,8 +134,24 @@
     .dp-btns{display:flex;flex-direction:column;gap:10px}
     .dp-btns a{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:var(--r8);font-weight:800;font-size:.95rem}
     .dp-urgent{margin-top:18px;background:rgba(239,68,68,.14);border:1px solid rgba(239,68,68,.4);border-radius:var(--r8);padding:12px 16px;font-size:.85rem;color:#fecaca}
+    .dp-form{background:rgba(255,255,255,.05);border:1px solid rgba(103,201,154,.3);border-radius:20px;padding:24px}
+    .dp-form .ht{font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:4px}
+    .dp-form .hs{font-size:.82rem;color:rgba(255,255,255,.6);margin-bottom:16px}
+    .dpf-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .dpf{display:flex;flex-direction:column;gap:5px}
+    .dpf.full{grid-column:1/-1}
+    .dpf label{font-size:.76rem;font-weight:600;color:rgba(255,255,255,.8)}
+    .dpf input,.dpf select,.dpf textarea{padding:11px 13px;border:1px solid rgba(103,201,154,.25);border-radius:var(--r8);background:rgba(255,255,255,.06);color:#fff;font-size:.9rem;font-family:inherit;outline:none}
+    .dpf input::placeholder,.dpf textarea::placeholder{color:rgba(255,255,255,.4)}
+    .dpf select option{color:#0f1f17}
+    .dpf input:focus,.dpf select:focus,.dpf textarea:focus{border-color:var(--green-light);background:rgba(255,255,255,.1)}
+    .dpf textarea{resize:vertical;min-height:70px}
+    .dp-submit{width:100%;background:var(--green-light);color:var(--green-deep);border:none;padding:14px;border-radius:var(--r8);font-weight:800;font-size:.95rem;cursor:pointer;margin-top:4px;font-family:inherit}
+    .dp-submit:hover{filter:brightness(1.05)}.dp-submit:disabled{opacity:.6;cursor:not-allowed}
+    .dp-note{font-size:.74rem;color:rgba(255,255,255,.5);text-align:center;margin-top:10px}
+    .dp-success{display:none;background:rgba(103,201,154,.15);border:1px solid var(--green-light);border-radius:var(--r8);padding:18px;text-align:center;color:#fff;margin-top:12px;font-size:.92rem}
     table.tarifs{width:100%;border-collapse:collapse;font-size:.9rem}
-    @media(max-width:768px){.grid-2,.grid-3,.img-grid-3,.ctype-grid,.err-grid,.dp-grid{grid-template-columns:1fr}.nav-links{display:none}.hero-page{padding:56px 20px 40px}.checklist-cols{columns:1}.dp-est{grid-template-columns:1fr 1fr 1fr}}
+    @media(max-width:768px){.grid-2,.grid-3,.img-grid-3,.ctype-grid,.err-grid,.dp-grid,.dpf-grid{grid-template-columns:1fr}.nav-links{display:none}.hero-page{padding:56px 20px 40px}.checklist-cols{columns:1}.dp-est{grid-template-columns:1fr 1fr 1fr}.devis-premium{padding:24px 18px}}
   </style>
 </head>
 <body>
@@ -152,7 +168,7 @@
       <a href="/#realisations">Réalisations</a>
       <a href="/#zones">Zones</a>
       <a href="tel:+33744257676">📞 07 44 25 76 76</a>
-      <a href="/#devis" class="nav-cta">Devis gratuit</a>
+      <a href="#devis-premium" class="nav-cta">Devis gratuit</a>
     </div>
   </div>
 </nav>
@@ -352,15 +368,36 @@
           </div>
           <div class="dp-urgent">⚡ Urgence livraison ? Précisez-le : nous réservons des créneaux prioritaires pour les remises de clés à date fixe.</div>
         </div>
-        <div class="dp-cta">
-          <div style="font-size:.8rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.08em">Réponse immédiate</div>
-          <a href="tel:+33744257676" class="tel">07 44 25 76 76</a>
-          <div class="sub">Disponible 7j/7, 7h–21h</div>
-          <div class="dp-btns">
-            <a href="https://wa.me/33744257676" class="btn-wa" target="_blank" rel="noopener">💬 Devis par WhatsApp</a>
-            <a href="/#devis" class="btn-primary">📋 Formulaire de devis</a>
-          </div>
-          <p style="font-size:.78rem;color:rgba(255,255,255,.55);margin:14px 0 0">Entreprise locale · Salariés formés · Assurance RC pro · Prix fixe garanti</p>
+        <div class="dp-form">
+          <div class="ht">Recevez votre devis fin de chantier</div>
+          <div class="hs">Gratuit, sans engagement. Réponse sous 24h.</div>
+          <form id="devisFormChantier" class="dpf-grid" novalidate>
+            <input type="hidden" name="_subject" value="Devis fin de chantier — zennettoyage.fr">
+            <input type="hidden" name="page" value="Nettoyage fin de chantier Nantes">
+            <div class="dpf"><label for="fc-nom">Nom / Société *</label><input id="fc-nom" name="nom" type="text" placeholder="Votre nom ou société" autocomplete="name" required></div>
+            <div class="dpf"><label for="fc-tel">Téléphone *</label><input id="fc-tel" name="telephone" type="tel" placeholder="06 XX XX XX XX" autocomplete="tel" required></div>
+            <div class="dpf"><label for="fc-email">Email</label><input id="fc-email" name="email" type="email" placeholder="votre@email.fr" autocomplete="email"></div>
+            <div class="dpf"><label for="fc-ville">Ville *</label><input id="fc-ville" name="ville" type="text" placeholder="Nantes, Rezé…" autocomplete="address-level2" required></div>
+            <div class="dpf full"><label for="fc-type">Type de chantier</label>
+              <select id="fc-type" name="type_chantier">
+                <option value="">Sélectionnez…</option>
+                <option>Logement neuf (pré-livraison)</option>
+                <option>Rénovation complète</option>
+                <option>Bureaux après rénovation</option>
+                <option>Après artisan / pièce d'eau</option>
+                <option>Commerce / local</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="dpf full"><label for="fc-surf">Surface approximative</label><input id="fc-surf" name="surface" type="text" placeholder="ex : 70 m², T3, maison 120 m²"></div>
+            <div class="dpf full"><label for="fc-msg">Message / date de livraison (optionnel)</label><textarea id="fc-msg" name="message" placeholder="Décrivez votre chantier, votre échéance…"></textarea></div>
+            <div class="dpf full">
+              <button type="submit" class="dp-submit">📋 Envoyer ma demande de devis</button>
+              <p class="dp-note">Devis 100% gratuit et sans engagement — Réponse sous 24h</p>
+            </div>
+          </form>
+          <div class="dp-success" id="formSuccessChantier">✅ <strong>Demande envoyée !</strong> Nous vous recontactons sous 24h.<br>Ou appelez le <a href="tel:+33744257676" style="color:var(--green-light);font-weight:700">07 44 25 76 76</a></div>
+          <p style="font-size:.78rem;color:rgba(255,255,255,.55);text-align:center;margin-top:14px">Ou appelez : <a href="tel:+33744257676" style="color:var(--green-light);font-weight:800">📞 07 44 25 76 76</a> · <a href="https://wa.me/33744257676" target="_blank" rel="noopener" style="color:#25D366;font-weight:800">💬 WhatsApp</a></p>
         </div>
       </div>
     </div>
@@ -400,6 +437,16 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- EEAT / CAS RÉEL -->
+<section>
+  <div class="container">
+    <span class="kicker">Preuve terrain</span>
+    <h2>Pourquoi confier votre remise en état à une entreprise locale</h2>
+    <p>Sur un chantier, le nettoyage final est souvent la dernière étape avant une échéance ferme : signature, état des lieux d'entrée, ouverture d'un commerce, emménagement. Une entreprise lointaine ou un prestataire improvisé qui décale son passage de 48 heures peut faire basculer tout votre planning. Notre ancrage à Nantes change la donne : nous connaissons les accès, le stationnement contraint de l'hypercentre, les horaires d'ouverture des résidences neuves, et nous pouvons réintervenir le lendemain si un corps de métier repasse après nous.</p>
+    <p>Un exemple concret de notre quotidien : sur un programme neuf de plusieurs logements livré en périphérie nantaise, le promoteur nous transmet le planning de réception, nous nettoyons chaque lot au fur et à mesure de la fin des travaux, et nous gardons un créneau tampon pour les retouches de dernière minute (un joint refait, une porte reposée). Pour un particulier après rénovation, nous arrivons après le départ des artisans, traitons la poussière de ponçage qui recouvre tout, retirons les projections de peinture sur le parquet neuf et rendons le logement habitable dans la journée. Cette régularité, c'est ce qui distingue une <strong>entreprise de nettoyage fin de chantier à Nantes</strong> rodée d'un prestataire occasionnel : des salariés formés, une assurance responsabilité civile professionnelle, un prix fixe annoncé à l'avance et un contrôle qualité systématique avant de rendre les clés.</p>
   </div>
 </section>
 
@@ -486,6 +533,28 @@
   <p style="margin-top:8px"><a href="/">Accueil</a> · <a href="/nettoyage-bureaux-nantes">Bureaux</a> · <a href="/nettoyage-vitres-nantes">Vitres</a> · <a href="/nettoyage-copropriete-nantes">Copropriété</a> · <a href="/menage-airbnb-nantes">Airbnb</a> · <a href="/nettoyage-fin-bail-nantes">Fin de bail</a> · <a href="/nettoyage-apres-sinistre-nantes">Après sinistre</a> · <a href="/entreprise-nettoyage-nantes">Notre entreprise</a></p>
 </footer>
 <a href="https://wa.me/33744257676" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<script>
+(function(){
+  var form=document.getElementById('devisFormChantier'), ok=document.getElementById('formSuccessChantier');
+  if(!form) return;
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=form.querySelector('button[type="submit"]');
+    var tel=(document.getElementById('fc-tel')||{}).value||'';
+    if(!tel.trim()){ alert('Merci de renseigner votre téléphone.'); return; }
+    btn.disabled=true; btn.textContent='Envoi en cours…';
+    var ty=(document.getElementById('fc-type')||{}).value||'Non précisé';
+    var vi=(document.getElementById('fc-ville')||{}).value||'Non précisée';
+    window.dataLayer=window.dataLayer||[];
+    window.dataLayer.push({event:'devis_envoye',prestation:'Fin de chantier',type_chantier:ty,ville:vi});
+    if(typeof window.gtag==='function') window.gtag('event','devis_envoye',{prestation:'Fin de chantier',ville:vi});
+    try{
+      var r=await fetch('https://formspree.io/f/xreojbbp',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(r.ok){ form.style.display='none'; if(ok){ ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'}); } }
+      else{ alert('Erreur. Veuillez appeler le 07 44 25 76 76.'); btn.disabled=false; btn.textContent='📋 Envoyer ma demande de devis'; }
+    }catch(err){ alert('Problème de connexion. Appelez le 07 44 25 76 76.'); btn.disabled=false; btn.textContent='📋 Envoyer ma demande de devis'; }
+  });
+})();
+</script>
 </body>
 </html>
-
