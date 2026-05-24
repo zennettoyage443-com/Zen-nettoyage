@@ -13,7 +13,7 @@
   <link rel="preload" as="image" href="/hero-nettoyage-bureaux-nantes.webp" fetchpriority="high" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
   <title>Nettoyage Copropriété Nantes – Bureaux & Chantier | ZEN 44</title>
   <meta name="description" content="Nettoyage copropriété, bureaux, fin de chantier à Nantes. ZEN NETTOYAGE 44 – Équipe qualifiée, disponible 7j/7. Devis gratuit en 24h. ☎ 07 44 25 76 76">
   <meta name="robots" content="index, follow">
@@ -109,7 +109,7 @@
     /* =====================================================
        DESIGN SYSTEM — ZEN NETTOYAGE 44
        Thème  : Luxury Forest Green × Emerald
-       Fonts  : Syne (display) + DM Sans (body)
+       Fonts  : Inter (display/gras) + DM Sans (body)
        ===================================================== */
     :root {
       --forest:  #0d2118;
@@ -126,7 +126,7 @@
       --white:   #ffffff;
       --rouge:   #ef4444;
       --wa:      #25D366;
-      --fd: 'Syne', sans-serif;
+      --fd: 'Inter', system-ui, sans-serif;
       --fb: 'DM Sans', system-ui, sans-serif;
       --r:  14px;
       --rl: 22px;
@@ -139,6 +139,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
     body { font-family: var(--fb); color: var(--forest); background: var(--white); line-height: 1.65; overflow-x: hidden; }
+    strong, b { font-family: var(--fd); font-weight: 700; }
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
@@ -326,7 +327,7 @@
     .faq-q::after { content: '+'; font-size: 1.4rem; color: var(--em); flex-shrink: 0; line-height: 1; transition: transform var(--t); }
     .faq-item.open .faq-q::after { transform: rotate(45deg); }
     .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; font-size: .9rem; color: var(--slate); line-height: 1.75; }
-    .faq-item.open .faq-a { max-height: 300px; padding: 0 24px 20px; }
+    .faq-item.open .faq-a { max-height: 400px; padding: 0 24px 20px; }
 
     /* ── MAILLAGE ── */
     #nos-services { background: var(--deep); padding: 72px 32px; }
@@ -678,7 +679,7 @@
         <div class="real-body"><div class="real-title">Pré-livraison – Nantes</div><p>Nettoyage complet fin de chantier avant livraison du logement.</p><a href="/nettoyage-fin-chantier-nantes" class="real-lnk">Devis fin de chantier</a></div>
       </article>
       <article class="real-card reveal d1">
-        <div class="real-img-w"><img src="/nettoyage-appartement-neuf-nantes-livraison.webp" alt="Nettoyage pré-livraison appartement neuf Loire-Atlantique" loading="lazy" width="400" height="210"><span class="real-tag">Après Travaux</span></div>
+        <div class="real-img-w"><img src="/nettoyage-appartement-neuf-nantes-livraison.webp" alt="Nettoyage pré-livraison appartement neuf après travaux Loire-Atlantique" loading="lazy" width="400" height="210"><span class="real-tag">Après Travaux</span></div>
         <div class="real-body"><div class="real-title">Appartement neuf – Loire-Atlantique</div><p>Remise en état complète d'un appartement neuf prêt pour la livraison.</p><a href="/prix-nettoyage-fin-chantier-nantes" class="real-lnk">Voir les tarifs</a></div>
       </article>
       <article class="real-card reveal d2">
@@ -785,7 +786,7 @@
   <div class="container">
     <header class="s-head">
       <div class="s-label">Bon à savoir</div>
-      <h3 class="s-title reveal">Pourquoi choisir un contrat d'entretien régulier ?</h3>
+      <h2 class="s-title reveal">Pourquoi choisir un contrat d'entretien régulier ?</h2>
     </header>
     <div style="max-width:860px;margin:0 auto">
       <p style="color:var(--slate,#475569);font-size:.97rem;line-height:1.8;margin-bottom:16px">Un contrat d'entretien régulier présente des avantages significatifs par rapport aux interventions ponctuelles. D'abord, le tarif : un contrat mensuel ou hebdomadaire est systématiquement moins cher au passage qu'une demande ponctuelle. Les économies d'échelle et la planification optimisée de nos tournées nous permettent de proposer des tarifs préférentiels pour les engagements réguliers, souvent inférieurs de 15 à 25 % au tarif ponctuel.</p>
@@ -818,7 +819,7 @@
   <div class="container">
     <header class="s-head">
       <div class="s-label">Toutes nos prestations</div>
-      <h3 id="h2-nos-services" class="s-title reveal">Nos services de nettoyage à Nantes</h3>
+      <h2 id="h2-nos-services" class="s-title reveal">Nos services de nettoyage à Nantes</h2>
       <p class="s-lead reveal d1">Votre <a href="/entreprise-nettoyage-nantes">entreprise de nettoyage à Nantes</a> intervient pour tous vos besoins. Contactez votre <a href="/entreprise-nettoyage-nantes">société de nettoyage à Nantes</a> pour un devis gratuit sous 24h.</p>
     </header>
     <div class="slnk-grid">
@@ -843,7 +844,7 @@
   <div class="container">
     <header class="s-head cx">
       <div class="s-label">Contact</div>
-      <h3 id="h2-devis" class="s-title reveal">Demandez votre devis gratuit</h3>
+      <h2 id="h2-devis" class="s-title reveal">Demandez votre devis gratuit</h2>
       <p class="s-lead reveal d1">Réponse garantie sous 24h. Décrivez votre besoin et nous vous proposons une solution sur mesure.</p>
     </header>
     <div class="devis-wrap">
