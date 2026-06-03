@@ -82,6 +82,33 @@
     .tl-dot{width:40px;height:40px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px;flex-shrink:0;z-index:1}
     .tl-year{font-size:12px;font-weight:700;color:var(--teal-d);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
     .tl-item h3{font-size:15px;color:var(--navy);margin-bottom:4px}.tl-item p{font-size:14px;color:var(--muted);margin:0}
+
+    /* CALCULATOR */
+    .calc-s{background:linear-gradient(135deg,var(--navy),#0d3a5c);padding:80px 24px}
+    .calc-wrap{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    .calc-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:28px}
+    .c-step{display:none}.c-step.active{display:block}
+    .c-tag{font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+    .c-q{font-size:17px;font-weight:700;color:#fff;margin-bottom:16px}
+    .c-opts{display:flex;flex-direction:column;gap:8px}
+    .c-opt{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 16px;cursor:pointer;color:rgba(255,255,255,.8);font-size:14px;font-weight:500;transition:all .2s;user-select:none}
+    .c-opt:hover,.c-opt.sel{border-color:var(--teal);background:rgba(0,168,130,.12);color:#fff}
+    .c-opt-ic{font-size:18px;flex-shrink:0}
+    .c-prog{display:flex;gap:6px;margin-bottom:20px}
+    .c-dot{height:4px;flex:1;background:rgba(255,255,255,.12);border-radius:2px;transition:background .3s}
+    .c-dot.done{background:var(--teal)}
+    .c-nav{display:flex;gap:10px;margin-top:16px}
+    .c-btn{flex:1;padding:12px;border-radius:9px;font-weight:600;font-size:14px;cursor:pointer;border:none;font-family:inherit;transition:all .2s}
+    .c-next{background:var(--teal);color:#fff}.c-next:disabled{opacity:.35;cursor:not-allowed}
+    .c-back{background:rgba(255,255,255,.08);color:rgba(255,255,255,.7)}
+    .c-result{background:linear-gradient(135deg,var(--teal-d),#005f4a);border-radius:14px;padding:22px;text-align:center;margin-top:16px;display:none}
+    .c-result.show{display:block}
+    .cr-lbl{font-size:11px;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+    .cr-price{font-size:2rem;font-weight:800;color:#fff;margin-bottom:4px}
+    .cr-note{font-size:12px;color:rgba(255,255,255,.65);margin-bottom:16px}
+    .cr-cta{display:inline-block;background:#fff;color:var(--teal);padding:12px 28px;border-radius:9px;font-weight:700;font-size:14px}
+    .cr-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+    @media(max-width:768px){.calc-wrap{grid-template-columns:1fr;gap:28px}.calc-s{padding:48px 16px}}
 </style>
 </head>
 <body>
@@ -165,6 +192,65 @@
     <strong>Assurance RC Pro :</strong> Oui, couverte pour tous nos intervenants</p>
   </div>
 </div></section>
+
+<section class="calc-s" id="calculateur">
+  <div class="calc-wrap">
+    <div>
+      <span class="badge" style="background:rgba(255,255,255,.12);color:#fff;margin-bottom:14px;display:inline-block">Outil exclusif</span>
+      <h2 style="color:#fff;font-size:clamp(22px,4vw,32px);margin-bottom:12px">Estimez votre devis<br>en 3 clics</h2>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.7">Obtenez une estimation immédiate. Devis définitif gratuit sous 24h, sans engagement.</p>
+      <div style="margin-top:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> Estimation instantanée</div>
+        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> Devis ferme sous 24h</div>
+        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> 100% gratuit, sans engagement</div>
+      </div>
+    </div>
+    <div class="calc-box">
+      <div class="c-prog"><div class="c-dot done" id="ent-d1"></div><div class="c-dot" id="ent-d2"></div><div class="c-dot" id="ent-d3"></div></div>
+      <div class="c-step active" id="ent-s1">
+        <div class="c-tag">Étape 1 sur 3</div>
+        <div class="c-q">Quel type de prestation ?</div>
+        <div class="c-opts">
+          <div class="c-opt" data-v="bureaux"><span class="c-opt-ic">🏢</span> Bureaux / Locaux</div>
+          <div class="c-opt" data-v="chantier"><span class="c-opt-ic">🏗</span> Fin de chantier</div>
+          <div class="c-opt" data-v="vitres"><span class="c-opt-ic">🪟</span> Nettoyage vitres</div>
+          <div class="c-opt" data-v="airbnb"><span class="c-opt-ic">🏠</span> Ménage Airbnb</div>
+          <div class="c-opt" data-v="copro"><span class="c-opt-ic">🏘</span> Copropriété</div>
+          <div class="c-opt" data-v="autre"><span class="c-opt-ic">✨</span> Grand ménage / Sinistre</div>
+        </div>
+        <div class="c-nav"><button class="c-btn c-next" id="ent-n1" disabled>Suivant →</button></div>
+      </div>
+      <div class="c-step" id="ent-s2">
+        <div class="c-tag">Étape 2 sur 3</div>
+        <div class="c-q">Quelle superficie ?</div>
+        <div class="c-opts">
+          <div class="c-opt" data-v="xs"><span class="c-opt-ic">📐</span> Moins de 50 m²</div>
+          <div class="c-opt" data-v="sm"><span class="c-opt-ic">📐</span> 50 – 150 m²</div>
+          <div class="c-opt" data-v="md"><span class="c-opt-ic">📐</span> 150 – 500 m²</div>
+          <div class="c-opt" data-v="lg"><span class="c-opt-ic">📐</span> Plus de 500 m²</div>
+        </div>
+        <div class="c-nav"><button class="c-btn c-back" id="ent-b2">← Retour</button><button class="c-btn c-next" id="ent-n2" disabled>Suivant →</button></div>
+      </div>
+      <div class="c-step" id="ent-s3">
+        <div class="c-tag">Étape 3 sur 3</div>
+        <div class="c-q">Quelle fréquence ?</div>
+        <div class="c-opts">
+          <div class="c-opt" data-v="once"><span class="c-opt-ic">📅</span> Une seule fois</div>
+          <div class="c-opt" data-v="weekly"><span class="c-opt-ic">📅</span> Hebdomadaire</div>
+          <div class="c-opt" data-v="bi"><span class="c-opt-ic">📅</span> Bi-mensuelle</div>
+          <div class="c-opt" data-v="monthly"><span class="c-opt-ic">📅</span> Mensuelle</div>
+        </div>
+        <div class="c-result" id="ent-res">
+          <div class="cr-lbl">Estimation indicative</div>
+          <div class="cr-price" id="ent-price">—</div>
+          <div class="cr-note">Devis précis gratuit sous 24h</div>
+          <a href="#devis-ent" class="cr-cta">📋 Obtenir mon devis gratuit</a>
+        </div>
+        <div class="c-nav"><button class="c-btn c-back" id="ent-b3">← Retour</button><button class="c-btn c-next" id="ent-n3" disabled>Calculer →</button></div>
+      </div>
+    </div>
+  </div>
+</section>
 <div class="social-share"><div class="ss-i">
     <div class="ss-label">Partager cette page</div>
     <div class="ss-btns">
@@ -253,4 +339,17 @@
 (function(){var btn=document.getElementById('burgerBtn'),menu=document.getElementById('mobMenu');if(!btn||!menu)return;btn.addEventListener('click',function(){var o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',String(o));});menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');});});}());
 (function(){var form=document.getElementById('devis-entForm'),ok=document.getElementById('devis-entSuccess');if(!form)return;form.addEventListener('submit',async function(e){e.preventDefault();var btn=form.querySelector('button[type="submit"]');var tel=form.querySelector('[name="telephone"]').value;if(!tel.trim()){alert('Merci de renseigner votre téléphone.');return;}btn.disabled=true;btn.textContent='Envoi…';var pr=(form.querySelector('[name="prestation"]')||{}).value||'';window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'devis_envoye',prestation:pr,ville:'Nantes'});if(typeof window.gtag==='function')window.gtag('event','devis_envoye',{prestation:pr,ville:'Nantes'});try{var r=await fetch('https://formspree.io/f/xreojbbp',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});if(r.ok){form.style.display='none';ok.style.display='block';ok.scrollIntoView({behavior:'smooth',block:'center'});}else{alert('Erreur. Appelez le 07 44 25 76 76.');btn.disabled=false;btn.textContent='📋 Envoyer ma demande';}}catch(err){alert('Problème. Appelez le 07 44 25 76 76.');btn.disabled=false;btn.textContent='📋 Envoyer ma demande';}})};
 </script>
+<script>
+/* CALCULATOR ent */
+(function(){var pid='ent',s={t:null,z:null,f:null};
+var prices={bureaux:{xs:'80–150 €',sm:'150–350 €',md:'350–800 €',lg:'Sur devis'},chantier:{xs:'200–400 €',sm:'400–900 €',md:'900–2500 €',lg:'Sur devis'},vitres:{xs:'60–120 €',sm:'120–300 €',md:'300–700 €',lg:'Sur devis'},airbnb:{xs:'45–70 €',sm:'70–120 €',md:'120–200 €',lg:'Sur devis'},copro:{xs:'Sur devis',sm:'Sur devis',md:'Sur devis',lg:'Sur devis'},autre:{xs:'Sur devis',sm:'Sur devis',md:'Sur devis',lg:'Sur devis'}};
+function show(n){[1,2,3].forEach(function(i){document.getElementById(pid+'-s'+i).classList.toggle('active',i===n);var d=document.getElementById(pid+'-d'+i);if(d)d.classList.toggle('done',i<=n);});}
+function bind(si,key,nid){var opts=document.querySelectorAll('#'+pid+'-s'+si+' .c-opt'),nb=document.getElementById(pid+'-'+nid);opts.forEach(function(o){o.addEventListener('click',function(){opts.forEach(function(x){x.classList.remove('sel');});o.classList.add('sel');s[key]=o.dataset.v;if(nb)nb.disabled=false;});}); }
+bind(1,'t','n1');bind(2,'z','n2');bind(3,'f','n3');
+document.getElementById(pid+'-n1').addEventListener('click',function(){if(s.t)show(2);});
+document.getElementById(pid+'-b2').addEventListener('click',function(){show(1);});
+document.getElementById(pid+'-n2').addEventListener('click',function(){if(s.z)show(3);});
+document.getElementById(pid+'-b3').addEventListener('click',function(){show(2);});
+document.getElementById(pid+'-n3').addEventListener('click',function(){if(!s.f)return;var pm=prices[s.t]||prices.autre,price=pm[s.z]||'Sur devis';if(s.f!=='once'&&price!=='Sur devis')price=price+' / passage';document.getElementById(pid+'-price').textContent=price;document.getElementById(pid+'-res').classList.add('show');document.getElementById(pid+'-n3').style.display='none';});
+})();</script>
 </body></html>
