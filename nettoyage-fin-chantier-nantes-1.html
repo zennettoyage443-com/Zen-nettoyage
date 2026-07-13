@@ -171,7 +171,70 @@
       <figure class="zng-c" aria-hidden="true"><img src="https://www.zennettoyage.fr/nettoyage-appui-fenetre-bureaux-nantes.webp" alt="Remise en état des appuis de fenêtre après travaux à Nantes" loading="lazy" width="800" height="600"></figure>
       <figure class="zng-c" aria-hidden="true"><img src="https://www.zennettoyage.fr/nettoyage-bureaux-plinthes-nantes.webp" alt="Nettoyage des plinthes après chantier de bureaux à Nantes" loading="lazy" width="800" height="600"></figure>
   </div></div>
-</section><section class="s"><div class="s-i">
+</section>
+
+<section class="calc-s" id="calculateur">
+  <div class="calc-wrap">
+    <div>
+      <span class="badge" style="background:rgba(255,255,255,.12);color:#fff;margin-bottom:14px;display:inline-block">Outil exclusif</span>
+      <div style="color:#fff;font-size:clamp(22px,4vw,32px);margin-bottom:12px">Estimez votre devis <br>en 3 clics</div>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.7">Obtenez une estimation immédiate. Devis définitif gratuit sous 24h, sans engagement.</p>
+      <div style="margin-top:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> Estimation instantanée</div>
+        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> Devis ferme sous 24h</div>
+        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> 100% gratuit, sans engagement</div>
+      </div>
+    </div>
+    <div class="calc-box">
+      <div class="c-prog"><div class="c-dot done" id="fc-d1"></div><div class="c-dot" id="fc-d2"></div><div class="c-dot" id="fc-d3"></div></div>
+      <div class="c-step active" id="fc-s1">
+        <div class="c-tag">Étape 1 sur 3</div>
+        <div class="c-q">Quel type de prestation ?</div>
+        <div class="c-opts">
+          <div class="c-opt" data-v="bureaux"><span class="c-opt-ic">🏢</span> Bureaux / Locaux</div>
+          <div class="c-opt" data-v="chantier"><span class="c-opt-ic">🏗</span> Fin de chantier</div>
+          <div class="c-opt" data-v="vitres"><span class="c-opt-ic">🪟</span> Nettoyage vitres</div>
+          <div class="c-opt" data-v="airbnb"><span class="c-opt-ic">🏠</span> Ménage Airbnb</div>
+          <div class="c-opt" data-v="copro"><span class="c-opt-ic">🏘</span> Copropriété</div>
+          <div class="c-opt" data-v="autre"><span class="c-opt-ic">✨</span> Grand ménage / Sinistre</div>
+        </div>
+        <div class="c-nav"><button class="c-btn c-next" id="fc-n1" disabled>Suivant →</button></div>
+      </div>
+      <div class="c-step" id="fc-s2">
+        <div class="c-tag">Étape 2 sur 3</div>
+        <div class="c-q">Quelle superficie ?</div>
+        <div class="c-opts">
+          <div class="c-opt" data-v="xs"><span class="c-opt-ic">📐</span> Moins de 50 m²</div>
+          <div class="c-opt" data-v="sm"><span class="c-opt-ic">📐</span> 50 – 150 m²</div>
+          <div class="c-opt" data-v="md"><span class="c-opt-ic">📐</span> 150 – 500 m²</div>
+          <div class="c-opt" data-v="lg"><span class="c-opt-ic">📐</span> Plus de 500 m²</div>
+        </div>
+        <div class="c-nav"><button class="c-btn c-back" id="fc-b2">← Retour</button><button class="c-btn c-next" id="fc-n2" disabled>Suivant →</button></div>
+      </div>
+      <div class="c-step" id="fc-s3">
+        <div class="c-tag">Étape 3 sur 3</div>
+        <div class="c-q">Quelle fréquence ?</div>
+        <div class="c-opts">
+          <div class="c-opt" data-v="once"><span class="c-opt-ic">📅</span> Une seule fois</div>
+          <div class="c-opt" data-v="weekly"><span class="c-opt-ic">📅</span> Hebdomadaire</div>
+          <div class="c-opt" data-v="bi"><span class="c-opt-ic">📅</span> Bi-mensuelle</div>
+          <div class="c-opt" data-v="monthly"><span class="c-opt-ic">📅</span> Mensuelle</div>
+        </div>
+        <div class="c-result" id="fc-res">
+          <div class="cr-lbl">Estimation indicative</div>
+          <div class="cr-price" id="fc-price">—</div>
+          <div class="cr-note">Devis précis gratuit sous 24h</div>
+          <a href="#devis-fc" class="cr-cta">📋 Obtenir mon devis gratuit</a>
+        </div>
+        <div class="c-nav"><button class="c-btn c-back" id="fc-b3">← Retour</button><button class="c-btn c-next" id="fc-n3" disabled>Calculer →</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc-block" id="toutes-prestations" aria-label="Toutes nos prestations de nettoyage"><div class="svc-inner"><div class="svc-head"><h2>Nos services de nettoyage à Nantes</h2><p>Votre entreprise de nettoyage à Nantes pour tous vos besoins. Société de nettoyage Nantes — devis gratuit 24h.</p></div><div class="svc-grid"><a class="svc-card" href="/nettoyage-bureaux-nantes"><span class="svc-ic" aria-hidden="true">🏢</span><span class="svc-tx">Nettoyage bureaux Nantes</span></a><a class="svc-card" href="/nettoyage-copropriete-nantes"><span class="svc-ic" aria-hidden="true">🏘️</span><span class="svc-tx">Nettoyage copropriété Nantes</span></a><a class="svc-card" href="/nettoyage-fin-chantier-nantes"><span class="svc-ic" aria-hidden="true">🏗️</span><span class="svc-tx">Fin de chantier Nantes</span></a><a class="svc-card" href="/nettoyage-vitres-nantes"><span class="svc-ic" aria-hidden="true">🪟</span><span class="svc-tx">Nettoyage vitres Nantes</span></a><a class="svc-card" href="/menage-airbnb-nantes"><span class="svc-ic" aria-hidden="true">🏠</span><span class="svc-tx">Ménage Airbnb Nantes</span></a><a class="svc-card" href="/grand-menage-demenagement-nantes"><span class="svc-ic" aria-hidden="true">✨</span><span class="svc-tx">Grand ménage Nantes</span></a><a class="svc-card" href="/nettoyage-fin-bail-nantes"><span class="svc-ic" aria-hidden="true">🔑</span><span class="svc-tx">Fin de bail Nantes</span></a><a class="svc-card" href="/nettoyage-apres-sinistre-nantes"><span class="svc-ic" aria-hidden="true">🛡️</span><span class="svc-tx">Après sinistre Nantes</span></a><a class="svc-card" href="/prix-nettoyage-nantes"><span class="svc-ic" aria-hidden="true">💶</span><span class="svc-tx">Prix nettoyage Nantes</span></a><a class="svc-card" href="/prix-nettoyage-fin-chantier-nantes"><span class="svc-ic" aria-hidden="true">💶</span><span class="svc-tx">Prix fin de chantier</span></a><a class="svc-card" href="/nettoyage-locaux-professionnels-nantes"><span class="svc-ic" aria-hidden="true">🏭</span><span class="svc-tx">Nettoyage locaux professionnels</span></a><a class="svc-card" href="/entreprise-nettoyage-nantes"><span class="svc-ic" aria-hidden="true">ℹ️</span><span class="svc-tx">Notre entreprise</span></a><a class="svc-card" href="/nettoyage-cabinet-medical-nantes"><span class="svc-ic" aria-hidden="true">⚕️</span><span class="svc-tx">Nettoyage cabinet médical</span></a><a class="svc-card" href="/nettoyage-restaurant-cuisine-professionnelle-nantes"><span class="svc-ic" aria-hidden="true">🍽️</span><span class="svc-tx">Restaurant &amp; cuisine pro</span></a><a class="svc-card" href="/nettoyage-creche-ecole-nantes"><span class="svc-ic" aria-hidden="true">🏫</span><span class="svc-tx">Crèche &amp; école</span></a></div><div class="svc-cities"><div class="svc-cities-lbl">Nos villes d'intervention</div><div class="svc-cities-grid"><a class="svc-city" href="/nettoyage-saint-herblain">Nettoyage Saint-Herblain</a><a class="svc-city" href="/nettoyage-carquefou">Nettoyage Carquefou</a><a class="svc-city" href="/nettoyage-sainte-luce-sur-loire">Nettoyage Sainte-Luce</a><a class="svc-city" href="/nettoyage-reze">Nettoyage Rezé</a><a class="svc-city" href="/nettoyage-la-chapelle-sur-erdre">Nettoyage La Chapelle-sur-Erdre</a><a class="svc-city" href="/nettoyage-vertou">Nettoyage Vertou</a><a class="svc-city" href="/nettoyage-saint-nazaire">Nettoyage Saint-Nazaire</a><a class="svc-city" href="/nettoyage-ancenis">Nettoyage Ancenis</a></div></div></div></section>
+
+<section class="s"><div class="s-i">
 <p>Nantes est l'une des métropoles les plus dynamiques de France en construction neuve. Les programmes immobiliers se multiplient à Bottière-Chénaie, Pirmil-les-Isles, la Prairie-de-Mauves, les ZAC du nord nantais et le secteur Euronantes. À cette construction neuve s'ajoutent d'importants programmes de réhabilitation dans l'hypercentre et les faubourgs anciens, ainsi que des rénovations d'appartements et de maisons individuelles dans toute l'agglomération. Chaque <strong>livraison de chantier</strong> impose une étape incontournable : la remise en état finale du bien.</p>
 <div class="hsec">Logements neufs, appartements et maisons neuves</div>
 <p>Pour un <strong>appartement neuf</strong> ou une <strong>maison neuve</strong> livrés par un promoteur — y compris les programmes entiers d’<strong>appartements neufs</strong> — ou un constructeur, le nettoyage de pré-livraison répond à des exigences précises. Nous retirons les films de protection des vitres et des menuiseries sans laisser de résidu adhésif, éliminons la laitance de ciment sur les carrelages neufs, dépoussiérons l'intégralité des volumes du haut vers le bas, et traitons les sanitaires et la cuisine flambant neufs. L'objectif : un bien conforme aux standards de réception, prêt pour l'état des lieux d'entrée ou l'emménagement, sans la moindre trace des travaux.</p>
@@ -184,7 +247,7 @@
 <figure style="margin:22px 0 0"><img src="/nettoyage-appartement-neuf-nantes-livraison.webp" alt="Nettoyage d’un appartement neuf avant livraison à Nantes par ZEN NETTOYAGE 44" title="Nettoyage appartement neuf avant livraison Nantes" loading="lazy" width="800" height="520" style="width:100%;height:auto;border-radius:16px;box-shadow:var(--sh-lg)"><figcaption style="font-size:13px;color:var(--muted,#64748b);margin-top:8px;text-align:center;font-style:italic">Appartement neuf nettoyé et prêt pour la remise des clés à Nantes.</figcaption></figure>
 </div></section>
 
-<section class="svc-block" id="toutes-prestations" aria-label="Toutes nos prestations de nettoyage"><div class="svc-inner"><div class="svc-head"><h2>Nos services de nettoyage à Nantes</h2><p>Votre entreprise de nettoyage à Nantes pour tous vos besoins. Société de nettoyage Nantes — devis gratuit 24h.</p></div><div class="svc-grid"><a class="svc-card" href="/nettoyage-bureaux-nantes"><span class="svc-ic" aria-hidden="true">🏢</span><span class="svc-tx">Nettoyage bureaux Nantes</span></a><a class="svc-card" href="/nettoyage-copropriete-nantes"><span class="svc-ic" aria-hidden="true">🏘️</span><span class="svc-tx">Nettoyage copropriété Nantes</span></a><a class="svc-card" href="/nettoyage-fin-chantier-nantes"><span class="svc-ic" aria-hidden="true">🏗️</span><span class="svc-tx">Fin de chantier Nantes</span></a><a class="svc-card" href="/nettoyage-vitres-nantes"><span class="svc-ic" aria-hidden="true">🪟</span><span class="svc-tx">Nettoyage vitres Nantes</span></a><a class="svc-card" href="/menage-airbnb-nantes"><span class="svc-ic" aria-hidden="true">🏠</span><span class="svc-tx">Ménage Airbnb Nantes</span></a><a class="svc-card" href="/grand-menage-demenagement-nantes"><span class="svc-ic" aria-hidden="true">✨</span><span class="svc-tx">Grand ménage Nantes</span></a><a class="svc-card" href="/nettoyage-fin-bail-nantes"><span class="svc-ic" aria-hidden="true">🔑</span><span class="svc-tx">Fin de bail Nantes</span></a><a class="svc-card" href="/nettoyage-apres-sinistre-nantes"><span class="svc-ic" aria-hidden="true">🛡️</span><span class="svc-tx">Après sinistre Nantes</span></a><a class="svc-card" href="/prix-nettoyage-nantes"><span class="svc-ic" aria-hidden="true">💶</span><span class="svc-tx">Prix nettoyage Nantes</span></a><a class="svc-card" href="/prix-nettoyage-fin-chantier-nantes"><span class="svc-ic" aria-hidden="true">💶</span><span class="svc-tx">Prix fin de chantier</span></a><a class="svc-card" href="/nettoyage-locaux-professionnels-nantes"><span class="svc-ic" aria-hidden="true">🏭</span><span class="svc-tx">Nettoyage locaux professionnels</span></a><a class="svc-card" href="/entreprise-nettoyage-nantes"><span class="svc-ic" aria-hidden="true">ℹ️</span><span class="svc-tx">Notre entreprise</span></a><a class="svc-card" href="/nettoyage-cabinet-medical-nantes"><span class="svc-ic" aria-hidden="true">⚕️</span><span class="svc-tx">Nettoyage cabinet médical</span></a><a class="svc-card" href="/nettoyage-restaurant-cuisine-professionnelle-nantes"><span class="svc-ic" aria-hidden="true">🍽️</span><span class="svc-tx">Restaurant &amp; cuisine pro</span></a><a class="svc-card" href="/nettoyage-creche-ecole-nantes"><span class="svc-ic" aria-hidden="true">🏫</span><span class="svc-tx">Crèche &amp; école</span></a></div><div class="svc-cities"><div class="svc-cities-lbl">Nos villes d'intervention</div><div class="svc-cities-grid"><a class="svc-city" href="/nettoyage-saint-herblain">Nettoyage Saint-Herblain</a><a class="svc-city" href="/nettoyage-carquefou">Nettoyage Carquefou</a><a class="svc-city" href="/nettoyage-sainte-luce-sur-loire">Nettoyage Sainte-Luce</a><a class="svc-city" href="/nettoyage-reze">Nettoyage Rezé</a><a class="svc-city" href="/nettoyage-la-chapelle-sur-erdre">Nettoyage La Chapelle-sur-Erdre</a><a class="svc-city" href="/nettoyage-vertou">Nettoyage Vertou</a><a class="svc-city" href="/nettoyage-saint-nazaire">Nettoyage Saint-Nazaire</a><a class="svc-city" href="/nettoyage-ancenis">Nettoyage Ancenis</a></div></div></div></section>
+
 
 
 
@@ -252,64 +315,7 @@
 <p>Nous couvrons l'ensemble des secteurs nantais où se concentrent construction et rénovation : <strong>Nantes Centre</strong>, <strong>Île de Nantes</strong>, <strong>Doulon</strong>, <strong>Chantenay</strong>, <strong>Saint-Félix</strong>, <strong>Hauts-Pavés</strong>, <strong>Nantes Nord</strong> et <strong>Nantes Sud</strong>, ainsi que les nouveaux programmes de Bottière-Chénaie et Pirmil-les-Isles. Notre connaissance du terrain — stationnement contraint de l'hypercentre, accès des résidences neuves, horaires d'ouverture des chantiers — nous fait gagner un temps précieux sur chaque rotation. Nous desservons aussi les communes limitrophes : <a href="https://www.zennettoyage.fr/nettoyage-saint-herblain">Saint-Herblain</a>, <a href="https://www.zennettoyage.fr/nettoyage-carquefou">Carquefou</a> et <a href="https://www.zennettoyage.fr/nettoyage-sainte-luce-sur-loire">Sainte-Luce-sur-Loire</a>, ainsi que Rezé, Orvault, Vertou et Saint-Sébastien-sur-Loire. Pour le détail des prix, consultez notre <a href="https://www.zennettoyage.fr/prix-nettoyage-fin-chantier-nantes">guide tarifs fin de chantier</a>.</p>
 </div></section>
 
-<section class="calc-s" id="calculateur">
-  <div class="calc-wrap">
-    <div>
-      <span class="badge" style="background:rgba(255,255,255,.12);color:#fff;margin-bottom:14px;display:inline-block">Outil exclusif</span>
-      <div style="color:#fff;font-size:clamp(22px,4vw,32px);margin-bottom:12px">Estimez votre devis <br>en 3 clics</div>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.7">Obtenez une estimation immédiate. Devis définitif gratuit sous 24h, sans engagement.</p>
-      <div style="margin-top:24px;display:flex;flex-direction:column;gap:12px">
-        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> Estimation instantanée</div>
-        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> Devis ferme sous 24h</div>
-        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> 100% gratuit, sans engagement</div>
-      </div>
-    </div>
-    <div class="calc-box">
-      <div class="c-prog"><div class="c-dot done" id="fc-d1"></div><div class="c-dot" id="fc-d2"></div><div class="c-dot" id="fc-d3"></div></div>
-      <div class="c-step active" id="fc-s1">
-        <div class="c-tag">Étape 1 sur 3</div>
-        <div class="c-q">Quel type de prestation ?</div>
-        <div class="c-opts">
-          <div class="c-opt" data-v="bureaux"><span class="c-opt-ic">🏢</span> Bureaux / Locaux</div>
-          <div class="c-opt" data-v="chantier"><span class="c-opt-ic">🏗</span> Fin de chantier</div>
-          <div class="c-opt" data-v="vitres"><span class="c-opt-ic">🪟</span> Nettoyage vitres</div>
-          <div class="c-opt" data-v="airbnb"><span class="c-opt-ic">🏠</span> Ménage Airbnb</div>
-          <div class="c-opt" data-v="copro"><span class="c-opt-ic">🏘</span> Copropriété</div>
-          <div class="c-opt" data-v="autre"><span class="c-opt-ic">✨</span> Grand ménage / Sinistre</div>
-        </div>
-        <div class="c-nav"><button class="c-btn c-next" id="fc-n1" disabled>Suivant →</button></div>
-      </div>
-      <div class="c-step" id="fc-s2">
-        <div class="c-tag">Étape 2 sur 3</div>
-        <div class="c-q">Quelle superficie ?</div>
-        <div class="c-opts">
-          <div class="c-opt" data-v="xs"><span class="c-opt-ic">📐</span> Moins de 50 m²</div>
-          <div class="c-opt" data-v="sm"><span class="c-opt-ic">📐</span> 50 – 150 m²</div>
-          <div class="c-opt" data-v="md"><span class="c-opt-ic">📐</span> 150 – 500 m²</div>
-          <div class="c-opt" data-v="lg"><span class="c-opt-ic">📐</span> Plus de 500 m²</div>
-        </div>
-        <div class="c-nav"><button class="c-btn c-back" id="fc-b2">← Retour</button><button class="c-btn c-next" id="fc-n2" disabled>Suivant →</button></div>
-      </div>
-      <div class="c-step" id="fc-s3">
-        <div class="c-tag">Étape 3 sur 3</div>
-        <div class="c-q">Quelle fréquence ?</div>
-        <div class="c-opts">
-          <div class="c-opt" data-v="once"><span class="c-opt-ic">📅</span> Une seule fois</div>
-          <div class="c-opt" data-v="weekly"><span class="c-opt-ic">📅</span> Hebdomadaire</div>
-          <div class="c-opt" data-v="bi"><span class="c-opt-ic">📅</span> Bi-mensuelle</div>
-          <div class="c-opt" data-v="monthly"><span class="c-opt-ic">📅</span> Mensuelle</div>
-        </div>
-        <div class="c-result" id="fc-res">
-          <div class="cr-lbl">Estimation indicative</div>
-          <div class="cr-price" id="fc-price">—</div>
-          <div class="cr-note">Devis précis gratuit sous 24h</div>
-          <a href="#devis-fc" class="cr-cta">📋 Obtenir mon devis gratuit</a>
-        </div>
-        <div class="c-nav"><button class="c-btn c-back" id="fc-b3">← Retour</button><button class="c-btn c-next" id="fc-n3" disabled>Calculer →</button></div>
-      </div>
-    </div>
-  </div>
-</section>
+
 <div class="social-share"><div class="ss-i">
     <div class="ss-label">Partager cette page</div>
     <div class="ss-btns">
