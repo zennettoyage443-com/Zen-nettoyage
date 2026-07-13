@@ -178,8 +178,71 @@
   </div></div>
 </section>
 
+<section class="calc-s" id="calculateur">
+  <div class="calc-wrap">
+    <div>
+      <span class="badge" style="background:rgba(255,255,255,.12);color:#fff;margin-bottom:14px;display:inline-block">Outil exclusif</span>
+      <h2 style="color:#fff;font-size:clamp(22px,4vw,32px);margin-bottom:12px">Estimez votre devis <br>en 3 clics</h2>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.7">Obtenez une estimation immédiate. Devis définitif gratuit sous 24h, sans engagement.</p>
+      <div style="margin-top:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> Estimation instantanée</div>
+        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> Devis ferme sous 24h</div>
+        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> 100% gratuit, sans engagement</div>
+      </div>
+    </div>
+    <div class="calc-box">
+      <div class="c-prog"><div class="c-dot done" id="cp-d1"></div><div class="c-dot" id="cp-d2"></div><div class="c-dot" id="cp-d3"></div></div>
+      <div class="c-step active" id="cp-s1">
+        <div class="c-tag">Étape 1 sur 3</div>
+        <div class="c-q">Quel type de prestation ?</div>
+        <div class="c-opts">
+          <div class="c-opt" data-v="bureaux"><span class="c-opt-ic">🏢</span> Bureaux / Locaux</div>
+          <div class="c-opt" data-v="chantier"><span class="c-opt-ic">🏗</span> Fin de chantier</div>
+          <div class="c-opt" data-v="vitres"><span class="c-opt-ic">🪟</span> Nettoyage vitres</div>
+          <div class="c-opt" data-v="airbnb"><span class="c-opt-ic">🏠</span> Ménage Airbnb</div>
+          <div class="c-opt" data-v="copro"><span class="c-opt-ic">🏘</span> Copropriété</div>
+          <div class="c-opt" data-v="autre"><span class="c-opt-ic">✨</span> Grand ménage / Sinistre</div>
+        </div>
+        <div class="c-nav"><button class="c-btn c-next" id="cp-n1" disabled>Suivant →</button></div>
+      </div>
+      <div class="c-step" id="cp-s2">
+        <div class="c-tag">Étape 2 sur 3</div>
+        <div class="c-q">Quelle superficie ?</div>
+        <div class="c-opts">
+          <div class="c-opt" data-v="xs"><span class="c-opt-ic">📐</span> Moins de 50 m²</div>
+          <div class="c-opt" data-v="sm"><span class="c-opt-ic">📐</span> 50 – 150 m²</div>
+          <div class="c-opt" data-v="md"><span class="c-opt-ic">📐</span> 150 – 500 m²</div>
+          <div class="c-opt" data-v="lg"><span class="c-opt-ic">📐</span> Plus de 500 m²</div>
+        </div>
+        <div class="c-nav"><button class="c-btn c-back" id="cp-b2">← Retour</button><button class="c-btn c-next" id="cp-n2" disabled>Suivant →</button></div>
+      </div>
+      <div class="c-step" id="cp-s3">
+        <div class="c-tag">Étape 3 sur 3</div>
+        <div class="c-q">Quelle fréquence ?</div>
+        <div class="c-opts">
+          <div class="c-opt" data-v="once"><span class="c-opt-ic">📅</span> Une seule fois</div>
+          <div class="c-opt" data-v="weekly"><span class="c-opt-ic">📅</span> Hebdomadaire</div>
+          <div class="c-opt" data-v="bi"><span class="c-opt-ic">📅</span> Bi-mensuelle</div>
+          <div class="c-opt" data-v="monthly"><span class="c-opt-ic">📅</span> Mensuelle</div>
+        </div>
+        <div class="c-result" id="cp-res">
+          <div class="cr-lbl">Estimation indicative</div>
+          <div class="cr-price" id="cp-price">—</div>
+          <div class="cr-note">Devis précis gratuit sous 24h</div>
+          <a href="#devis-copro" class="cr-cta">📋 Obtenir mon devis gratuit</a>
+        </div>
+        <div class="c-nav"><button class="c-btn c-back" id="cp-b3">← Retour</button><button class="c-btn c-next" id="cp-n3" disabled>Calculer →</button></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="svc-block" id="toutes-prestations" aria-label="Toutes nos prestations de nettoyage"><div class="svc-inner"><div class="svc-head"><h2>Nos services de nettoyage à Nantes</h2><p>Votre entreprise de nettoyage à Nantes pour tous vos besoins. Société de nettoyage Nantes — devis gratuit 24h.</p></div><div class="svc-grid"><a class="svc-card" href="/nettoyage-bureaux-nantes"><span class="svc-ic" aria-hidden="true">🏢</span><span class="svc-tx">Nettoyage bureaux Nantes</span></a><a class="svc-card" href="/nettoyage-copropriete-nantes"><span class="svc-ic" aria-hidden="true">🏘️</span><span class="svc-tx">Nettoyage copropriété Nantes</span></a><a class="svc-card" href="/nettoyage-fin-chantier-nantes"><span class="svc-ic" aria-hidden="true">🏗️</span><span class="svc-tx">Fin de chantier Nantes</span></a><a class="svc-card" href="/nettoyage-vitres-nantes"><span class="svc-ic" aria-hidden="true">🪟</span><span class="svc-tx">Nettoyage vitres Nantes</span></a><a class="svc-card" href="/menage-airbnb-nantes"><span class="svc-ic" aria-hidden="true">🏠</span><span class="svc-tx">Ménage Airbnb Nantes</span></a><a class="svc-card" href="/grand-menage-demenagement-nantes"><span class="svc-ic" aria-hidden="true">✨</span><span class="svc-tx">Grand ménage Nantes</span></a><a class="svc-card" href="/nettoyage-fin-bail-nantes"><span class="svc-ic" aria-hidden="true">🔑</span><span class="svc-tx">Fin de bail Nantes</span></a><a class="svc-card" href="/nettoyage-apres-sinistre-nantes"><span class="svc-ic" aria-hidden="true">🛡️</span><span class="svc-tx">Après sinistre Nantes</span></a><a class="svc-card" href="/prix-nettoyage-nantes"><span class="svc-ic" aria-hidden="true">💶</span><span class="svc-tx">Prix nettoyage Nantes</span></a><a class="svc-card" href="/prix-nettoyage-fin-chantier-nantes"><span class="svc-ic" aria-hidden="true">💶</span><span class="svc-tx">Prix fin de chantier</span></a><a class="svc-card" href="/nettoyage-locaux-professionnels-nantes"><span class="svc-ic" aria-hidden="true">🏭</span><span class="svc-tx">Nettoyage locaux professionnels</span></a><a class="svc-card" href="/entreprise-nettoyage-nantes"><span class="svc-ic" aria-hidden="true">ℹ️</span><span class="svc-tx">Notre entreprise</span></a><a class="svc-card" href="/nettoyage-cabinet-medical-nantes"><span class="svc-ic" aria-hidden="true">⚕️</span><span class="svc-tx">Nettoyage cabinet médical</span></a><a class="svc-card" href="/nettoyage-restaurant-cuisine-professionnelle-nantes"><span class="svc-ic" aria-hidden="true">🍽️</span><span class="svc-tx">Restaurant &amp; cuisine pro</span></a><a class="svc-card" href="/nettoyage-creche-ecole-nantes"><span class="svc-ic" aria-hidden="true">🏫</span><span class="svc-tx">Crèche &amp; école</span></a></div><div class="svc-cities"><div class="svc-cities-lbl">Nos villes d'intervention</div><div class="svc-cities-grid"><a class="svc-city" href="/nettoyage-saint-herblain">Nettoyage Saint-Herblain</a><a class="svc-city" href="/nettoyage-carquefou">Nettoyage Carquefou</a><a class="svc-city" href="/nettoyage-sainte-luce-sur-loire">Nettoyage Sainte-Luce</a><a class="svc-city" href="/nettoyage-reze">Nettoyage Rezé</a><a class="svc-city" href="/nettoyage-vertou">Nettoyage Vertou</a><a class="svc-city" href="/nettoyage-la-chapelle-sur-erdre">Nettoyage La Chapelle-sur-Erdre</a><a class="svc-city" href="/nettoyage-saint-nazaire">Nettoyage Saint-Nazaire</a><a class="svc-city" href="/nettoyage-ancenis">Nettoyage Ancenis</a></div></div></div></section>
+
+
+
+
+
 
 <section class="s"><div class="s-i">
   <span class="badge">Zones traitées</span>
@@ -276,6 +339,12 @@
   </div>
 </div></section>
 
+<section class="s"><div class="s-i"><span class="badge">Contrat régulier</span><h2>Un contrat de copropriété adapté à votre résidence</h2><p>Petite copropriété de quelques lots ou grande résidence de plusieurs bâtiments : nous construisons un contrat calibré à la réalité de votre immeuble, pas une formule standard appliquée sans discernement. Le contrat précise noir sur blanc les zones couvertes, la fréquence de passage, les produits utilisés et les horaires d'intervention — un document simple que le syndic peut présenter en assemblée générale pour justifier le choix du prestataire.</p><p>Nous proposons généralement un passage hebdomadaire pour les parties communes courantes (hall, escaliers, ascenseur) et une fréquence adaptée pour les espaces moins sollicités (locaux techniques, parkings). Cette fréquence se réévalue avec vous à chaque renouvellement de contrat, selon l'usage réel constaté sur le terrain. Nous restons également disponibles pour ajuster ponctuellement ce planning lors d'événements particuliers : livraison de mobilier, travaux dans un lot privatif, ou période de forte affluence dans les parties communes.</p></div></section>
+
+<section class="s alt"><div class="s-i"><span class="badge">Conseil syndical</span><h2>Un interlocuteur unique pour le conseil syndical</h2><p>Nous savons qu'un conseil syndical n'a pas le temps de gérer plusieurs interlocuteurs pour l'entretien de sa résidence. C'est pourquoi nous proposons un point de contact unique, joignable directement, qui connaît l'historique de votre copropriété et peut répondre rapidement à une demande ponctuelle — un dégât des eaux à nettoyer en urgence, un renfort avant une assemblée générale, un ajustement de fréquence en cours d'année.</p><p>Cette proximité facilite aussi le suivi qualité : nous transmettons un compte rendu de passage sur simple demande, utile pour documenter l'entretien de la résidence auprès des copropriétaires ou en cas de contrôle.</p></div></section>
+
+<section class="s"><div class="s-i"><span class="badge">Assemblée générale</span><h2>Préparer votre assemblée générale sereinement</h2><p>Avant une assemblée générale, l'état des parties communes se remarque immédiatement par les copropriétaires présents. Un hall propre, des escaliers bien entretenus et un ascenseur sans traces envoient un signal clair sur la qualité de gestion de la résidence — un point qui influence directement la perception du travail du syndic et du conseil syndical par les copropriétaires.</p><p>Nous proposons, sur demande, un passage renforcé dans les jours précédant votre assemblée générale, pour que la résidence soit dans son meilleur état au moment où elle est le plus observée. C'est un service simple à mettre en place, qui s'ajoute à votre contrat habituel sans complexité administrative supplémentaire.</p></div></section>
+
 <section class="s alt"><div class="s-i">
   <span class="badge">FAQ</span>
   <h2>Questions fréquentes — nettoyage copropriété Nantes</h2>
@@ -351,64 +420,7 @@
 </div></section>
 <section class="s"><div class="s-i"><span class="badge">Références</span><h2>Notre bilan d'intervention en copropriété à Nantes</h2><div class="prose"><p>Depuis 2019, ZEN NETTOYAGE 44 est intervenu dans plusieurs dizaines de copropriétés nantaises de toutes tailles, du petit immeuble de 4 logements en centre-ville à la résidence de plus de 60 lots en périphérie. Cette expérience accumulée se traduit par une maîtrise des situations les plus variées : immeubles anciens aux matériaux nobles, résidences neuves avec équipements techniques sophistiqués, copropriétés avec problèmes spécifiques récurrents — calcaire, vandalismes, nuisibles — que nous avons appris à traiter efficacement.</p><p>Chaque nouvelle copropriété que nous intégrons dans notre portefeuille bénéficie du même niveau d'attention que nos premiers clients de 2019. Nous ne sacrifions pas la qualité à la quantité. Notre croissance est maîtrisée, construite sur la fidélisation et la recommandation plutôt que sur la conquête agressive de marchés. Cette discipline, parfois au détriment d'une croissance plus rapide, est précisément ce qui maintient notre niveau de service et la satisfaction constante de nos copropriétaires nantais. SIRET 853 634 616 00025 — attestation RC professionnelle disponible sur simple demande.</p></div></div></section>
 
-<section class="calc-s" id="calculateur">
-  <div class="calc-wrap">
-    <div>
-      <span class="badge" style="background:rgba(255,255,255,.12);color:#fff;margin-bottom:14px;display:inline-block">Outil exclusif</span>
-      <h2 style="color:#fff;font-size:clamp(22px,4vw,32px);margin-bottom:12px">Estimez votre devis <br>en 3 clics</h2>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.7">Obtenez une estimation immédiate. Devis définitif gratuit sous 24h, sans engagement.</p>
-      <div style="margin-top:24px;display:flex;flex-direction:column;gap:12px">
-        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> Estimation instantanée</div>
-        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> Devis ferme sous 24h</div>
-        <div style="display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.75);font-size:14px"><span style="color:var(--teal)">✅</span> 100% gratuit, sans engagement</div>
-      </div>
-    </div>
-    <div class="calc-box">
-      <div class="c-prog"><div class="c-dot done" id="cp-d1"></div><div class="c-dot" id="cp-d2"></div><div class="c-dot" id="cp-d3"></div></div>
-      <div class="c-step active" id="cp-s1">
-        <div class="c-tag">Étape 1 sur 3</div>
-        <div class="c-q">Quel type de prestation ?</div>
-        <div class="c-opts">
-          <div class="c-opt" data-v="bureaux"><span class="c-opt-ic">🏢</span> Bureaux / Locaux</div>
-          <div class="c-opt" data-v="chantier"><span class="c-opt-ic">🏗</span> Fin de chantier</div>
-          <div class="c-opt" data-v="vitres"><span class="c-opt-ic">🪟</span> Nettoyage vitres</div>
-          <div class="c-opt" data-v="airbnb"><span class="c-opt-ic">🏠</span> Ménage Airbnb</div>
-          <div class="c-opt" data-v="copro"><span class="c-opt-ic">🏘</span> Copropriété</div>
-          <div class="c-opt" data-v="autre"><span class="c-opt-ic">✨</span> Grand ménage / Sinistre</div>
-        </div>
-        <div class="c-nav"><button class="c-btn c-next" id="cp-n1" disabled>Suivant →</button></div>
-      </div>
-      <div class="c-step" id="cp-s2">
-        <div class="c-tag">Étape 2 sur 3</div>
-        <div class="c-q">Quelle superficie ?</div>
-        <div class="c-opts">
-          <div class="c-opt" data-v="xs"><span class="c-opt-ic">📐</span> Moins de 50 m²</div>
-          <div class="c-opt" data-v="sm"><span class="c-opt-ic">📐</span> 50 – 150 m²</div>
-          <div class="c-opt" data-v="md"><span class="c-opt-ic">📐</span> 150 – 500 m²</div>
-          <div class="c-opt" data-v="lg"><span class="c-opt-ic">📐</span> Plus de 500 m²</div>
-        </div>
-        <div class="c-nav"><button class="c-btn c-back" id="cp-b2">← Retour</button><button class="c-btn c-next" id="cp-n2" disabled>Suivant →</button></div>
-      </div>
-      <div class="c-step" id="cp-s3">
-        <div class="c-tag">Étape 3 sur 3</div>
-        <div class="c-q">Quelle fréquence ?</div>
-        <div class="c-opts">
-          <div class="c-opt" data-v="once"><span class="c-opt-ic">📅</span> Une seule fois</div>
-          <div class="c-opt" data-v="weekly"><span class="c-opt-ic">📅</span> Hebdomadaire</div>
-          <div class="c-opt" data-v="bi"><span class="c-opt-ic">📅</span> Bi-mensuelle</div>
-          <div class="c-opt" data-v="monthly"><span class="c-opt-ic">📅</span> Mensuelle</div>
-        </div>
-        <div class="c-result" id="cp-res">
-          <div class="cr-lbl">Estimation indicative</div>
-          <div class="cr-price" id="cp-price">—</div>
-          <div class="cr-note">Devis précis gratuit sous 24h</div>
-          <a href="#devis-copro" class="cr-cta">📋 Obtenir mon devis gratuit</a>
-        </div>
-        <div class="c-nav"><button class="c-btn c-back" id="cp-b3">← Retour</button><button class="c-btn c-next" id="cp-n3" disabled>Calculer →</button></div>
-      </div>
-    </div>
-  </div>
-</section>
+
 <div class="social-share"><div class="ss-i">
     <div class="ss-label">Partager cette page</div>
     <div class="ss-btns">
