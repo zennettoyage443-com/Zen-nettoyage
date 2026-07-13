@@ -1,0 +1,313 @@
+{
+  "redirects": [
+    {
+      "source": "/fin-de-chantier-nantes",
+      "destination": "/nettoyage-fin-chantier-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/fin-de-chantier-nantes.html",
+      "destination": "/nettoyage-fin-chantier-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/guide-prix-nettoyage-nantes",
+      "destination": "/prix-nettoyage-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/guide-prix-nettoyage-nantes.html",
+      "destination": "/prix-nettoyage-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-fin-chantier-nantes.html",
+      "destination": "/nettoyage-fin-chantier-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-bureaux-nantes.html",
+      "destination": "/nettoyage-bureaux-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-copropriete-nantes.html",
+      "destination": "/nettoyage-copropriete-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-vitres-nantes.html",
+      "destination": "/nettoyage-vitres-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/menage-airbnb-nantes.html",
+      "destination": "/menage-airbnb-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-fin-bail-nantes.html",
+      "destination": "/nettoyage-fin-bail-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-apres-sinistre-nantes.html",
+      "destination": "/nettoyage-apres-sinistre-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/grand-menage-demenagement-nantes.html",
+      "destination": "/grand-menage-demenagement-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/prix-nettoyage-fin-chantier-nantes.html",
+      "destination": "/prix-nettoyage-fin-chantier-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/prix-nettoyage-nantes.html",
+      "destination": "/prix-nettoyage-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/entreprise-nettoyage-nantes.html",
+      "destination": "/entreprise-nettoyage-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/a-propos.html",
+      "destination": "/a-propos",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-saint-herblain.html",
+      "destination": "/nettoyage-saint-herblain",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-carquefou.html",
+      "destination": "/nettoyage-carquefou",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-sainte-luce-sur-loire.html",
+      "destination": "/nettoyage-sainte-luce-sur-loire",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-locaux-professionnels-nantes.html",
+      "destination": "/nettoyage-locaux-professionnels-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-reze.html",
+      "destination": "/nettoyage-reze",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-la-chapelle-sur-erdre.html",
+      "destination": "/nettoyage-la-chapelle-sur-erdre",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-vertou.html",
+      "destination": "/nettoyage-vertou",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-saint-nazaire.html",
+      "destination": "/nettoyage-saint-nazaire",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-ancenis.html",
+      "destination": "/nettoyage-ancenis",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-cabinet-medical-nantes.html",
+      "destination": "/nettoyage-cabinet-medical-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-restaurant-cuisine-professionnelle-nantes.html",
+      "destination": "/nettoyage-restaurant-cuisine-professionnelle-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/nettoyage-creche-ecole-nantes.html",
+      "destination": "/nettoyage-creche-ecole-nantes",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/menage-airbnb-nantes",
+      "destination": "/menage-airbnb-nantes.html"
+    },
+    {
+      "source": "/nettoyage-bureaux-nantes",
+      "destination": "/nettoyage-bureaux-nantes.html"
+    },
+    {
+      "source": "/nettoyage-vitres-nantes",
+      "destination": "/nettoyage-vitres-nantes.html"
+    },
+    {
+      "source": "/nettoyage-fin-chantier-nantes",
+      "destination": "/nettoyage-fin-chantier-nantes-1.html"
+    },
+    {
+      "source": "/nettoyage-copropriete-nantes",
+      "destination": "/nettoyage-copropriete-nantes.html"
+    },
+    {
+      "source": "/nettoyage-fin-bail-nantes",
+      "destination": "/nettoyage-fin-bail-nantes.html"
+    },
+    {
+      "source": "/nettoyage-apres-sinistre-nantes",
+      "destination": "/nettoyage-apres-sinistre-nantes.html"
+    },
+    {
+      "source": "/grand-menage-demenagement-nantes",
+      "destination": "/grand-menage-demenagement-nantes.html"
+    },
+    {
+      "source": "/prix-nettoyage-nantes",
+      "destination": "/prix-nettoyage-nantes.html"
+    },
+    {
+      "source": "/prix-nettoyage-fin-chantier-nantes",
+      "destination": "/prix-nettoyage-fin-chantier-nantes.html"
+    },
+    {
+      "source": "/entreprise-nettoyage-nantes",
+      "destination": "/entreprise-nettoyage-nantes.html"
+    },
+    {
+      "source": "/a-propos",
+      "destination": "/a-propos.html"
+    },
+    {
+      "source": "/partenaires",
+      "destination": "/partenaires.html"
+    },
+    {
+      "source": "/nettoyage-saint-herblain",
+      "destination": "/nettoyage-saint-herblain.html"
+    },
+    {
+      "source": "/nettoyage-carquefou",
+      "destination": "/nettoyage-carquefou.html"
+    },
+    {
+      "source": "/nettoyage-sainte-luce-sur-loire",
+      "destination": "/nettoyage-sainte-luce-sur-loire.html"
+    },
+    {
+      "source": "/nettoyage-locaux-professionnels-nantes",
+      "destination": "/nettoyage-locaux-professionnels-nantes.html"
+    },
+    {
+      "source": "/nettoyage-reze",
+      "destination": "/nettoyage-reze.html"
+    },
+    {
+      "source": "/nettoyage-la-chapelle-sur-erdre",
+      "destination": "/nettoyage-la-chapelle-sur-erdre.html"
+    },
+    {
+      "source": "/nettoyage-vertou",
+      "destination": "/nettoyage-vertou.html"
+    },
+    {
+      "source": "/nettoyage-saint-nazaire",
+      "destination": "/nettoyage-saint-nazaire.html"
+    },
+    {
+      "source": "/nettoyage-ancenis",
+      "destination": "/nettoyage-ancenis.html"
+    },
+    {
+      "source": "/nettoyage-cabinet-medical-nantes",
+      "destination": "/nettoyage-cabinet-medical-nantes.html"
+    },
+    {
+      "source": "/nettoyage-restaurant-cuisine-professionnelle-nantes",
+      "destination": "/nettoyage-restaurant-cuisine-professionnelle-nantes.html"
+    },
+    {
+      "source": "/nettoyage-creche-ecole-nantes",
+      "destination": "/nettoyage-creche-ecole-nantes.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/index.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
+      ]
+    }
+  ]
+}
