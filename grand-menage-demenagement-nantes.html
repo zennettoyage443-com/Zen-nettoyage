@@ -173,7 +173,7 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px;text-align:center;fo
 .footer-legal a{color:rgba(255,255,255,.4);font-size:12px;transition:color .2s}
 .footer-legal a:hover{color:rgba(255,255,255,.7)}
 @media(max-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
-.wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;transition:transform .2s}
+.devis-float{position:fixed;bottom:24px;right:92px;background:var(--teal);color:#fff;font-weight:700;font-size:14px;padding:0 18px;height:56px;border-radius:50px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(0,168,130,.4);z-index:999;transition:transform .2s,background .2s}.devis-float:hover{background:var(--teal-d);transform:translateY(-2px)}@media(max-width:768px){.devis-float span{display:none}.devis-float{width:56px;height:56px;padding:0;justify-content:center;right:92px;border-radius:50%}}@media(max-width:480px){.devis-float{right:84px}}.wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;transition:transform .2s}
 .wa-float:hover{transform:scale(1.08)}
 .wa-pulse{position:absolute;inset:-4px;border-radius:50%;border:2px solid #25d366;animation:wa-ring 2.5s ease-out infinite}
 @keyframes wa-ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.5);opacity:0}}
@@ -416,7 +416,7 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px;text-align:center;fo
         
       </div>
     </div>
-  </div></footer><a href="https://wa.me/33744257676" class="wa-float" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp"><span class="wa-pulse"></span>💬</a>
+  </div></footer><a href="#devis" class="devis-float" aria-label="Devis gratuit">📋<span>Devis gratuit</span></a><a href="https://wa.me/33744257676" class="wa-float" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp"><span class="wa-pulse"></span>💬</a>
 <script>
 /* Calculateur */
 (function(){var pid='gm',s={t:null,z:null,f:null};
