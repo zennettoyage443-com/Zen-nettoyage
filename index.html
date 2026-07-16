@@ -539,6 +539,8 @@
           <div class="c-opt" data-v="vitres"><span class="c-opt-ic">🪟</span> Nettoyage vitres</div>
           <div class="c-opt" data-v="airbnb"><span class="c-opt-ic">🏠</span> Ménage Airbnb</div>
           <div class="c-opt" data-v="copro"><span class="c-opt-ic">🏘</span> Copropriété</div>
+          <div class="c-opt" data-v="finbail"><span class="c-opt-ic">🔑</span> Fin de bail</div>
+          <div class="c-opt" data-v="restaurant"><span class="c-opt-ic">🍽️</span> Restaurant &amp; cuisine pro</div>
           <div class="c-opt" data-v="autre"><span class="c-opt-ic">✨</span> Grand ménage / Sinistre</div>
         </div>
         <div class="c-nav"><button class="c-btn c-next" id="idx-n1" disabled>Suivant →</button></div>
@@ -1094,7 +1096,7 @@
 
 /* CALCULATOR */
 (function(){var pid='idx',s={t:null,z:null,f:null};
-var prices={bureaux:{xs:'80–150 €',sm:'150–350 €',md:'350–800 €',lg:'Sur devis'},chantier:{xs:'200–400 €',sm:'400–900 €',md:'900–2500 €',lg:'Sur devis'},vitres:{xs:'60–120 €',sm:'120–300 €',md:'300–700 €',lg:'Sur devis'},airbnb:{xs:'45–70 €',sm:'70–120 €',md:'120–200 €',lg:'Sur devis'},copro:{xs:'Sur devis',sm:'Sur devis',md:'Sur devis',lg:'Sur devis'},autre:{xs:'Sur devis',sm:'Sur devis',md:'Sur devis',lg:'Sur devis'}};
+var prices={bureaux:{xs:'80–150 €',sm:'150–350 €',md:'350–800 €',lg:'Sur devis'},chantier:{xs:'200–400 €',sm:'400–900 €',md:'900–2500 €',lg:'Sur devis'},vitres:{xs:'60–120 €',sm:'120–300 €',md:'300–700 €',lg:'Sur devis'},airbnb:{xs:'45–70 €',sm:'70–120 €',md:'120–200 €',lg:'Sur devis'},copro:{xs:'Sur devis',sm:'Sur devis',md:'Sur devis',lg:'Sur devis'},finbail:{xs:'90–150 €',sm:'150–320 €',md:'320–700 €',lg:'Sur devis'},restaurant:{xs:'150–300 €',sm:'300–600 €',md:'600–1500 €',lg:'Sur devis'},autre:{xs:'Sur devis',sm:'Sur devis',md:'Sur devis',lg:'Sur devis'}};
 function show(n){[1,2,3].forEach(function(i){document.getElementById(pid+'-s'+i).classList.toggle('active',i===n);var d=document.getElementById(pid+'-d'+i);if(d)d.classList.toggle('done',i<=n);});}
 function bind(si,key,nid){var opts=document.querySelectorAll('#'+pid+'-s'+si+' .c-opt'),nb=document.getElementById(pid+'-n'+nid.replace('n',''));nb=document.getElementById(pid+'-'+nid);opts.forEach(function(o){o.addEventListener('click',function(){opts.forEach(function(x){x.classList.remove('sel');});o.classList.add('sel');s[key]=o.dataset.v;if(nb)nb.disabled=false;});});}
 bind(1,'t','n1');bind(2,'z','n2');bind(3,'f','n3');
