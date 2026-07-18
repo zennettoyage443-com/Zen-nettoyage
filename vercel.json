@@ -131,6 +131,16 @@
       "permanent": true
     },
     {
+      "source": "/mentions-legales",
+      "destination": "/#mentions",
+      "permanent": true
+    },
+    {
+      "source": "/mentions-legales.html",
+      "destination": "/#mentions",
+      "permanent": true
+    },
+    {
       "source": "/nettoyage-cabinet-medical-nantes.html",
       "destination": "/nettoyage-cabinet-medical-nantes",
       "permanent": true
