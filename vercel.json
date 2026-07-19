@@ -154,6 +154,11 @@
       "source": "/nettoyage-creche-ecole-nantes.html",
       "destination": "/nettoyage-creche-ecole-nantes",
       "permanent": true
+    },
+    {
+      "source": "/partenaires.html",
+      "destination": "/partenaires",
+      "permanent": true
     }
   ],
   "rewrites": [
