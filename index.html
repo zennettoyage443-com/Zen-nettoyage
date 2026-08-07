@@ -271,7 +271,7 @@
     .prose-s.alt{background:var(--paper)}
     .eng-grid{display:grid;grid-template-columns:1.35fr .95fr;gap:52px;align-items:start;margin-top:8px}
     @media(max-width:900px){.eng-grid{grid-template-columns:1fr}}
-    .eng-prose p{font-size:15.5px;color:#334;line-height:1.85;margin-bottom:18px}
+    .eng-prose{max-width:72ch;min-width:0}.eng-prose p{font-size:15.5px;color:#334;line-height:1.85;margin-bottom:18px;max-width:72ch;overflow-wrap:break-word;hyphens:auto}.prose-s p,.prose-s .lead,.prose-s .lead-answer{max-width:72ch;overflow-wrap:break-word;hyphens:auto}.prose-note{max-width:72ch}.lead-answer{max-width:72ch;overflow-wrap:break-word}@media(max-width:720px){.eng-prose,.eng-prose p,.prose-s p,.prose-s .lead,.prose-note,.lead-answer{max-width:100%}}
     .eng-prose p:last-child{margin-bottom:0}
     .eng-prose strong{color:var(--navy);font-weight:700}
     .eng-aside{display:flex;flex-direction:column;gap:18px}
@@ -595,7 +595,9 @@
 </section>
 
 
-    <div class="eng-grid">
+    <section class="prose-s">
+  <div class="wrap">
+<div class="eng-grid">
       <div class="eng-prose">
         <p>Quand vous appelez le <a href="tel:+33744257676" class="il">07 44 25 76 76</a>, vous parlez directement à l'équipe qui interviendra chez vous. Pas de central d'appels lointain, pas de prestataire inconnu sur le terrain. Cette proximité est notre force et votre garantie.</p>
         <p>Nos techniciens connaissent les spécificités des <strong>copropriétés nantaises</strong> — halls en marbre des immeubles haussmanniens du centre-ville, résidences récentes de l'Île de Nantes — les contraintes des parcs tertiaires d'Euronantes et d'Atlantis, et les exigences des promoteurs pour les <a href="/nettoyage-fin-chantier-nantes" class="il">livraisons de chantier en Loire-Atlantique</a>.</p>
@@ -603,6 +605,7 @@
         <p>Notre croissance se fait par <strong>recommandation</strong> : syndics, gérants d'immeuble, hôtes Airbnb, promoteurs — la preuve la plus sincère d'un travail bien fait, semaine après semaine.</p>
         <p>Cette proximité se traduit dans notre réactivité : une demande urgente le matin est souvent traitée le jour même, et un remplacement de dernière minute est géré en interne, sans faire appel à un tiers. Nous privilégions une relation de confiance durable, ce qui explique pourquoi une large part de notre clientèle nous suit depuis plusieurs années sans jamais avoir renégocié ni comparé d'autres prestataires.</p>
         <p>En cas d'imprévu — absence, retard, matériel défaillant — nous mobilisons une solution de remplacement en interne dans la journée, sans dépendre d'un sous-traitant externe. C'est cette maîtrise de bout en bout qui distingue une entreprise locale structurée d'un simple intermédiaire.</p>
+<figure style="margin:26px 0 0"><a href="/nettoyage-fin-chantier-nantes" aria-label="Voir nos chantiers de livraison à Nantes"><img src="/nettoyage-sol-boutique-nocibe-nantes.webp" alt="Technicien ZEN NETTOYAGE 44 grattant les résidus de peinture sur le carrelage du chantier NOCIBÉ à Nantes" title="Grattage peinture carrelage chantier NOCIBÉ Nantes" loading="lazy" width="800" height="1067" style="width:100%;height:auto;border-radius:14px;box-shadow:0 8px 30px rgba(15,23,42,.10)"></a><figcaption style="font-size:13px;color:#64748b;margin-top:8px;text-align:center;font-style:italic">Chantier NOCIBÉ à Nantes, pré-livraison : décrochage manuel des résidus de peinture sur le carrelage neuf.</figcaption></figure>
       </div>
       <div class="eng-aside">
         <div class="eng-item"><div class="eng-ic">🏙</div><div><div class="eng-label">Expertise du terrain nantais</div><p>Nous connaissons chaque quartier de la métropole : Bouffay, Graslin, Île de Nantes, Chantenay, Hauts-Pavés, Doulon-Bottière, ainsi que les communes limitrophes de l'agglomération.</p></div></div>
@@ -612,6 +615,7 @@
       </div>
     </div>
   </div>
+</section>
 
 
 <!-- EXPERTISE NANTES -->
