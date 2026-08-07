@@ -417,7 +417,7 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px;text-align:center;fo
  
  </div>
  </div>
- </div></footer><a href="#devis" class="devis-float" aria-label="Devis gratuit">📋<span>Devis gratuit</span></a><a href="https://wa.me/33744257676" class="wa-float" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp"><span class="wa-pulse"></span>💬</a>
+ </div><div style="text-align:center;margin-top:18px;font-size:12.5px"><a href="/mentions-legales" style="color:rgba(255,255,255,.55)">Mentions légales</a></div></footer><a href="#devis" class="devis-float" aria-label="Devis gratuit">📋<span>Devis gratuit</span></a><a href="https://wa.me/33744257676" class="wa-float" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp"><span class="wa-pulse"></span>💬</a>
 <script>
 /* Calculateur */
 (function(){var pid='gm',s={t:null,z:null,f:null};
@@ -438,4 +438,5 @@ var n3=document.getElementById(pid+'-n3');if(n3)n3.addEventListener('click',func
 f.addEventListener('submit',function(e){e.preventDefault();var btn=f.querySelector('button[type="submit"]');var tel=(f.querySelector('[name="téléphone"]')||{}).value||'';if(!tel.trim()){alert('Merci de renseigner votre téléphone.');return;}btn.disabled=true;btn.textContent='Envoi…';var pr=(f.querySelector('[name="type prestation"]')||{}).value||'';try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'devis_envoye',prestation:pr,ville:'Nantes'});if(typeof gtag==='function')gtag('event','devis_envoye',{prestation:pr,ville:'Nantes'});}catch(err){}
 fetch('https://formspree.io/f/xreojbbp',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(r){if(r.ok){f.style.display='none';ok.style.display='block';ok.scrollIntoView({behavior:'smooth',block:'center'});}else{alert('Erreur. Appelez le 07 44 25 76 76.');btn.disabled=false;btn.textContent='📋 Envoyer ma demande';}}).catch(function(){alert('Problème de connexion. Appelez le 07 44 25 76 76.');btn.disabled=false;btn.textContent='📋 Envoyer ma demande';});});})();
 </script>
+</div>
 </body></html>

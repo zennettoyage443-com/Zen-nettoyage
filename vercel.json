@@ -131,16 +131,6 @@
       "permanent": true
     },
     {
-      "source": "/mentions-legales",
-      "destination": "/#mentions",
-      "permanent": true
-    },
-    {
-      "source": "/mentions-legales.html",
-      "destination": "/#mentions",
-      "permanent": true
-    },
-    {
       "source": "/nettoyage-cabinet-medical-nantes.html",
       "destination": "/nettoyage-cabinet-medical-nantes",
       "permanent": true
@@ -158,6 +148,11 @@
     {
       "source": "/partenaires.html",
       "destination": "/partenaires",
+      "permanent": true
+    },
+    {
+      "source": "/mentions-legales.html",
+      "destination": "/mentions-legales",
       "permanent": true
     }
   ],
@@ -261,6 +256,10 @@
     {
       "source": "/nettoyage-creche-ecole-nantes",
       "destination": "/nettoyage-creche-ecole-nantes.html"
+    },
+    {
+      "source": "/mentions-legales",
+      "destination": "/mentions-legales.html"
     }
   ],
   "headers": [

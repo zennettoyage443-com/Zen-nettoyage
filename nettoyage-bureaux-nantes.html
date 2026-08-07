@@ -437,11 +437,12 @@ document.getElementById(pid+'-n3').addEventListener('click',function(){if(!s.f)r
       <div style="font-size:13px"><address style="font-style:normal;display:inline">© 2026 <strong style="color:#fff">ZEN NETTOYAGE 44</strong> — 75 rue du Port Boyer, 44300 Nantes — SIRET 853 634 616 00025</address></div>
     </div>
   </div>
-</footer>
+<div style="text-align:center;margin-top:18px;font-size:12.5px"><a href="/mentions-legales" style="color:rgba(255,255,255,.55)">Mentions légales</a></div></footer>
 <a href="#devis-bur" class="devis-float" aria-label="Devis gratuit">📋<span>Devis gratuit</span></a>
 <a href="https://wa.me/33744257676" class="wa" target="_blank" rel="noopener" aria-label="WhatsApp (nouvelle fenêtre)">💬</a>
 <script>
 (function(){var btn=document.getElementById('burgerBtn'),menu=document.getElementById('mobMenu');if(!btn||!menu)return;btn.addEventListener('click',function(){var o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',String(o));});menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');});});})();
 (function(){var form=document.getElementById('burForm'),ok=document.getElementById('burSuccess');if(!form)return;form.addEventListener('submit',async function(e){e.preventDefault();var btn=form.querySelector('button');var tel=form.querySelector('[name="telephone"]').value;if(!tel.trim()){alert('Merci de renseigner votre téléphone.');return;}btn.disabled=true;btn.textContent='Envoi…';var pr=(form.querySelector('[name="prestation"]')||{}).value||'Non précisée';window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'devis_envoye',prestation:'Bureaux '+pr,ville:'Nantes'});if(typeof window.gtag==='function')window.gtag('event','devis_envoye',{prestation:'Bureaux '+pr,ville:'Nantes'});try{var r=await fetch('https://formspree.io/f/xreojbbp',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});if(r.ok){form.style.display='none';ok.style.display='block';ok.scrollIntoView({behavior:'smooth',block:'center'});}else{alert('Erreur. Appelez le 07 44 25 76 76.');btn.disabled=false;btn.textContent='📋 Envoyer ma demande de devis';}}catch(e){alert('Problème. Appelez le 07 44 25 76 76.');btn.disabled=false;btn.textContent='📋 Envoyer ma demande de devis';}});})();
 </script>
+</div>
 </body></html>
