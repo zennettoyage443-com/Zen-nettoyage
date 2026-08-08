@@ -37,7 +37,7 @@
     .btn-p{background:var(--teal);color:#fff;padding:14px 28px;border-radius:10px;font-weight:700;font-size:15px;transition:all .2s;display:inline-flex;align-items:center;gap:8px}.btn-p:hover{background:var(--teal-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,168,130,.35)}.btn-o{border:2px solid rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);padding:14px 28px;border-radius:10px;font-weight:700;font-size:15px;transition:all .2s;display:inline-flex;align-items:center;gap:8px}.btn-o:hover{border-color:#fff;background:rgba(255,255,255,.22);transform:translateY(-2px)}
     .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:600px;margin-top:36px}.hst{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 12px;text-align:center}.hst-n{font-size:1.5rem;font-weight:800;color:var(--gold);line-height:1}.hst-l{font-size:11px;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.6px;margin-top:4px}
     @media(max-width:640px){.hero-stats{grid-template-columns:repeat(2,1fr)}.hero{padding:72px 16px 48px}.hero-btns{flex-direction:column;align-items:flex-start}}
-    .s{padding:72px 24px}.s.alt{background:var(--light)}.s-i{max-width:860px;margin:0 auto}.badge{display:inline-block;background:var(--teal);color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}.s h2{font-size:clamp(22px,4vw,32px);color:var(--navy);margin-bottom:16px;letter-spacing:-.3px}.s-lead{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:36px}.il{color:var(--teal);font-weight:600}
+    .s{padding:72px 24px}.s.alt{background:var(--light)}.s-i{max-width:860px;margin:0 auto}.badge{display:inline-block;background:var(--teal);color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}.s h2{font-size:clamp(22px,4vw,32px);color:var(--navy);margin-bottom:16px;letter-spacing:-.3px}.s-lead{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:36px}.il{color:var(--teal-d,#00806a);font-weight:600;text-decoration:underline;text-decoration-color:rgba(0,168,130,.45);text-underline-offset:3px;text-decoration-thickness:1.5px;transition:color .15s}.il:hover{color:var(--teal,#00a882);text-decoration-color:var(--teal,#00a882)}
     .prose p{color:#374151;font-size:15px;line-height:1.8;margin-bottom:16px}.prose strong{color:var(--navy)}
     .cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:22px;box-shadow:var(--sh);transition:all .2s}.card:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:var(--sh-lg)}.card-ic{font-size:26px;margin-bottom:10px}.card h3{font-size:16px;color:var(--navy);margin-bottom:6px}.card p{font-size:13px;color:var(--muted)}
     .hbox{background:linear-gradient(135deg,rgba(0,168,130,.08),rgba(11,46,78,.05));border:1px solid rgba(0,168,130,.25);border-radius:14px;padding:24px 28px;margin:28px 0}.hbox p{font-size:15px;margin:0}
@@ -132,9 +132,9 @@
  <button class="burger" id="burgerBtn" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
 </div></nav>
 <div class="mob-menu" id="mobMenu">
- <a href="/#services">Tous nos services</a><a href="/prix-nettoyage-nantes">Guide des tarifs</a><a href="/a-propos">Qui sommes-nous</a><a href="#devis-fc">Obtenir un devis</a><a href="tel:+33744257676">📞 Nous joindre par téléphone</a>
+ <a href="/#services">Tous nos services</a><a href="/prix-nettoyage-nantes" class="il">Guide des tarifs</a><a href="/a-propos" class="il">Qui sommes-nous</a><a href="#devis-fc">Obtenir un devis</a><a href="tel:+33744257676">📞 Nous joindre par téléphone</a>
 </div>
-<div class="bc"><div class="bc-i"><a href="/">Accueil</a><span>›</span>Nettoyage fin de chantier Nantes</div></div>
+<div class="bc"><div class="bc-i"><a href="/" class="il">Accueil</a><span>›</span>Nettoyage fin de chantier Nantes</div></div>
 <header class="hero"><div class="hero-i">
  <div class="hero-badge">🏗 Pré-livraison · Logements neufs · Rénovation</div>
  <h1>Nettoyage de fin de chantier &amp; après travaux à <span>Nantes</span></h1>
@@ -296,7 +296,7 @@
 <span class="badge">Organisation locale</span>
 <h2>Organisation de nos équipes à Nantes</h2>
 <p>L'<strong>organisation de nos équipes à Nantes</strong> repose sur la proximité et la réactivité. Basés 75 rue du Port Boyer, nous intervenons sans frais de déplacement dans un rayon de 30 km, avec un <strong>délai d'intervention standard de 48 heures</strong> et des créneaux d'urgence pour les livraisons serrées.</p>
-<p>Nous couvrons tous les secteurs nantais où se concentrent construction et rénovation: <strong>Nantes Centre</strong>, <strong>Île de Nantes</strong>, <strong>Doulon</strong>, <strong>Chantenay</strong>, <strong>Saint-Félix</strong>, <strong>Hauts-Pavés</strong>, <strong>Nantes Nord</strong> et <strong>Nantes Sud</strong>, que les nouveaux programmes de Bottière-Chénaie et Pirmil-les-Isles. Notre connaissance du terrain — stationnement contraint de l'hypercentre, accès des résidences neuves, horaires d'ouverture des chantiers — nous fait gagner un temps précieux sur chaque rotation. Nous desservons aussi les communes limitrophes: <a href="/nettoyage-saint-herblain">Saint-Herblain</a>, <a href="/nettoyage-carquefou">Carquefou</a> et <a href="/nettoyage-sainte-luce-sur-loire">Sainte-Luce-sur-Loire</a>, que Rezé, Orvault, Vertou et Saint-Sébastien-sur-Loire. Pour le détail des prix, consultez notre <a href="/prix-nettoyage-fin-chantier-nantes">guide tarifs fin de chantier</a>.</p>
+<p>Nous couvrons tous les secteurs nantais où se concentrent construction et rénovation: <strong>Nantes Centre</strong>, <strong>Île de Nantes</strong>, <strong>Doulon</strong>, <strong>Chantenay</strong>, <strong>Saint-Félix</strong>, <strong>Hauts-Pavés</strong>, <strong>Nantes Nord</strong> et <strong>Nantes Sud</strong>, que les nouveaux programmes de Bottière-Chénaie et Pirmil-les-Isles. Notre connaissance du terrain — stationnement contraint de l'hypercentre, accès des résidences neuves, horaires d'ouverture des chantiers — nous fait gagner un temps précieux sur chaque rotation. Nous desservons aussi les communes limitrophes: <a href="/nettoyage-saint-herblain" class="il">Saint-Herblain</a>, <a href="/nettoyage-carquefou" class="il">Carquefou</a> et <a href="/nettoyage-sainte-luce-sur-loire" class="il">Sainte-Luce-sur-Loire</a>, que Rezé, Orvault, Vertou et Saint-Sébastien-sur-Loire. Pour le détail des prix, consultez notre <a href="/prix-nettoyage-fin-chantier-nantes" class="il">guide tarifs fin de chantier</a>.</p>
 </div></section>
 
 
@@ -346,7 +346,7 @@
 <p><strong>Entreprises générales du bâtiment.</strong> Les entreprises générales du bâtiment nous intègrent comme prestataire de propreté de fin de chantier, en sous-traitance déclarée, sur leurs opérations neuves comme en rénovation. Nous fournissons attestation d'assurance et documents administratifs sur simple demande.</p>
 <p><strong>Agences immobilières et marchands de biens.</strong> Agences immobilières et marchands de biens font appel à nous après travaux de rénovation, avant mise en vente ou en location, pour valoriser le bien et accélérer sa commercialisation.</p>
 <p><strong>Syndics et gestionnaires immobiliers.</strong> Pour les syndics et gestionnaires immobiliers, nous réalisons le nettoyage des parties communes neuves ou rénovées, ainsi que la remise en état après travaux dans les résidences existantes.</p>
-<p><strong>Artisans du bâtiment.</strong> Enfin, de nombreux artisans du bâtiment (peintres, plaquistes, carreleurs, plombiers, électriciens) nous délèguent le nettoyage final pour livrer un chantier impeccable sans mobiliser leurs propres équipes. Voir aussi notre page <a href="/nettoyage-locaux-professionnels-nantes">nettoyage de locaux professionnels à Nantes</a>.</p>
+<p><strong>Artisans du bâtiment.</strong> Enfin, de nombreux artisans du bâtiment (peintres, plaquistes, carreleurs, plombiers, électriciens) nous délèguent le nettoyage final pour livrer un chantier impeccable sans mobiliser leurs propres équipes. Voir aussi notre page <a href="/nettoyage-locaux-professionnels-nantes" class="il">nettoyage de locaux professionnels à Nantes</a>.</p>
 </div></section>
 
 <section class="s"><div class="s-i">
@@ -380,7 +380,7 @@
 <section class="s alt"><div class="s-i"><span class="badge">Questions fréquentes</span>
 <h2>Questions fréquentes — Nettoyage fin de chantier &amp; après travaux à Nantes</h2>
 <div class="faq">
-<details class="faq-item"><summary>Quel est le prix d'un nettoyage de fin de chantier à Nantes ?</summary><div class="faq-a"><p>Comptez 3,50 à 7 €/m² selon le type de chantier et les résidus. Un studio/T1 neuf démarre à 150 €, un T3 de 70 m² se situe entre 320 et 500 €, une maison neuve de 100-150 m² entre 550 et 900 €. Devis écrit gratuit sous 24h. <a href="/prix-nettoyage-fin-chantier-nantes">Voir le guide tarifs complet</a>.</p></div></details>
+<details class="faq-item"><summary>Quel est le prix d'un nettoyage de fin de chantier à Nantes ?</summary><div class="faq-a"><p>Comptez 3,50 à 7 €/m² selon le type de chantier et les résidus. Un studio/T1 neuf démarre à 150 €, un T3 de 70 m² se situe entre 320 et 500 €, une maison neuve de 100-150 m² entre 550 et 900 €. Devis écrit gratuit sous 24h. <a href="/prix-nettoyage-fin-chantier-nantes" class="il">Voir le guide tarifs complet</a>.</p></div></details>
 
 <details class="faq-item"><summary>Quel est le délai d'intervention pour une fin de chantier ?</summary><div class="faq-a"><p>Notre délai standard est de 48 heures sur Nantes et sa première couronne. Pour les livraisons à date fixe, nous réservons des créneaux d'urgence prioritaires, 7j/7, week-ends et jours fériés inclus.</p></div></details>
 
@@ -414,7 +414,7 @@
 <tr><td style="padding:11px;border-bottom:1px solid var(--border,#e2e8f0)">Rénovation complète (50-80 m²)</td><td style="padding:11px;border-bottom:1px solid var(--border,#e2e8f0)">400–650 €</td></tr>
 <tr><td style="padding:11px">Local commercial rénové</td><td style="padding:11px">Sur devis</td></tr>
 </tbody></table></div>
-<p style="font-size:13px;color:var(--muted,#64748b);margin-top:12px">Tarifs HT indicatifs. <a href="/prix-nettoyage-fin-chantier-nantes">Guide tarifs complet fin de chantier →</a></p>
+<p style="font-size:13px;color:var(--muted,#64748b);margin-top:12px">Tarifs HT indicatifs. <a href="/prix-nettoyage-fin-chantier-nantes" class="il">Guide tarifs complet fin de chantier →</a></p>
 </div></section>
 <section class="s"><div class="s-i"><span class="badge">Avis clients</span>
 <div style="font-size:clamp(20px,2.6vw,26px);font-weight:800;color:var(--navy);margin-bottom:18px">Ils nous font confiance à Nantes</div>
@@ -478,7 +478,7 @@
  <div style="font-size:13px"><address style="font-style:normal;display:inline">© 2026 <strong style="color:#fff">ZEN NETTOYAGE 44</strong> — 75 rue du Port Boyer, 44300 Nantes — SIRET 853 634 616 00025</address></div>
  </div>
  </div>
-<div style="text-align:center;margin-top:18px;font-size:12.5px"><a href="/mentions-legales" style="color:rgba(255,255,255,.55)">Mentions légales</a></div></footer>
+<div style="text-align:center;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:13.5px"><a href="/mentions-legales" style="color:rgba(255,255,255,.9);font-weight:600;text-decoration:underline;text-underline-offset:3px">⚖️ Mentions légales</a><span style="color:rgba(255,255,255,.35);margin:0 10px">·</span><a href="/a-propos" style="color:rgba(255,255,255,.9);font-weight:600;text-decoration:underline;text-underline-offset:3px">À propos</a><span style="color:rgba(255,255,255,.35);margin:0 10px">·</span><a href="/partenaires" style="color:rgba(255,255,255,.9);font-weight:600;text-decoration:underline;text-underline-offset:3px">Partenaires</a></div></footer>
 <a href="#devis-fc" class="devis-float" aria-label="Devis gratuit">📋<span>Devis gratuit</span></a>
 <a href="https://wa.me/33744257676" class="wa" target="_blank" rel="noopener nofollow" aria-label="Contacter sur WhatsApp">💬</a>
 <script>
