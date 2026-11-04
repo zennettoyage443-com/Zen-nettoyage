@@ -154,6 +154,41 @@
       "source": "/mentions-legales.html",
       "destination": "/mentions-legales",
       "permanent": true
+    },
+    {
+      "source": "/actualites.html",
+      "destination": "/actualites",
+      "permanent": true
+    },
+    {
+      "source": "/actualite-entretien-sols-creche-nantes.html",
+      "destination": "/actualite-entretien-sols-creche-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/actualite-fin-chantier-boutique-monobrosse-nantes.html",
+      "destination": "/actualite-fin-chantier-boutique-monobrosse-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/actualite-fin-chantier-plateau-bureaux-nantes.html",
+      "destination": "/actualite-fin-chantier-plateau-bureaux-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/actualite-nettoyage-moquette-bureaux-nantes.html",
+      "destination": "/actualite-nettoyage-moquette-bureaux-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/actualite-cuisine-piece-de-vie-menage-nantes.html",
+      "destination": "/actualite-cuisine-piece-de-vie-menage-nantes",
+      "permanent": true
+    },
+    {
+      "source": "/actualite-vitres-exterieures-eau-pure-nantes.html",
+      "destination": "/actualite-vitres-exterieures-eau-pure-nantes",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -260,6 +295,34 @@
     {
       "source": "/mentions-legales",
       "destination": "/mentions-legales.html"
+    },
+    {
+      "source": "/actualites",
+      "destination": "/actualites.html"
+    },
+    {
+      "source": "/actualite-entretien-sols-creche-nantes",
+      "destination": "/actualite-entretien-sols-creche-nantes.html"
+    },
+    {
+      "source": "/actualite-fin-chantier-boutique-monobrosse-nantes",
+      "destination": "/actualite-fin-chantier-boutique-monobrosse-nantes.html"
+    },
+    {
+      "source": "/actualite-fin-chantier-plateau-bureaux-nantes",
+      "destination": "/actualite-fin-chantier-plateau-bureaux-nantes.html"
+    },
+    {
+      "source": "/actualite-nettoyage-moquette-bureaux-nantes",
+      "destination": "/actualite-nettoyage-moquette-bureaux-nantes.html"
+    },
+    {
+      "source": "/actualite-cuisine-piece-de-vie-menage-nantes",
+      "destination": "/actualite-cuisine-piece-de-vie-menage-nantes.html"
+    },
+    {
+      "source": "/actualite-vitres-exterieures-eau-pure-nantes",
+      "destination": "/actualite-vitres-exterieures-eau-pure-nantes.html"
     }
   ],
   "headers": [
