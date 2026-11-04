@@ -222,7 +222,7 @@ main figure figcaption{font-size:13px;color:#64748b;margin-top:10px;text-align:c
 </style>
 <style id="zen-nav">
 :root{--zn-navy:#0b2e4e;--zn-teal:#00a882;--zn-teal-d:#007f62;--zn-gold:#f0a500;--zn-line:#e6ecf1;--zn-ink:#0f1e2c}
-.burger,.mob-menu,nav .nav-i>.nav-cta{display:none!important}
+.burger,.mob-menu,nav .nav-i>.nav-cta,.topbar{display:none!important}
 nav .nav-i{gap:18px}
 nav .nav-links.zn{display:flex;align-items:center;gap:6px;flex-wrap:nowrap;margin-left:auto}
 nav .nav-links.zn>a,nav .nav-links.zn .zn-dd>button{font:inherit;font-size:15px;font-weight:600;color:var(--zn-navy);padding:10px 12px;border-radius:10px;background:none;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:background .2s,color .2s;white-space:nowrap}
@@ -469,6 +469,8 @@ var n3=document.getElementById(pid+'-n3');if(n3)n3.addEventListener('click',func
 f.addEventListener('submit',function(e){e.preventDefault();var btn=f.querySelector('button[type="submit"]');var tel=(f.querySelector('[name="téléphone"]')||{}).value||'';if(!tel.trim()){alert('Merci de renseigner votre téléphone.');return;}btn.disabled=true;btn.textContent='Envoi…';var pr=(f.querySelector('[name="type prestation"]')||{}).value||'';try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'devis_envoye',prestation:pr,ville:'Ancenis'});if(typeof gtag==='function')gtag('event','devis_envoye',{prestation:pr,ville:'Ancenis'});}catch(err){}
 fetch('https://formspree.io/f/xreojbbp',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(r){if(r.ok){f.style.display='none';ok.style.display='block';ok.scrollIntoView({behavior:'smooth',block:'center'});}else{alert('Erreur. Appelez le 07 44 25 76 76.');btn.disabled=false;btn.textContent='📋 Envoyer ma demande';}}).catch(function(){alert('Problème de connexion. Appelez le 07 44 25 76 76.');btn.disabled=false;btn.textContent='📋 Envoyer ma demande';});});})();
 </script>
+
+
 
 
 
