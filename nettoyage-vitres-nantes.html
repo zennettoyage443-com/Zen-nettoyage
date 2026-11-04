@@ -164,12 +164,60 @@ main figure figcaption{font-size:13px;color:#64748b;margin-top:10px;text-align:c
  .hero-note{font-size:12px!important;text-align:center}
 }
 </style>
+<style id="zen-nav">
+:root{--zn-navy:#0b2e4e;--zn-teal:#00a882;--zn-teal-d:#007f62;--zn-gold:#f0a500;--zn-line:#e6ecf1;--zn-ink:#0f1e2c}
+.burger,.mob-menu,nav .nav-i>.nav-cta{display:none!important}
+nav .nav-i{gap:18px}
+nav .nav-links.zn{display:flex;align-items:center;gap:6px;flex-wrap:nowrap;margin-left:auto}
+nav .nav-links.zn>a,nav .nav-links.zn .zn-dd>button{font:inherit;font-size:15px;font-weight:600;color:var(--zn-navy);padding:10px 12px;border-radius:10px;background:none;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:background .2s,color .2s;white-space:nowrap}
+nav .nav-links.zn>a:hover,nav .nav-links.zn .zn-dd>button:hover,nav .nav-links.zn>a[aria-current="page"]{background:#eef5f3;color:var(--zn-teal-d)}
+nav .nav-links.zn .zn-tel{color:var(--zn-navy)}
+nav .nav-links.zn .zn-cta{background:var(--zn-teal-d)!important;color:#fff!important;padding:11px 20px!important;border-radius:999px!important;margin-left:6px;box-shadow:0 10px 24px -10px rgba(0,127,98,.7)}
+nav .nav-links.zn .zn-cta:hover{background:var(--zn-navy)!important;transform:translateY(-1px)}
+.zn-dd{position:relative}
+.zn-dd>button svg{transition:transform .25s}
+.zn-dd:hover>button svg,.zn-dd.open>button svg{transform:rotate(180deg)}
+.zn-mega{position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,8px);width:min(760px,92vw);background:#fff;border:1px solid var(--zn-line);border-radius:20px;box-shadow:0 30px 70px -20px rgba(11,46,78,.35);padding:22px;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:6px 22px;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s,visibility .2s;z-index:300}
+.zn-dd:hover .zn-mega,.zn-dd:focus-within .zn-mega,.zn-dd.open .zn-mega{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.zn-mega::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.zn-mh{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin:2px 0 8px;font-weight:800}
+.zn-mega a{display:block;padding:8px 10px;border-radius:10px;font-size:14.5px;font-weight:600;color:var(--zn-ink);text-decoration:none;transition:background .15s,color .15s}
+.zn-mega a:hover,.zn-mega a[aria-current="page"]{background:#eef5f3;color:var(--zn-teal-d)}
+.zn-burger{display:none;width:46px;height:46px;border-radius:14px;border:1px solid var(--zn-line);background:#fff;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;margin-left:auto;box-shadow:0 4px 14px -6px rgba(11,46,78,.25)}
+.zn-burger span{display:block;width:20px;height:2px;background:var(--zn-navy);border-radius:2px;position:relative}
+.zn-burger span::before,.zn-burger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--zn-navy);border-radius:2px}
+.zn-burger span::before{top:-6px}.zn-burger span::after{top:6px}
+@media(max-width:1080px){nav .nav-links.zn,nav>.nav-i>.nav-cta,nav .nav-i>.nav-cta{display:none!important}.zn-burger{display:inline-flex}}
+.zn-overlay{position:fixed;inset:0;background:rgba(6,22,38,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:9998}
+.zn-drawer{position:fixed;top:0;right:0;height:100vh;height:100dvh;width:min(420px,100%);background:#fff;z-index:9999;transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(6,22,38,.25)}
+.zn-open .zn-overlay{opacity:1;visibility:visible}.zn-open .zn-drawer{transform:none}
+html.zn-lock,html.zn-lock body{overflow:hidden!important}
+.zn-dh{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--zn-line)}
+.zn-dh img{height:30px;width:auto}
+.zn-close{width:44px;height:44px;border-radius:12px;border:1px solid var(--zn-line);background:#fff;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:var(--zn-navy)}
+.zn-db{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px 18px 28px;flex:1}
+.zn-quick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.zn-quick a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:14px;font-weight:700;font-size:15px;text-decoration:none}
+.zn-quick .q-devis{grid-column:1/-1;background:var(--zn-teal-d);color:#fff;box-shadow:0 12px 26px -12px rgba(0,127,98,.8)}
+.zn-quick .q-tel{background:var(--zn-navy);color:#fff}.zn-quick .q-wa{background:#e9f9ef;color:#12733b}
+.zn-sec{border-bottom:1px solid var(--zn-line)}
+.zn-sum{width:100%;font:inherit;background:none;border:0;display:flex;align-items:center;justify-content:space-between;padding:16px 4px;font-size:16px;font-weight:800;color:var(--zn-navy);cursor:pointer;text-align:left}
+.zn-sum svg{transition:transform .25s;color:#94a3b8}.zn-sec.open .zn-sum svg{transform:rotate(180deg)}
+.zn-sec .zn-l{display:none;padding:0 0 12px}.zn-sec.open .zn-l{display:block}
+.zn-sec .zn-l a{display:flex;align-items:center;justify-content:space-between;padding:11px 10px;border-radius:12px;font-size:15px;font-weight:600;color:var(--zn-ink);text-decoration:none}
+.zn-sec .zn-l a::after{content:"›";color:#94a3b8;font-size:20px;line-height:1}
+.zn-sec .zn-l a:hover,.zn-sec .zn-l a[aria-current="page"]{background:#eef5f3;color:var(--zn-teal-d)}
+.zn-sec .zn-sub{font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#94a3b8;padding:8px 10px 4px}
+.zn-foot{margin-top:18px;font-size:13px;color:#64748b;line-height:1.6}
+.zn-foot a{color:#64748b}
+@media(prefers-reduced-motion:reduce){.zn-drawer,.zn-overlay,.zn-mega{transition:none}}
+</style>
 </head>
 <body>
 <a href="#main" class="skip-link">Aller au contenu principal</a>
 <div class="topbar"><span>📍 <address>75 rue du Port Boyer, 44300 Nantes</address></span><a href="tel:+33744257676">📞 07 44 25 76 76</a><a href="https://wa.me/33744257676" target="_blank" rel="noopener nofollow">💬 WhatsApp<span class="sr-only"> (nouvelle fenêtre)</span></a></div>
 <nav><div class="nav-i"><a href="/" class="nav-logo"><img src="/logo-zen-nettoyage-44-header.svg" alt="ZEN NETTOYAGE 44" width="246" height="36" class="nav-logo-img"></a>
- <div class="nav-links"><a href="/#services">Services</a><a href="/prix-nettoyage-nantes">Nos tarifs</a><a href="/a-propos">À propos</a><a href="tel:+33744257676">📞 Appeler ZEN NETTOYAGE 44</a><a href="#devis-fc" class="nav-cta">Devis gratuit</a></div>
+ <div class="nav-links zn"><div class="zn-dd"><button type="button" aria-expanded="false" aria-controls="znMega">Services<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="zn-mega" id="znMega"><div><div class="zn-mh">Entreprises</div><a href="/nettoyage-copropriete-nantes">Entretien de copropriété</a><a href="/nettoyage-bureaux-nantes">Nettoyage de bureaux</a><a href="/nettoyage-locaux-professionnels-nantes">Locaux professionnels &amp; commerces</a><a href="/nettoyage-fin-chantier-nantes">Nettoyage de fin de chantier</a><a href="/nettoyage-vitres-nantes" aria-current="page">Nettoyage de vitres</a><a href="/nettoyage-apres-sinistre-nantes">Nettoyage après sinistre</a><a href="/nettoyage-cabinet-medical-nantes">Cabinet médical</a><a href="/nettoyage-restaurant-cuisine-professionnelle-nantes">Restaurant &amp; cuisine pro</a><a href="/nettoyage-creche-ecole-nantes">Crèche &amp; école</a></div><div><div class="zn-mh">Particuliers</div><a href="/grand-menage-demenagement-nantes">Grand ménage &amp; déménagement</a><a href="/nettoyage-fin-bail-nantes">Ménage de fin de bail</a><a href="/menage-airbnb-nantes">Ménage Airbnb &amp; location courte</a><div class="zn-mh" style="margin-top:14px">Infos</div><a href="/prix-nettoyage-nantes">Nos tarifs 2026</a><a href="/prix-nettoyage-fin-chantier-nantes">Prix fin de chantier</a></div><div><div class="zn-mh">Villes</div><a href="/">Nantes</a><a href="/nettoyage-reze">Rezé</a><a href="/nettoyage-saint-herblain">Saint-Herblain</a><a href="/nettoyage-vertou">Vertou</a><a href="/nettoyage-carquefou">Carquefou</a><a href="/nettoyage-sainte-luce-sur-loire">Sainte-Luce-sur-Loire</a><a href="/nettoyage-la-chapelle-sur-erdre">La Chapelle-sur-Erdre</a><a href="/nettoyage-ancenis">Ancenis</a><a href="/nettoyage-saint-nazaire">Saint-Nazaire</a></div></div></div><a href="/prix-nettoyage-nantes">Tarifs</a><a href="/actualites">Actualités</a><a href="/a-propos">À propos</a><a href="tel:+33744257676" class="zn-tel">07 44 25 76 76</a><a href="/#devis" class="zn-cta">Devis gratuit</a></div><button type="button" class="zn-burger" id="znBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="znDrawer"><span></span></button>
  <button class="burger" id="burgerBtn" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
 </div></nav>
 <div class="mob-menu" id="mobMenu">
@@ -530,5 +578,21 @@ document.getElementById(pid+'-b2').addEventListener('click',function(){show(1);}
 document.getElementById(pid+'-n2').addEventListener('click',function(){if(s.z)show(3);});
 document.getElementById(pid+'-b3').addEventListener('click',function(){show(2);});
 document.getElementById(pid+'-n3').addEventListener('click',function(){if(!s.f)return;var pm=prices[s.t]||prices.autre,price=pm[s.z]||'Sur devis';if(s.f!=='once'&&price!=='Sur devis')price=price+' / passage';document.getElementById(pid+'-price').textContent=price;document.getElementById(pid+'-res').classList.add('show');document.getElementById(pid+'-n3').style.display='none';});
+})();</script>
+
+
+
+
+
+
+<div class="zn-overlay" id="znOverlay"></div><aside class="zn-drawer" id="znDrawer" role="dialog" aria-modal="true" aria-label="Menu" hidden><div class="zn-dh"><a href="/"><img src="/logo-zen-nettoyage-44-header.svg" alt="ZEN NETTOYAGE 44" width="205" height="30"></a><button type="button" class="zn-close" id="znClose" aria-label="Fermer le menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div class="zn-db"><div class="zn-quick"><a class="q-devis" href="/#devis">📋 Devis gratuit en 24 h</a><a class="q-tel" href="tel:+33744257676">📞 Appeler</a><a class="q-wa" href="https://wa.me/33744257676" target="_blank" rel="noopener">💬 WhatsApp</a></div><div class="zn-sec open"><button type="button" class="zn-sum" aria-expanded="true">Nos services<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="zn-l"><div class="zn-sub">Entreprises</div><a href="/nettoyage-copropriete-nantes">Entretien de copropriété</a><a href="/nettoyage-bureaux-nantes">Nettoyage de bureaux</a><a href="/nettoyage-locaux-professionnels-nantes">Locaux professionnels &amp; commerces</a><a href="/nettoyage-fin-chantier-nantes">Nettoyage de fin de chantier</a><a href="/nettoyage-vitres-nantes" aria-current="page">Nettoyage de vitres</a><a href="/nettoyage-apres-sinistre-nantes">Nettoyage après sinistre</a><a href="/nettoyage-cabinet-medical-nantes">Cabinet médical</a><a href="/nettoyage-restaurant-cuisine-professionnelle-nantes">Restaurant &amp; cuisine pro</a><a href="/nettoyage-creche-ecole-nantes">Crèche &amp; école</a><div class="zn-sub">Particuliers</div><a href="/grand-menage-demenagement-nantes">Grand ménage &amp; déménagement</a><a href="/nettoyage-fin-bail-nantes">Ménage de fin de bail</a><a href="/menage-airbnb-nantes">Ménage Airbnb &amp; location courte</a></div></div><div class="zn-sec"><button type="button" class="zn-sum" aria-expanded="false">Villes desservies<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="zn-l"><a href="/">Nantes</a><a href="/nettoyage-reze">Rezé</a><a href="/nettoyage-saint-herblain">Saint-Herblain</a><a href="/nettoyage-vertou">Vertou</a><a href="/nettoyage-carquefou">Carquefou</a><a href="/nettoyage-sainte-luce-sur-loire">Sainte-Luce-sur-Loire</a><a href="/nettoyage-la-chapelle-sur-erdre">La Chapelle-sur-Erdre</a><a href="/nettoyage-ancenis">Ancenis</a><a href="/nettoyage-saint-nazaire">Saint-Nazaire</a></div></div><div class="zn-sec"><button type="button" class="zn-sum" aria-expanded="false">Tarifs & informations<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="zn-l"><a href="/prix-nettoyage-nantes">Nos tarifs 2026</a><a href="/prix-nettoyage-fin-chantier-nantes">Prix fin de chantier</a><a href="/actualites">Actualités &amp; chantiers</a><a href="/a-propos">À propos de nous</a><a href="/entreprise-nettoyage-nantes">Notre entreprise</a><a href="/partenaires">Nos partenaires</a><a href="/mentions-legales">Mentions légales</a></div></div><p class="zn-foot">ZEN NETTOYAGE 44 · 75 rue du Port Boyer, 44300 Nantes<br>Intervention 7j/7 à Nantes et en Loire-Atlantique</p></div></aside>
+<script id="zen-nav-js">(function(){var d=document,h=d.documentElement,b=d.getElementById('znBurger'),dr=d.getElementById('znDrawer'),ov=d.getElementById('znOverlay'),c=d.getElementById('znClose');if(!b||!dr)return;var last;
+function open(){last=d.activeElement;dr.hidden=false;requestAnimationFrame(function(){h.classList.add('zn-open','zn-lock')});b.setAttribute('aria-expanded','true');setTimeout(function(){c.focus()},50)}
+function close(){h.classList.remove('zn-open','zn-lock');b.setAttribute('aria-expanded','false');setTimeout(function(){dr.hidden=true},350);if(last&&last.focus)last.focus()}
+b.addEventListener('click',open);c.addEventListener('click',close);ov.addEventListener('click',close);
+d.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('zn-open'))close()});
+dr.querySelectorAll('.zn-sum').forEach(function(x){x.addEventListener('click',function(){var o=x.parentNode.classList.toggle('open');x.setAttribute('aria-expanded',String(o))})});
+dr.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){close()})});
+var dd=d.querySelector('.zn-dd'),bt=dd&&dd.querySelector('button');if(bt){bt.addEventListener('click',function(){var o=dd.classList.toggle('open');bt.setAttribute('aria-expanded',String(o))});d.addEventListener('click',function(e){if(!dd.contains(e.target)){dd.classList.remove('open');bt.setAttribute('aria-expanded','false')}})}
 })();</script>
 </body></html>
