@@ -58,6 +58,18 @@
 <style>@media(max-width:600px){.svc-block{padding:32px 12px!important}.svc-head{margin:0 0 18px!important}.svc-grid{grid-template-columns:1fr 1fr!important;gap:6px!important}.svc-card{flex-direction:row!important;align-items:center!important;padding:7px 8px!important;gap:6px!important;min-height:32px!important;border-radius:10px!important}.svc-ic{width:22px!important;height:22px!important;font-size:12px!important;border-radius:6px!important}.svc-tx{font-size:10.3px!important;line-height:1.15!important}}</style>
 <style>.skip-link{position:absolute;left:-9999px;top:0;background:var(--teal,#00a882);color:#fff;padding:12px 20px;z-index:9999;border-radius:0 0 8px 0;font-weight:700;text-decoration:none}.skip-link:focus{left:0}</style>
 <style>*:focus-visible{outline:3px solid var(--teal,#00a882)!important;outline-offset:2px!important}</style>
+<style id="zen-media">
+/* Images éditoriales : un seul format (4:3), recadrage centré, coins arrondis, ombre douce */
+main figure:not(.zng-card):not(.zng-c){max-width:760px;margin-left:auto!important;margin-right:auto!important}
+main figure:not(.zng-card):not(.zng-c)>a{display:block;border-radius:18px;overflow:hidden;box-shadow:0 12px 36px rgba(11,46,78,.14);transition:transform .35s ease,box-shadow .35s ease;-webkit-tap-highlight-color:transparent}
+main figure:not(.zng-card):not(.zng-c) img:not(.prt-logo){display:block;width:100%!important;max-width:100%;height:auto!important;aspect-ratio:4/3;object-fit:cover;object-position:50% 45%;border-radius:18px!important;box-shadow:none!important;background:#e9eef3;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+main figure:not(.zng-card):not(.zng-c)>a img{border-radius:0!important}
+main figure:not(.zng-card):not(.zng-c)>img{box-shadow:0 12px 36px rgba(11,46,78,.14)!important}
+main figure:not(.zng-card):not(.zng-c)>a:hover,main figure:not(.zng-card):not(.zng-c)>a:focus-visible{transform:translateY(-3px);box-shadow:0 20px 52px rgba(11,46,78,.22)}
+main figure:not(.zng-card):not(.zng-c)>a:hover img{transform:scale(1.04)}
+main figure figcaption{font-size:13px;color:#64748b;margin-top:10px;text-align:center}
+@media(prefers-reduced-motion:reduce){main figure>a,main figure img{transition:none!important}main figure>a:hover,main figure>a:hover img{transform:none!important}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Aller au contenu principal</a>
@@ -477,7 +489,7 @@
 <li><a href="/nettoyage-apres-sinistre-nantes">Après sinistre</a></li>
 <li><a href="/prix-nettoyage-nantes">Prix nettoyage</a></li>
 <li><a href="/prix-nettoyage-fin-chantier-nantes">Prix fin de chantier</a></li>
-<li><a href="/entreprise-nettoyage-nantes">Notre entreprise</a></li>
+<li><a href="/entreprise-nettoyage-nantes">Notre entreprise</a></li><li><a href="/actualites">Actualités</a></li>
 </ul>
 </div>
 <div class="ft-col">
