@@ -1,7 +1,30 @@
+# Tous les robots sont autorisés sur l'ensemble du site
 User-agent: *
 Allow: /
 
+# Moteurs de recherche
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: DuckDuckBot
+User-agent: YandexBot
+User-agent: Qwantbot
+User-agent: Ecosia
+Allow: /
+
+# Assistants et moteurs IA
 User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: ClaudeBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+User-agent: MistralAI-User
 Allow: /
 
 Sitemap: https://www.zennettoyage.fr/sitemap.xml
