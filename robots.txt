@@ -2,9 +2,15 @@
 User-agent: *
 Allow: /
 
-# Moteurs de recherche
+# Google (recherche + Gemini) et Microsoft (Bing + Copilot)
 User-agent: Googlebot
+User-agent: Google-Extended
 User-agent: Bingbot
+User-agent: msnbot
+User-agent: BingPreview
+Allow: /
+
+# Autres moteurs de recherche
 User-agent: Applebot
 User-agent: DuckDuckBot
 User-agent: YandexBot
@@ -12,16 +18,21 @@ User-agent: Qwantbot
 User-agent: Ecosia
 Allow: /
 
-# Assistants et moteurs IA
+# ChatGPT (OpenAI)
 User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
 User-agent: GPTBot
+Allow: /
+
+# Claude (Anthropic)
 User-agent: Claude-SearchBot
 User-agent: Claude-User
 User-agent: ClaudeBot
+Allow: /
+
+# Perplexity, Apple Intelligence, Meta AI, Mistral (Le Chat)
 User-agent: PerplexityBot
 User-agent: Perplexity-User
-User-agent: Google-Extended
 User-agent: Applebot-Extended
 User-agent: meta-externalagent
 User-agent: MistralAI-User
